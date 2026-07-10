@@ -1,0 +1,46 @@
+{
+  "site": {
+    "brand": "LogIA",
+    "title": "LogIA transforma procesos con inteligencia artificial.",
+    "subtitle": "Una plataforma SaaS moderna para automatizar tareas, centralizar métricas y acelerar la toma de decisiones.",
+    "ctaPrimary": "Explorar producto",
+    "ctaSecondary": "Ver casos de uso"
+  },
+  "navLinks": [
+    { "label": "Producto", "href": "#producto" },
+    { "label": "Beneficios", "href": "#beneficios" },
+    { "label": "Casos de uso", "href": "#casos-de-uso" }
+  ],
+  "heroStats": [
+    { "label": "Tiempo ahorrado", "value": "12h/semana" },
+    { "label": "Automatizaciones", "value": "80+" },
+    { "label": "Satisfacción", "value": "98%" }
+  ],
+  "features": [
+    {
+      "title": "Panel inteligente",
+      "description": "Centraliza métricas, alertas y reportes en un solo lugar para tomar decisiones más rápidas.",
+      "icon": "📊"
+    },
+    {
+      "title": "Automatización IA",
+      "description": "Activa flujos inteligentes que reducen tareas repetitivas y minimizan errores humanos.",
+      "icon": "🤖"
+    },
+    {
+      "title": "Integraciones ágiles",
+      "description": "Conecta tus herramientas favoritas sin complicaciones y acelera tu operación diaria.",
+      "icon": "🔗"
+    }
+  ],
+  "benefits": [
+    "Reducción de tiempos operativos y procesos manuales.",
+    "Visibilidad clara para equipos comerciales, soporte y liderazgo.",
+    "Escalabilidad para empresas que necesitan crecer sin perder control."
+  ],
+  "useCases": [
+    "Gestión de clientes y seguimiento de leads.",
+    "Atención al cliente con respuestas asistidas por IA.",
+    "Análisis de rendimiento y reportes ejecutivos."
+  ]
+}
