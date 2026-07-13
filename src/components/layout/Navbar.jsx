@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/favicon.svg';
+import { SITE_CONTENT } from '../../data/siteContent';
+
+const { navbar } = SITE_CONTENT;
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,9 +14,7 @@ const Navbar = () => {
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -38,13 +39,17 @@ const Navbar = () => {
     setActiveDropdown(null);
     if (target.startsWith('#')) {
       scrollToSection(target);
+    } else if (target.startsWith('/app/')) {
+      navigate(target);
+    } else if (target.startsWith('/')) {
+      navigate(target);
     } else {
       navigate(target);
     }
   };
 
-  const toggleDropdown = (dropdownName) => {
-    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  const toggleDropdown = (name) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
   };
 
   return (
@@ -59,59 +64,72 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="nav-links d-none d-lg-flex align-items-center">
-          <a href="#modulos" className="nav-link-x" onClick={(e) => handleNavClick(e, '#modulos')}>Soluciones</a>
-          <a href="#tecnologia" className="nav-link-x" onClick={(e) => handleNavClick(e, '#tecnologia')}>Infraestructura</a>
-          <a href="#precios" className="nav-link-x" onClick={(e) => handleNavClick(e, '#precios')}>Planes</a>
-          
-          {/* Dropdown Recursos */}
+          <a href="#modulos" className="nav-link-x" onClick={(e) => handleNavClick(e, '#modulos')}>Producto</a>
+
+          {/* Dropdown Soluciones */}
           <div className="nav-item-dropdown">
-            <span 
-              className="nav-link-x nav-dropdown-trigger" 
+            <span
+              className="nav-link-x nav-dropdown-trigger"
               style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
-              onClick={() => toggleDropdown('recursos')}
+              onClick={() => toggleDropdown('soluciones')}
             >
-              Recursos <i className="fas fa-chevron-down" style={{ fontSize: '0.7rem', opacity: 0.6 }}></i>
+              Soluciones <i className="fas fa-chevron-down" style={{ fontSize: '0.7rem', opacity: 0.6 }}></i>
             </span>
-            <div className={`dropdown-menu-x ${activeDropdown === 'recursos' ? 'active' : ''}`}>
-              <a href="#academy" className="dropdown-item-x" onClick={(e) => handleNavClick(e, '#academy')}><i className="fas fa-graduation-cap"></i> LogIA Academy</a>
-              <a href="/soporte" className="dropdown-item-x" onClick={(e) => handleNavClick(e, '/soporte')}><i className="fas fa-headset"></i> Soporte Técnico</a>
-              <a href="/preguntas" className="dropdown-item-x" onClick={(e) => handleNavClick(e, '/preguntas')}><i className="fas fa-circle-question"></i> Preguntas Frecuentes</a>
+            <div className={`dropdown-menu-x ${activeDropdown === 'soluciones' ? 'active' : ''}`}>
+              {navbar.solutions.map((sol) => (
+                <a
+                  key={sol.path}
+                  href={sol.path}
+                  className="dropdown-item-x"
+                  onClick={(e) => handleNavClick(e, sol.path)}
+                >
+                  <i className={`fas ${sol.icon}`}></i> {sol.label}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Dropdown Legal */}
+          <a href="#precios" className="nav-link-x" onClick={(e) => handleNavClick(e, '#precios')}>Precios</a>
+
+          {/* Dropdown Soporte */}
           <div className="nav-item-dropdown">
-            <span 
-              className="nav-link-x nav-dropdown-trigger" 
+            <span
+              className="nav-link-x nav-dropdown-trigger"
               style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
-              onClick={() => toggleDropdown('legal')}
+              onClick={() => toggleDropdown('soporte')}
             >
-              Legal <i className="fas fa-chevron-down" style={{ fontSize: '0.7rem', opacity: 0.6 }}></i>
+              Soporte <i className="fas fa-chevron-down" style={{ fontSize: '0.7rem', opacity: 0.6 }}></i>
             </span>
-            <div className={`dropdown-menu-x ${activeDropdown === 'legal' ? 'active' : ''}`}>
-              <a href="/privacidad" className="dropdown-item-x" onClick={(e) => handleNavClick(e, '/privacidad')}><i className="fas fa-shield-halved"></i> Privacidad</a>
-              <a href="/terminos" className="dropdown-item-x" onClick={(e) => handleNavClick(e, '/terminos')}><i className="fas fa-file-contract"></i> Términos</a>
-              <a href="/actualizaciones" className="dropdown-item-x" onClick={(e) => handleNavClick(e, '/actualizaciones')}><i className="fas fa-clock-rotate-left"></i> Changelog</a>
+            <div className={`dropdown-menu-x ${activeDropdown === 'soporte' ? 'active' : ''}`}>
+              {navbar.support.map((sup) => (
+                <a
+                  key={sup.path}
+                  href={sup.path}
+                  className="dropdown-item-x"
+                  onClick={(e) => handleNavClick(e, sup.path)}
+                >
+                  <i className={sup.icon}></i> {sup.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
         <div className="nav-actions d-none d-lg-flex align-items-center">
-          <a href="https://app.logia.lat/login/" className="btn-text" target="_blank" rel="noopener noreferrer">Ingresar</a>
-          <a href="https://app.logia.lat/register/" className="btn-executive" target="_blank" rel="noopener noreferrer">Prueba Gratis</a>
+          <a href={navbar.cta.login.href} className="btn-text" target="_blank" rel="noopener noreferrer">
+            {navbar.cta.login.label}
+          </a>
+          <a href={navbar.cta.trial.href} className="btn-executive btn-trial-cta" target="_blank" rel="noopener noreferrer">
+            <i className="fas fa-gift" style={{ marginRight: '0.4rem', fontSize: '0.85rem' }}></i>
+            {navbar.cta.trial.label}
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="mobile-menu-btn d-lg-none" 
+        <button
+          className="mobile-menu-btn d-lg-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          style={{ 
-            background: 'transparent', 
-            border: 'none', 
-            color: '#fff', 
-            fontSize: '1.5rem', 
-            cursor: 'pointer' 
-          }}
+          style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.5rem', cursor: 'pointer' }}
         >
           <i className={mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
         </button>
@@ -120,17 +138,9 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="mobile-menu" style={{
-          position: 'fixed',
-          top: '0',
-          right: '0',
-          width: '80%',
-          maxWidth: '350px',
-          height: '100vh',
-          background: 'rgba(15, 23, 42, 0.98)',
-          backdropFilter: 'blur(20px)',
-          zIndex: '9999',
-          padding: '2rem',
-          boxShadow: '-10px 0 40px rgba(0,0,0,0.5)'
+          position: 'fixed', top: '0', right: '0', width: '80%', maxWidth: '350px',
+          height: '100vh', background: 'rgba(15, 23, 42, 0.98)', backdropFilter: 'blur(20px)',
+          zIndex: '9999', padding: '2rem', boxShadow: '-10px 0 40px rgba(0,0,0,0.5)', overflowY: 'auto'
         }}>
           <div className="d-flex justify-content-between align-items-center mb-5">
             <Link to="/" style={{ textDecoration: 'none' }}>
@@ -139,41 +149,64 @@ const Navbar = () => {
                 <span className="brand-name">Log<span>IA</span></span>
               </div>
             </Link>
-            <button 
-              onClick={() => setMobileMenuOpen(false)}
-              style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.5rem', cursor: 'pointer' }}
-            >
+            <button onClick={() => setMobileMenuOpen(false)} style={{ background: 'transparent', border: 'none', color: '#fff', fontSize: '1.5rem', cursor: 'pointer' }}>
               <i className="fas fa-times"></i>
             </button>
           </div>
-          
-          <div className="mobile-links" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <a href="#modulos" className="nav-link-x" onClick={(e) => handleNavClick(e, '#modulos')} style={{ margin: '0' }}>Soluciones</a>
-            <a href="#tecnologia" className="nav-link-x" onClick={(e) => handleNavClick(e, '#tecnologia')} style={{ margin: '0' }}>Infraestructura</a>
-            <a href="#precios" className="nav-link-x" onClick={(e) => handleNavClick(e, '#precios')} style={{ margin: '0' }}>Planes</a>
-            <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
-              <a href="#academy" className="nav-link-x" onClick={(e) => handleNavClick(e, '#academy')} style={{ margin: '0', display: 'block', marginBottom: '1rem' }}>
-                <i className="fas fa-graduation-cap" style={{ marginRight: '0.5rem' }}></i> LogIA Academy
-              </a>
-              <a href="/soporte" className="nav-link-x" onClick={(e) => handleNavClick(e, '/soporte')} style={{ margin: '0', display: 'block', marginBottom: '1rem' }}>
-                <i className="fas fa-headset" style={{ marginRight: '0.5rem' }}></i> Soporte Técnico
-              </a>
-              <a href="/preguntas" className="nav-link-x" onClick={(e) => handleNavClick(e, '/preguntas')} style={{ margin: '0', display: 'block', marginBottom: '1rem' }}>
-                <i className="fas fa-circle-question" style={{ marginRight: '0.5rem' }}></i> Preguntas Frecuentes
-              </a>
-              <a href="/privacidad" className="nav-link-x" onClick={(e) => handleNavClick(e, '/privacidad')} style={{ margin: '0', display: 'block', marginBottom: '1rem' }}>
-                <i className="fas fa-shield-halved" style={{ marginRight: '0.5rem' }}></i> Privacidad
-              </a>
-              <a href="/terminos" className="nav-link-x" onClick={(e) => handleNavClick(e, '/terminos')} style={{ margin: '0', display: 'block', marginBottom: '1rem' }}>
-                <i className="fas fa-file-contract" style={{ marginRight: '0.5rem' }}></i> Términos
-              </a>
-              <a href="/actualizaciones" className="nav-link-x" onClick={(e) => handleNavClick(e, '/actualizaciones')} style={{ margin: '0', display: 'block' }}>
-                <i className="fas fa-clock-rotate-left" style={{ marginRight: '0.5rem' }}></i> Changelog
-              </a>
+
+          <div className="mobile-links" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <a href="#modulos" className="nav-link-x" onClick={(e) => handleNavClick(e, '#modulos')} style={{ margin: '0', padding: '0.75rem 0' }}>Producto</a>
+
+            {/* Mobile Soluciones */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '0.75rem' }}>
+              <span
+                className="nav-link-x"
+                style={{ margin: '0', padding: '0.75rem 0', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                onClick={() => toggleDropdown('soluciones-mobile')}
+              >
+                Soluciones <i className={`fas fa-chevron-${activeDropdown === 'soluciones-mobile' ? 'up' : 'down'}`} style={{ fontSize: '0.7rem', opacity: 0.6 }}></i>
+              </span>
+              {activeDropdown === 'soluciones-mobile' && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0', paddingLeft: '1rem', borderLeft: '2px solid rgba(99, 102, 241, 0.3)', marginTop: '0.25rem' }}>
+                  {navbar.solutions.map((sol) => (
+                    <a key={sol.path} href={sol.path} className="dropdown-item-x" onClick={(e) => handleNavClick(e, sol.path)} style={{ padding: '0.6rem 0.75rem' }}>
+                      <i className={`fas ${sol.icon}`}></i> {sol.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
-            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <a href="https://app.logia.lat/login/" className="btn-text" target="_blank" rel="noopener noreferrer" style={{ textAlign: 'center', padding: '0.75rem' }}>Ingresar</a>
-              <a href="https://app.logia.lat/register/" className="btn-executive" target="_blank" rel="noopener noreferrer" style={{ textAlign: 'center', padding: '0.75rem 1.5rem' }}>Prueba Gratis</a>
+
+            <a href="#precios" className="nav-link-x" onClick={(e) => handleNavClick(e, '#precios')} style={{ margin: '0', padding: '0.75rem 0', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '0.75rem' }}>Precios</a>
+
+            {/* Mobile Soporte */}
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '0.75rem' }}>
+              <span
+                className="nav-link-x"
+                style={{ margin: '0', padding: '0.75rem 0', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                onClick={() => toggleDropdown('soporte-mobile')}
+              >
+                Soporte <i className={`fas fa-chevron-${activeDropdown === 'soporte-mobile' ? 'up' : 'down'}`} style={{ fontSize: '0.7rem', opacity: 0.6 }}></i>
+              </span>
+              {activeDropdown === 'soporte-mobile' && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0', paddingLeft: '1rem', borderLeft: '2px solid rgba(99, 102, 241, 0.3)', marginTop: '0.25rem' }}>
+                  {navbar.support.map((sup) => (
+                    <a key={sup.path} href={sup.path} className="dropdown-item-x" onClick={(e) => handleNavClick(e, sup.path)} style={{ padding: '0.6rem 0.75rem' }}>
+                      <i className={sup.icon}></i> {sup.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <a href={navbar.cta.login.href} className="btn-text" target="_blank" rel="noopener noreferrer" style={{ textAlign: 'center', padding: '0.75rem' }}>
+                {navbar.cta.login.label}
+              </a>
+              <a href={navbar.cta.trial.href} className="btn-executive btn-trial-cta" target="_blank" rel="noopener noreferrer" style={{ textAlign: 'center', padding: '0.75rem 1.5rem' }}>
+                <i className="fas fa-gift" style={{ marginRight: '0.4rem' }}></i>
+                {navbar.cta.trial.label}
+              </a>
             </div>
           </div>
         </div>

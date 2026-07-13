@@ -43,7 +43,7 @@ const Privacy = () => {
           <p>Implementamos medidas de seguridad de grado corporativo para proteger tu información:</p>
           <ul>
             <li>Encriptación AES-256 en reposo y TLS 1.3 en tránsito</li>
-            <li>Aislamiento completo de datos por tenant (multi-tenant seguro)</li>
+            <li>Aislamiento completo de datos por agencia (cada empresa tiene su propio entorno seguro)</li>
             <li>Copias de seguridad automáticas diarias en servidores geográficamente distribuidos</li>
             <li>Auditorías de seguridad periódicas y pruebas de penetración</li>
           </ul>

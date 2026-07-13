@@ -1,9 +1,11 @@
 import React from 'react';
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/layout/HeroSection';
+import SocialProof from '../components/layout/SocialProof';
+import HowItWorks from '../components/layout/HowItWorks';
 import VideoShowcase from '../components/layout/VideoShowcase';
 import AdminHub from '../components/modules/AdminHub';
-import ModulesSection from '../components/modules/ModulesSection';
+import AppGallery from '../components/modules/AppGallery';
 import TechHub from '../components/layout/TechHub';
 import AcademySection from '../components/layout/AcademySection';
 import SupportSection from '../components/layout/SupportSection';
@@ -16,9 +18,11 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <SocialProof />
+        <HowItWorks />
         <VideoShowcase />
         <AdminHub />
-        <ModulesSection />
+        <AppGallery />
         <TechHub />
         <AcademySection />
         <SupportSection />
