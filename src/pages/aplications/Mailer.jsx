@@ -3,7 +3,7 @@ import PageLayout from '../../components/layout/PageLayout';
 
 const Mailer = () => {
   return (
-    <PageLayout title="Comunicaciones Masivas" tagline="Emails profesionales automatizados">
+    <PageLayout title="Comunicaciones Masivas" tagline="Emails profesionales automatizados" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">

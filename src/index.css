@@ -103,15 +103,15 @@ body {
 
 /* Big/small placeholders for spacing control */
 .big-placeholder {
-  height: 500px !important;
+  aspect-ratio: auto;
 }
 
 .small-placeholder {
-  height: 250px !important;
+  aspect-ratio: auto;
 }
 
 .mini-placeholder {
-  height: 180px !important;
+  aspect-ratio: auto;
 }
 
 @media (max-width: 768px) {
@@ -122,13 +122,13 @@ body {
     padding: 0 1.25rem;
   }
   .big-placeholder {
-    height: 350px !important;
+    aspect-ratio: auto;
   }
   .small-placeholder {
-    height: 220px !important;
+    aspect-ratio: auto;
   }
   .mini-placeholder {
-    height: 160px !important;
+    aspect-ratio: auto;
   }
 }
 
@@ -731,47 +731,196 @@ body {
 
 .card-image-placeholder {
   width: 100%;
-  aspect-ratio: 16/9;
   background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(99, 102, 241, 0.08);
+  transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card-image-placeholder:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(99, 102, 241, 0.12);
+}
+
+.card-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.06) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .card-image-placeholder img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top;
-  transition: transform 0.5s ease;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.6s ease;
+  border-radius: 19px;
+  padding: 8px;
 }
 
-.feature-card-premium:hover .card-image-placeholder img {
-  transform: scale(1.05);
+.card-image-placeholder:hover img {
+  transform: scale(1.04);
 }
 
 .system-mockup-tag {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 0.6rem;
-  color: #fff;
-  opacity: 0.8;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
   z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+/* Horizontal Feature Card */
+.horizontal-feature {
+  padding: 2rem !important;
+}
+
+.horizontal-feature .row {
+  flex-wrap: nowrap;
+}
+
+.horizontal-feature .row > [class*="col-md-5"],
+.horizontal-feature .row > [class*="col-md-7"] {
+  flex: 0 0 auto;
+}
+
+.horizontal-feature .row > [class*="col-md-7"] {
+  flex: 1 1 0%;
+  max-width: none;
+}
+
+.horizontal-feature .row > [class*="col-md-5"] {
+  flex: 0 0 40%;
+  max-width: 40%;
 }
 
 /* Modules Section */
 .modules-section {
   padding: var(--py-section) 0;
   position: relative;
+}
+
+/* Module Slide Layout (AppCards) */
+.module-slide-layout {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 3rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease;
+}
+
+.module-slide-layout:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.module-slide-content {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.module-slide-image {
+  flex: 0 0 45%;
+  max-width: 45%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(99, 102, 241, 0.06);
+  transform: perspective(1000px) rotateY(-2deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.module-slide-image:hover {
+  transform: perspective(1000px) rotateY(0deg);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(99, 102, 241, 0.1);
+}
+
+.module-slide-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.module-slide-image .system-mockup-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: auto;
+}
+
+.module-feature-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.module-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.module-feature-list li i {
+  color: var(--accent-indigo);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+  .module-slide-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  .module-slide-image {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+    order: 2 !important;
+  }
+  .module-slide-content {
+    order: 1 !important;
+  }
 }
 
 .glow-orb {
@@ -2435,6 +2584,15 @@ main {
   background: transparent;
 }
 
+.app-gallery-section .row.align-items-center {
+  flex-wrap: nowrap !important;
+}
+
+.app-gallery-section .row.align-items-center > [class*="col-lg-6"] {
+  max-width: 50% !important;
+  flex: 0 0 50% !important;
+}
+
 .app-tabs {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -2645,6 +2803,78 @@ main {
   color: var(--text-primary);
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+/* App Detail Button (Gallery carousel) */
+.btn-app-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.8rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 14px;
+  color: var(--accent-indigo);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn-app-detail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+  border-radius: 13px;
+}
+
+.btn-app-detail:hover {
+  border-color: var(--accent-indigo);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(99, 102, 241, 0.35);
+}
+
+.btn-app-detail:hover::before {
+  opacity: 1;
+}
+
+.btn-app-detail-text {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-app-detail-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-app-detail:hover .btn-app-detail-icon {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(3px);
+}
+
+.btn-app-detail:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
 }
 
 .app-carousel-nav {
@@ -2873,6 +3103,41 @@ main {
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(99, 102, 241, 0.15);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(99, 102, 241, 0.08);
+  transform: perspective(1000px) rotateY(2deg) rotateX(1deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.app-page-image:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  box-shadow: 
+    0 35px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(99, 102, 241, 0.12);
+}
+
+.app-page-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.08) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.app-page-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.app-page-image:hover img {
+  transform: scale(1.03);
 }
 
 @media (min-width: 992px) {
@@ -3015,7 +3280,7 @@ main {
 
 /* Workflow */
 .app-page-workflow {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
 }
 

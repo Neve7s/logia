@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/kpi.webp';
 
 const Recruiment = () => {
   return (
-    <PageLayout title="Reclutamiento ATS" tagline="Del postulado al empleado en un clic">
+    <PageLayout title="Reclutamiento ATS" tagline="Del postulado al empleado en un clic" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">

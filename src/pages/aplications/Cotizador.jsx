@@ -5,7 +5,7 @@ import img from '../../assets/ecosistema/cotizador.webp';
 
 const Cotizador = () => {
   return (
-    <PageLayout title="Cotizador Pro" tagline="Cotiza en minutos, no en horas">
+    <PageLayout title="Cotizador Pro" tagline="Cotiza en minutos, no en horas" fullWidth={true}>
       <div className="app-page">
 
         {/* Hero de la app */}

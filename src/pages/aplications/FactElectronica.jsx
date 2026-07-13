@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/fiannza1.webp';
 
 const FactElectronica = () => {
   return (
-    <PageLayout title="Facturación SUNAT" tagline="Cumplimiento fiscal automático">
+    <PageLayout title="Facturación SUNAT" tagline="Cumplimiento fiscal automático" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">

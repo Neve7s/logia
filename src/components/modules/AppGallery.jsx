@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SITE_CONTENT } from '../../data/siteContent';
 import cotizadorImg from '../../assets/ecosistema/cotizador.webp';
 import shipmentImg from '../../assets/ecosistema/shipment.webp';
@@ -111,6 +112,11 @@ const AppGallery = () => {
                   </div>
                 ))}
               </div>
+
+              <Link to={currentApp.route} className="btn-app-detail">
+                <span className="btn-app-detail-text">Explorar módulo</span>
+                <span className="btn-app-detail-icon"><i className="fas fa-arrow-right"></i></span>
+              </Link>
             </div>
           </div>
 

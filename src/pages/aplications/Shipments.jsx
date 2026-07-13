@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/shipment.webp';
 
 const Shipments = () => {
   return (
-    <PageLayout title="Shipments Control" tagline="Tracking real de cada carga">
+    <PageLayout title="Shipments Control" tagline="Tracking real de cada carga" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">

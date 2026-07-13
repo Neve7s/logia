@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/maestros.webp';
 
 const DataMaster = () => {
   return (
-    <PageLayout title="Infraestructura Masters" tagline="Datos centralizados, búsquedas instantáneas">
+    <PageLayout title="Infraestructura Masters" tagline="Datos centralizados, búsquedas instantáneas" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">

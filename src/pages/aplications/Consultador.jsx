@@ -3,7 +3,7 @@ import PageLayout from '../../components/layout/PageLayout';
 
 const Consultador = () => {
   return (
-    <PageLayout title="Consultador de Oportunidades" tagline="Encuentra oportunidades antes que tu competencia">
+    <PageLayout title="Consultador de Oportunidades" tagline="Encuentra oportunidades antes que tu competencia" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
