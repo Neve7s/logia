@@ -123,7 +123,7 @@ const Footer = () => {
             </div>
             <div className="footer-bottom-center">
               <span className="footer-made-with">
-                Desarrollado con <i className="fas fa-heart" style={{ color: 'var(--accent-indigo)', fontSize: '0.7rem' }}></i> para la logística LATAM
+                Desarrollado con <i className="fas fa-heart footer-heart-icon"></i> para la logística LATAM
               </span>
             </div>
             <div className="footer-bottom-links">

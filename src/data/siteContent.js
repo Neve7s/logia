@@ -28,7 +28,7 @@ export const SITE_CONTENT = {
     subtitle: "Nuestro primer cliente opera sin quejas desde el día uno. Esto es lo que opina:",
     testimonials: [
       {
-        quote: "LogIA transformó nuestra forma de cotizar. Lo que antes tomaba 30 minutos ahora se resuelve en 2. El equipo de ventas cerró un 40% más de operaciones en el primer mes.",
+        quote: "LogIA transformó nuestra forma de cotizar. Lo que antes tomaba 30 minutos ahora se resuelve en 2. El equipo comercial cerró un 40% más de operaciones en el primer mes.",
         author: "Operaciones Logísticas",
         role: "Cliente desde 2026",
         avatar: "🏢",
