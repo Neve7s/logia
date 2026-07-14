@@ -1,9 +1,10 @@
 import React from 'react';
 import PageLayout from '../../components/layout/PageLayout';
+import img from '../../assets/ecosistema/commu.jpg';
 
 const Mailer = () => {
   return (
-    <PageLayout title="Comunicaciones Masivas" tagline="Emails profesionales automatizados" fullWidth={true}>
+    <PageLayout title="Comunicaciones" tagline="Correos corporativos que impactan" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
@@ -12,30 +13,24 @@ const Mailer = () => {
               <i className="fas fa-paper-plane"></i> Módulo de Comunicaciones
             </div>
             <h2 className="app-page-title">
-              Envía correos profesionales que <span className="text-highlight">generan confianza</span>
+              Correos profesionales que <span className="text-highlight">abren puertas</span>
             </h2>
             <p className="app-page-subtitle">
-              Enviar un Aviso de Llegada o una cotización por WhatsApp no es profesional. 
-              Pero escribir correos uno por uno toma tiempo que tu equipo no tiene.
+              Presenta tu agencia a prospectos con correos corporativos que impactan. 
+              Envía emails masivos para eventos, saludos y promociones. Tu imagen profesional habla por ti antes de que hables.
             </p>
             <div className="app-page-metric">
               <div className="app-page-metric-icon"><i className="fas fa-bolt"></i></div>
               <div>
-                <div className="app-page-metric-value">De 10 min a envío automático</div>
-                <div className="app-page-metric-label">Tiempo para comunicar al cliente</div>
+                <div className="app-page-metric-value">Impacto profesional</div>
+                <div className="app-page-metric-label">Correos que generan confianza y oportunidades</div>
               </div>
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="app-page-image-placeholder" style={{
-              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1))',
-              border: '1px solid rgba(99, 102, 241, 0.2)',
-              borderRadius: '20px',
-              padding: '4rem 2rem',
-              textAlign: 'center'
-            }}>
-              <i className="fas fa-paper-plane" style={{ fontSize: '4rem', color: 'var(--accent-indigo)', opacity: 0.5 }}></i>
-              <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>Comunicaciones Masivas — Panel</p>
+            <div className="app-page-image">
+              <img src={img} alt="Comunicaciones" className="img-fluid rounded-4" />
+              <div className="app-page-image-tag">Comunicaciones — Panel de Emails</div>
             </div>
           </div>
         </div>
@@ -50,28 +45,28 @@ const Mailer = () => {
               <div className="col-md-4">
                 <div className="app-page-pain-item">
                   <div className="app-page-pain-item-header">
+                    <i className="fas fa-user-tie"></i>
+                    <h4>Presentaciones poco profesionales</h4>
+                  </div>
+                  <p>Envías correos genéricos sin personalizar. El prospecto recibe tu email junto a otros 50 y no destaca.</p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="app-page-pain-item">
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-calendar-days"></i>
+                    <h4>Sin comunicación en fechas clave</h4>
+                  </div>
+                  <p>Se te pasa saludar el Día del Padre, Madre, Trabajador. Tus clientes se sienten olvidados.</p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="app-page-pain-item">
+                  <div className="app-page-pain-item-header">
                     <i className="fas fa-clock"></i>
                     <h4>Correos uno por uno</h4>
                   </div>
-                  <p>Cada aviso de llegada, cada recordatorio de pago, cada actualización... escribes el correo manualmente para cada cliente.</p>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="app-page-pain-item">
-                  <div className="app-page-pain-item-header">
-                    <i className="fas fa-palette"></i>
-                    <h4>Sin diseño profesional</h4>
-                  </div>
-                  <p>Un correo en texto plano no genera confianza. Los clientes esperan algo con logo, colores y formato profesional.</p>
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="app-page-pain-item">
-                  <div className="app-page-pain-item-header">
-                    <i className="fas fa-chart-bar"></i>
-                    <h4>Sin métricas</h4>
-                  </div>
-                  <p>No sabes si el cliente abrió el correo, si hizo clic en algún link, o si el correo llegó correctamente.</p>
+                  <p>Escribes cada correo manualmente. No tienes tiempo para saludar a 200 clientes uno por uno.</p>
                 </div>
               </div>
             </div>
@@ -86,44 +81,44 @@ const Mailer = () => {
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-wand-magic-sparkles"></i></div>
-                  <h4>Templates profesionales</h4>
+                  <div className="app-page-feature-icon"><i className="fas fa-pen-fancy"></i></div>
+                  <h4>Correos de prospección</h4>
                 </div>
-                <p>Plantillas prediseñadas con logo, colores de tu empresa y formato profesional. Solo seleccionas la plantilla y envías.</p>
+                <p>Plantillas profesionales para presentar tu agencia a nuevas empresas. Personaliza con logo, servicios y propuesta de valor.</p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-robot"></i></div>
-                  <h4>Envío automático</h4>
+                  <div className="app-page-feature-icon"><i className="fas fa-bullhorn"></i></div>
+                  <h4>Emails masivos para eventos</h4>
                 </div>
-                <p>Cuando una cotización se aprueba o una carga llega, el sistema envía el correo automáticamente al cliente.</p>
+                <p>Saluda a tus clientes en el Día del Padre, Madre, Trabajador o cualquier fecha clave. Un correo masivo, cientos de sonrisas.</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="app-page-feature-card">
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-wand-magic-sparkles"></i></div>
+                  <h4>Templates con tu marca</h4>
+                </div>
+                <p>Diseños profesionales con los colores y logo de tu agencia. Cada correo es una tarjeta de presentación.</p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
                   <div className="app-page-feature-icon"><i className="fas fa-users"></i></div>
-                  <h4>Envío masivo segmentado</h4>
+                  <h4>Segmentación inteligente</h4>
                 </div>
-                <p>Envía el mismo correo a cientos de clientes segmentados por zona, servicio o estado. Un clic, cientos de correos.</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="app-page-feature-card">
-                <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-chart-line"></i></div>
-                  <h4>Métricas de apertura</h4>
-                </div>
-                <p>Sabes quién abrió el correo, quién hizo clic en el link, y si el correo llegó correctamente. Datos para mejorar.</p>
+                <p>Envía correos segmentados por cliente, zona, servicio o estado. Cada mensaje llega a quien realmente le importa.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="app-page-cta text-center">
-          <h3>¿Listo para automatizar tus comunicaciones?</h3>
+          <h3>¿Listo para que tus correos abran puertas?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
           <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
             <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis

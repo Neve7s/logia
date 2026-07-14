@@ -199,6 +199,23 @@ export const SITE_CONTENT = {
           "Tus datos siempre protegidos y separados",
         ],
       },
+      {
+        id: "comunicaciones",
+        icon: "fa-paper-plane",
+        title: "Comunicaciones",
+        route: "/app/comunicaciones",
+        tagline: "Correos corporativos que impactan",
+        problem: "Envías correos genéricos sin personalizar. Se te pasa saludar en fechas clave. Escribes cada correo uno por uno.",
+        solution: "Templates profesionales con tu marca. Envía correos de prospección que abren puertas y emails masivos para eventos y saludos.",
+        timeSaved: "De 10 min a envío automático",
+        image: "commu.jpg",
+        features: [
+          "Correos de prospección personalizados",
+          "Emails masivos para eventos (Día del Padre, Madre, Trabajador)",
+          "Templates con logo y colores de tu marca",
+          "Segmentación por cliente, zona o servicio",
+        ],
+      },
     ],
     pdfEngine: {
       icon: "fa-file-pdf",

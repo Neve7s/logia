@@ -11,6 +11,7 @@ import configuracionImg from '../assets/ecosistema/configuracion.webp';
 import atsImg from '../assets/ecosistema/ats.jpg';
 import consulteeImg from '../assets/ecosistema/consultee.webp';
 import kpiImg from '../assets/ecosistema/kpi.webp';
+import commuImg from '../assets/ecosistema/commu.jpg';
 
 const { appGallery } = SITE_CONTENT;
 
@@ -24,6 +25,7 @@ const imageMap = {
   'ats.jpg': atsImg,
   'consultee.webp': consulteeImg,
   'kpi.webp': kpiImg,
+  'commu.jpg': commuImg,
 };
 
 const slugToId = {
@@ -33,6 +35,7 @@ const slugToId = {
   maestros: 'maestros',
   reclutamiento: 'reclutamiento',
   configuracion: 'configuracion',
+  comunicaciones: 'comunicaciones',
 };
 
 const AppDetail = () => {
