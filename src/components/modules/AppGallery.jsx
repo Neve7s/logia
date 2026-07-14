@@ -8,6 +8,8 @@ import maestrosImg from '../../assets/ecosistema/maestros.webp';
 import kpiImg from '../../assets/ecosistema/kpi.webp';
 import configuracionImg from '../../assets/ecosistema/configuracion.webp';
 import pdfDocs from '../../assets/ecosistema/pdf-docs.jpg';
+import atsImg from '../../assets/ecosistema/ats.jpg';
+import consulteeImg from '../../assets/ecosistema/consultee.webp';
 
 const { appGallery } = SITE_CONTENT;
 
@@ -19,6 +21,9 @@ const imageMap = {
   'kpi.webp': kpiImg,
   'configuracion.webp': configuracionImg,
   'pdf-docs.jpg': pdfDocs,
+  'ats.jpg': atsImg,
+  'consultee.webp': consulteeImg,
+  'kpi.webp': kpiImg,
 };
 
 const AppGallery = () => {
@@ -74,10 +79,14 @@ const AppGallery = () => {
                 <div className="app-detail-icon">
                   <i className={`fas ${currentApp.icon}`}></i>
                 </div>
-                <div>
+                <div className="app-detail-header-text">
                   <h3 className="app-detail-title">{currentApp.title}</h3>
                   <p className="app-detail-tagline">{currentApp.tagline}</p>
                 </div>
+                <Link to={currentApp.route} className="btn-app-detail btn-app-detail-inline">
+                  <span className="btn-app-detail-text">Explorar</span>
+                  <span className="btn-app-detail-icon"><i className="fas fa-arrow-right"></i></span>
+                </Link>
               </div>
 
               <div className="app-detail-problem">
@@ -97,7 +106,7 @@ const AppGallery = () => {
               <div className="app-detail-time-saved">
                 <i className="fas fa-bolt"></i>
                 <span>{currentApp.timeSaved}</span>
-              </div>
+              </div>  
 
               {/* Features Carousel */}
               <div className="app-features-carousel">
@@ -112,11 +121,6 @@ const AppGallery = () => {
                   </div>
                 ))}
               </div>
-
-              <Link to={currentApp.route} className="btn-app-detail">
-                <span className="btn-app-detail-text">Explorar módulo</span>
-                <span className="btn-app-detail-icon"><i className="fas fa-arrow-right"></i></span>
-              </Link>
             </div>
           </div>
 

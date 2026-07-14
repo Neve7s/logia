@@ -1,6 +1,6 @@
 import React from 'react';
 import PageLayout from '../../components/layout/PageLayout';
-import img from '../../assets/ecosistema/kpi.webp';
+import img from '../../assets/ecosistema/ats.jpg';
 
 const Recruiment = () => {
   return (

@@ -1,36 +1,36 @@
 import React from 'react';
 import PageLayout from '../../components/layout/PageLayout';
-import img from '../../assets/ecosistema/consultee.webp';
+import img from '../../assets/ecosistema/kpi.webp';
 
-const Consultador = () => {
+const Configuracion = () => {
   return (
-    <PageLayout title="Consultador de Importadores" tagline="Data lake de SUNAT — Importadores del Perú" fullWidth={true}>
+    <PageLayout title="Métricas & Config" tagline="Control total de tu agencia" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
           <div className="col-lg-6">
             <div className="app-page-badge">
-              <i className="fas fa-database"></i> Data Lake SUNAT
+              <i className="fas fa-chart-line"></i> Módulo Gerencial
             </div>
             <h2 className="app-page-title">
-              Resumen de empresas importadoras <span className="text-highlight">actualizado cada 7 días</span>
+              Toma decisiones con datos, <span className="text-highlight">no con intuición</span>
             </h2>
             <p className="app-page-subtitle">
-              Consulta el historial de importaciones de cualquier empresa peruana. 
-              Volumen, frecuencia, productos, origen y destino. Toda la información de SUNAT en un solo lugar.
+              Sin métricas claras, la gerencia no sabe qué vende más, qué empleado rinde mejor ni dónde están las fugas de dinero.
+              Cada día sin datos es una decisión equivocada.
             </p>
             <div className="app-page-metric">
-              <div className="app-page-metric-icon"><i className="fas fa-sync-alt"></i></div>
+              <div className="app-page-metric-icon"><i className="fas fa-bolt"></i></div>
               <div>
-                <div className="app-page-metric-value">Actualización cada 7 días</div>
-                <div className="app-page-metric-label">Datos frescos directo de SUNAT</div>
+                <div className="app-page-metric-value">100% visibilidad</div>
+                <div className="app-page-metric-label">KPIs de ventas, productividad y rentabilidad</div>
               </div>
             </div>
           </div>
           <div className="col-lg-6">
             <div className="app-page-image">
-              <img src={img} alt="Consultador de Importadores" className="img-fluid rounded-4" />
-              <div className="app-page-image-tag">Consultador — Resumen de Importaciones</div>
+              <img src={img} alt="Métricas & Config" className="img-fluid rounded-4" />
+              <div className="app-page-image-tag">Dashboard Ejecutivo — KPIs en Tiempo Real</div>
             </div>
           </div>
         </div>
@@ -46,27 +46,27 @@ const Consultador = () => {
                 <div className="app-page-pain-item">
                   <div className="app-page-pain-item-header">
                     <i className="fas fa-eye-slash"></i>
-                    <h4>No sabes quién importa</h4>
+                    <h4>Sin visibilidad</h4>
                   </div>
-                  <p>Cotizas a empresas sin saber cuánto importan, con qué frecuencia y por qué canales. Vas a ciegas.</p>
+                  <p>No sabes cuánto vende cada vendedor, cuánto tiempo toma cada operación ni dónde se están perdiendo clientes.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
                   <div className="app-page-pain-item-header">
-                    <i className="fas fa-magnifying-glass"></i>
-                    <h4>SUNAT es difícil de navegar</h4>
+                    <i className="fas fa-file-invoice"></i>
+                    <h4>Documentos genéricos</h4>
                   </div>
-                  <p>La información de importaciones está repartida en portales gubernamentales. Buscar una empresa toma horas.</p>
+                  <p>Cotizaciones y documentos sin branding profesional. Cada empleado genera documentos diferentes, sin estándar.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
                   <div className="app-page-pain-item-header">
-                    <i className="fas fa-clock"></i>
-                    <h4>Datos desactualizados</h4>
+                    <i className="fas fa-user-shield"></i>
+                    <h4>Sin control de acceso</h4>
                   </div>
-                  <p>Usas información vieja o incompleta. No sabes si el importador sigue activo o si cambió de proveedor.</p>
+                  <p>Todos ven todo. No hay permisos por rol. Un vendedor puede ver datos de otro o modificar configuraciones críticas.</p>
                 </div>
               </div>
             </div>
@@ -75,50 +75,50 @@ const Consultador = () => {
 
         <div className="app-page-section">
           <h3 className="app-page-section-title">
-            <i className="fas fa-check-circle"></i> Qué encontrarás en el Consultador
+            <i className="fas fa-check-circle"></i> Cómo Métricas & Config resuelve esto
           </h3>
           <div className="row g-4">
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-building"></i></div>
-                  <h4>Resumen por empresa</h4>
+                  <div className="app-page-feature-icon"><i className="fas fa-chart-bar"></i></div>
+                  <h4>KPIs de ventas y productividad</h4>
                 </div>
-                <p>RUC, razón social, estado, y resumen completo de operaciones de importación. Todo en una vista.</p>
+                <p>Dashboard con métricas en tiempo real: cotizaciones generadas, aprobación promedio, rendimiento por vendedor y comparativas mensuales.</p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-boxes-stacked"></i></div>
-                  <h4>Volumen y frecuencia</h4>
+                  <div className="app-page-feature-icon"><i className="fas fa-palette"></i></div>
+                  <h4>Personalización de documentos</h4>
                 </div>
-                <p>Cuántas veces importa al mes, qué volumen mueve y en qué modalidad (marítimo, aéreo, terrestre).</p>
+                <p>Configura firmas, logotipos, colores y plantillas. Todos los documentos de la agencia tienen un formato profesional y consistente.</p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-globe"></i></div>
-                  <h4>Origen y destino</h4>
+                  <div className="app-page-feature-icon"><i className="fas fa-users-gear"></i></div>
+                  <h4>Gestión de usuarios y permisos</h4>
                 </div>
-                <p>Países de origen, puertos de embarque y destinos. Identifica rutas y patrones de importación.</p>
+                <p>Roles personalizados: Admin, Gerente, Vendedor, Operaciones. Cada uno ve solo lo que necesita. Control total sobre quién accede a qué.</p>
               </div>
             </div>
             <div className="col-md-4">
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
-                  <div className="app-page-feature-icon"><i className="fas fa-file-invoice"></i></div>
-                  <h4>Declaraciones aduaneras</h4>
+                  <div className="app-page-feature-icon"><i className="fas fa-shield-halved"></i></div>
+                  <h4>Datos protegidos y separados</h4>
                 </div>
-                <p>Detalle de cada declaración: producto, valor CIF, impuestos y estado de la operación.</p>
+                <p>Tu información está completamente aislada. Respaldo automático diario. Cumplimiento con estándares de seguridad bancaria.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="app-page-cta text-center">
-          <h3>¿Listo para consultar importadores?</h3>
+          <h3>¿Listo para controlar tu agencia con datos reales?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
           <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
             <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
@@ -130,4 +130,4 @@ const Consultador = () => {
   );
 };
 
-export default Consultador;
+export default Configuracion;

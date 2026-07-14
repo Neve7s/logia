@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import dashboard from '../../assets/ecosistema/dashboard.webp';
+import img1 from '../../assets/ecosistema/agenc1.jpg';
+import img2 from '../../assets/ecosistema/agenc2.jpg';
+import img3 from '../../assets/ecosistema/agenc3.jpg';
 
 const features = [
   {
@@ -19,8 +21,11 @@ const features = [
   },
 ];
 
+const images = [img1, img2, img3];
+
 const AdminHub = () => {
   const [activeFeature, setActiveFeature] = useState(0);
+  const [currentImg, setCurrentImg] = useState(0);
   const touchStartX = useRef(0);
   const touchDeltaX = useRef(0);
 
@@ -29,6 +34,13 @@ const AdminHub = () => {
       setActiveFeature((prev) => (prev + 1) % features.length);
     }, 4500);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const imgTimer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(imgTimer);
   }, []);
 
   const handleTouchStart = (e) => {
@@ -105,9 +117,17 @@ const AdminHub = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="card-image-placeholder big-placeholder">
+            <div className="admin-crossfade-wrapper">
+              <div className="admin-crossfade-glow"></div>
+              {images.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Admin Dashboard ${i + 1}`}
+                  className={`admin-crossfade-img ${i === currentImg ? 'active' : ''}`}
+                />
+              ))}
               <div className="system-mockup-tag">Dashboard Administrativo</div>
-              <img src={dashboard} alt="Dashboard Administrativo" className="img-fluid rounded-4 shadow-lg" />
             </div>
           </div>
         </div>

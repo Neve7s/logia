@@ -11,6 +11,7 @@ const APP_NAV = [
   { path: '/app/reclutamiento', label: 'Reclutamiento', icon: 'fa-user-tie' },
   { path: '/app/comunicaciones', label: 'Comunicaciones', icon: 'fa-paper-plane' },
   { path: '/app/consultador', label: 'Consultador', icon: 'fa-binoculars' },
+  { path: '/app/configuracion', label: 'Métricas & Config', icon: 'fa-chart-line' },
 ];
 
 const PageLayout = ({ title, tagline, children, showBackButton = true, fullWidth = false }) => {

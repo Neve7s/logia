@@ -76,7 +76,7 @@ const HeroSection = () => {
 
         <p className="hero-lead">{hero.subtitle}</p>
 
-        <div className="hero-metrics mt-5 d-none d-md-flex w-100 justify-content-center">
+        <div className="hero-metrics mt-5 d-flex w-100 justify-content-center">
           {hero.metrics.map((m, i) => (
             <div key={i} className="metric-item">
               <span className="metric-value" data-value={m.value}>0</span><span className="metric-suffix">{m.suffix}</span>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/layout/Navbar';
 import HeroSection from '../components/layout/HeroSection';
-import dashboardImg from '../assets/ecosistema/dashboard.webp';
+import HeroCrossfade from '../components/layout/HeroCrossfade';
 import HowItWorks from '../components/layout/HowItWorks';
 import AdminHub from '../components/modules/AdminHub';
 import AppGallery from '../components/modules/AppGallery';
@@ -16,22 +16,12 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
-
-        {/* Dashboard Preview */}
-        <section className="hero-dashboard-preview">
-          <div className="container-x">
-            <div className="hero-dashboard-wrapper">
-              <div className="hero-dashboard-glow"></div>
-              <img src={dashboardImg} alt="LogIA Dashboard" className="hero-dashboard-img" />
-            </div>
-          </div>
-        </section>
-
+        <HeroCrossfade />
         <HowItWorks />
         <AdminHub />
         <AppGallery />
         <TechHub />
-        <SocialProof />
+        {/* <SocialProof /> */}
         <PricingSection />
       </main>
       <Footer />

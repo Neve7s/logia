@@ -8,6 +8,9 @@ import fiannza1Img from '../assets/ecosistema/fiannza1.webp';
 import maestrosImg from '../assets/ecosistema/maestros.webp';
 import kpiImg from '../assets/ecosistema/kpi.webp';
 import configuracionImg from '../assets/ecosistema/configuracion.webp';
+import atsImg from '../assets/ecosistema/ats.jpg';
+import consulteeImg from '../assets/ecosistema/consultee.webp';
+import kpiImg from '../assets/ecosistema/kpi.webp';
 
 const { appGallery } = SITE_CONTENT;
 
@@ -18,6 +21,9 @@ const imageMap = {
   'maestros.webp': maestrosImg,
   'kpi.webp': kpiImg,
   'configuracion.webp': configuracionImg,
+  'ats.jpg': atsImg,
+  'consultee.webp': consulteeImg,
+  'kpi.webp': kpiImg,
 };
 
 const slugToId = {

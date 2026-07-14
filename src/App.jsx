@@ -13,6 +13,7 @@ import DataMaster from './pages/aplications/DataMaster';
 import Recruiment from './pages/aplications/Recruiment';
 import Mailer from './pages/aplications/Mailer';
 import Consultador from './pages/aplications/Consultador';
+import Configuracion from './pages/aplications/Configuracion';
 import Academy from './pages/Academy';
 import ThreeBackground from './components/layout/ThreeBackground';
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/app/reclutamiento" element={<Recruiment />} />
           <Route path="/app/comunicaciones" element={<Mailer />} />
           <Route path="/app/consultador" element={<Consultador />} />
+          <Route path="/app/configuracion" element={<Configuracion />} />
           <Route path="/academy" element={<Academy />} />
         </Routes>
       </BrowserRouter>
