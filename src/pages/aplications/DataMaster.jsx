@@ -44,22 +44,28 @@ const DataMaster = () => {
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-magnifying-glass"></i>
-                  <h4>Búsqueda eterna</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-magnifying-glass"></i>
+                    <h4>Búsqueda eterna</h4>
+                  </div>
                   <p>¿Cuál es el RUC de ese cliente? ¿Cuál es el correo de esa naviera? Buscas en WhatsApp, en Excel, en correos...</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-users"></i>
-                  <h4>Datos duplicados</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-users"></i>
+                    <h4>Datos duplicados</h4>
+                  </div>
                   <p>Cada vendedor tiene su propia lista. Hay clientes repetidos, con datos diferentes, sin control centralizado.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-lock"></i>
-                  <h4>Sin privacidad</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-lock"></i>
+                    <h4>Sin privacidad</h4>
+                  </div>
                   <p>Todos ven todos los clientes. Un vendedor puede ver y copiar los clientes de otro. No hay aislamiento.</p>
                 </div>
               </div>
@@ -72,45 +78,57 @@ const DataMaster = () => {
             <i className="fas fa-check-circle"></i> Cómo Masters resuelve esto
           </h3>
           <div className="row g-4">
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-magnifying-glass"></i></div>
-                <h4>Autocompleta por RUC o razón social</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-magnifying-glass"></i></div>
+                  <h4>Autocompleta por RUC o razón social</h4>
+                </div>
                 <p>Escribes 3 dígitos del RUC y el sistema muestra todas las coincidencias. Seleccionas y se autocompletan nombre, dirección, correo y teléfono.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-ship"></i></div>
-                <h4>Catálogo de navieras y puertos</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-ship"></i></div>
+                  <h4>Catálogo de navieras y puertos</h4>
+                </div>
                 <p>Base de datos de las principales navieras del mundo con códigos, países y contactos. Puerto de origen y destino con un clic.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-user-lock"></i></div>
-                <h4>Aislamiento por vendedor</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-user-lock"></i></div>
+                  <h4>Aislamiento por vendedor</h4>
+                </div>
                 <p>Cada vendedor solo ve sus propios clientes. No puede ver ni modificar los de otros. Privacidad y control total.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-building"></i></div>
-                <h4>Consulta SUNAT integrada</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-building"></i></div>
+                  <h4>Consulta SUNAT integrada</h4>
+                </div>
                 <p>Ingresa el RUC y el sistema consulta SUNAT automáticamente. Razón social, estado, dirección y condición fiscal al instante.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-cubes"></i></div>
-                <h4>Servicios y tarifas</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-cubes"></i></div>
+                  <h4>Servicios y tarifas</h4>
+                </div>
                 <p>Catálogo de servicios con tarifas base, modalidades (LCL, FCL, Aéreo) y reglas de cálculo. Todo listo para el Cotizador.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-shield-halved"></i></div>
-                <h4>Datos protegidos y separados</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-shield-halved"></i></div>
+                  <h4>Datos protegidos y separados</h4>
+                </div>
                 <p>Cada agencia tiene su propia base de datos segura. Los datos nunca se mezclan entre empresas. Tu información está protegida con encriptación de grado bancario.</p>
               </div>
             </div>

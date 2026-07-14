@@ -5,20 +5,20 @@ import img from '../../assets/ecosistema/cotizador.webp';
 
 const Cotizador = () => {
   return (
-    <PageLayout title="Cotizador Pro" tagline="Cotiza en minutos, no en horas" fullWidth={true}>
+    <PageLayout title="Cotizador Profesional" tagline="Cotiza en minutos, no hagas esperar a tu cliente" fullWidth={true}>
       <div className="app-page">
 
         {/* Hero de la app */}
         <div className="row align-items-center g-5 mb-5">
           <div className="col-lg-6">
             <div className="app-page-badge">
-              <i className="fas fa-calculator"></i> Módulo de Ventas
+              <i className="fas fa-calculator"></i> Módulo Comercial
             </div>
             <h2 className="app-page-title">
               Genera cotizaciones profesionales que <span className="text-highlight">cierran negocios</span>
             </h2>
             <p className="app-page-subtitle">
-              Tu equipo de ventas pierde tiempo abriendo Excel, buscando tarifas y calculando costos manualmente. 
+              Tu equipo comercial pierde tiempo abriendo Excel, buscando tarifas y calculando costos manualmente. 
               Cada minuto perdido es un cliente que se va con la competencia.
             </p>
             <div className="app-page-metric">
@@ -32,7 +32,7 @@ const Cotizador = () => {
           <div className="col-lg-6">
             <div className="app-page-image">
               <img src={img} alt="Cotizador Pro" className="img-fluid rounded-4" />
-              <div className="app-page-image-tag">Cotizador Pro — Panel Principal</div>
+              <div className="app-page-image-tag">Cotizador Profesional — Panel Principal</div>
             </div>
           </div>
         </div>
@@ -47,22 +47,28 @@ const Cotizador = () => {
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-hourglass-half"></i>
-                  <h4>Cotizaciones lentas</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-hourglass-half"></i>
+                    <h4>Cotizaciones lentas</h4>
+                  </div>
                   <p>Crear una cotización en Word o Excel toma 30-45 minutos. Multiplica eso por 10-15 solicitudes diarias y tu equipo está colapsado.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-calculator"></i>
-                  <h4>Errores de cálculo</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-calculator"></i>
+                    <h4>Errores de cálculo</h4>
+                  </div>
                   <p>Un error en el peso, volumen o tipo de cambio puede costar cientos de dólares. Los clientes pierden confianza cuando los precios cambian.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-file-circle-xmark"></i>
-                  <h4>Sin presentación profesional</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-file-circle-xmark"></i>
+                    <h4>Sin presentación profesional</h4>
+                  </div>
                   <p>Enviar una cotización en Word o WhatsApp no genera confianza. Los clientes comparan y eligen al que se ve más profesional.</p>
                 </div>
               </div>
@@ -76,45 +82,57 @@ const Cotizador = () => {
             <i className="fas fa-check-circle"></i> Cómo Cotizador Pro resuelve esto
           </h3>
           <div className="row g-4">
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-bolt"></i></div>
-                <h4>Cálculo automático multi-criterio</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-bolt"></i></div>
+                  <h4>Cálculo automático multi-criterio</h4>
+                </div>
                 <p>Ingresa peso, volumen o tipo de contenedor. El sistema calcula automáticamente el costo usando tarifas fijas, por kilo, por metro cúbico o por contenedor. Sin errores, sin fórmulas en Excel.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-file-pdf"></i></div>
-                <h4>PDF profesional con tu marca</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-file-pdf"></i></div>
+                  <h4>PDF profesional con tu marca</h4>
+                </div>
                 <p>Genera documentos listos para enviar: con logo, datos de empresa, desglose de costos y conditions. El cliente recibe algo que se ve serio y confiable.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-copy"></i></div>
-                <h4>Duplicar en un clic</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-copy"></i></div>
+                  <h4>Duplicar en un clic</h4>
+                </div>
                 <p>¿El cliente pide una modificación? Duplica la cotización original, ajusta lo que necesitas y genera un nuevo código al instante. Sin empezar de cero.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-dollar-sign"></i></div>
-                <h4>Tipo de cambio actualizado</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-dollar-sign"></i></div>
+                  <h4>Tipo de cambio actualizado</h4>
+                </div>
                 <p>El sistema usa el tipo de cambio del día automáticamente. No más buscas en Google "cuanto está el dólar hoy" y errores de conversión.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-history"></i></div>
-                <h4>Historial completo con estados</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-history"></i></div>
+                  <h4>Historial completo con estados</h4>
+                </div>
                 <p>Cada cotización tiene un estado: Borrador, Enviada, Aprobada, Rechazada. Sabes exactamente dónde está cada negocio en tu pipeline de ventas.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-percentage"></i></div>
-                <h4>Percepción IGV automática</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-percentage"></i></div>
+                  <h4>Percepción IGV automática</h4>
+                </div>
                 <p>Si el cliente ya tiene cotizaciones aprobadas, el sistema aplica 3.50% automáticamente. Si es nuevo, aplica 10%. Sin que el vendedor tenga que recordar la regla.</p>
               </div>
             </div>

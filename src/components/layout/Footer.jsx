@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/favicon.svg';
 import { SITE_CONTENT } from '../../data/siteContent';
@@ -6,20 +6,9 @@ import { SITE_CONTENT } from '../../data/siteContent';
 const { footer } = SITE_CONTENT;
 
 const Footer = () => {
-  const [newsletterMsg, setNewsletterMsg] = useState('');
-  const [email, setEmail] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setNewsletterMsg('Gracias por suscribirte al boletín de LogIA.');
-      setEmail('');
-      setTimeout(() => setNewsletterMsg(''), 4000);
-    }
-  };
 
   const handleLinkClick = (e, path) => {
     if (path.startsWith('/#')) {
@@ -36,16 +25,31 @@ const Footer = () => {
 
   const currentYear = new Date().getFullYear();
 
-  const renderLink = (item, extraClass = '') => (
-    <Link
-      key={item.label}
-      to={item.path}
-      className={`footer-link ${extraClass}`}
-      onClick={(e) => handleLinkClick(e, item.path)}
-    >
-      <i className={item.icon}></i> {item.label}
-    </Link>
-  );
+  const renderLink = (item, extraClass = '') => {
+    if (item.external) {
+      return (
+        <a
+          key={item.label}
+          href={item.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`footer-link ${extraClass}`}
+        >
+          <i className={item.icon}></i> {item.label}
+        </a>
+      );
+    }
+    return (
+      <Link
+        key={item.label}
+        to={item.path}
+        className={`footer-link ${extraClass}`}
+        onClick={(e) => handleLinkClick(e, item.path)}
+      >
+        <i className={item.icon}></i> {item.label}
+      </Link>
+    );
+  };
 
   return (
     <footer className="footer-executive" role="contentinfo">
@@ -104,44 +108,6 @@ const Footer = () => {
                 <div className="footer-hours">
                   <i className="fas fa-clock"></i>
                   <span>{footer.contact.hours}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Column 5: Newsletter */}
-            <div className="footer-newsletter">
-              <h5>Boletín</h5>
-              <p className="footer-newsletter-text">
-                Recibe actualizaciones de producto, guías de uso y novedades de la plataforma directamente en tu correo.
-              </p>
-              <form className="footer-newsletter-form" onSubmit={handleSubmit}>
-                <div className="footer-newsletter-input-group">
-                  <input
-                    type="email"
-                    className="footer-newsletter-input"
-                    placeholder="tu@correo.com"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <button type="submit" className="footer-newsletter-btn">
-                    <i className="fas fa-paper-plane"></i>
-                  </button>
-                </div>
-                {newsletterMsg && (
-                  <p className="footer-newsletter-success">
-                    <i className="fas fa-check-circle"></i> {newsletterMsg}
-                  </p>
-                )}
-              </form>
-              <div className="footer-trust-badges">
-                <div className="trust-badge">
-                  <i className="fas fa-lock"></i>
-                  <span>Datos protegidos con encriptación AES-256</span>
-                </div>
-                <div className="trust-badge">
-                  <i className="fas fa-shield-halved"></i>
-                  <span>Cumplimiento SOC 2 Tipo II</span>
                 </div>
               </div>
             </div>

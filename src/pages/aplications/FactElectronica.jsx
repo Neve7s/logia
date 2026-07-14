@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/fiannza1.webp';
 
 const FactElectronica = () => {
   return (
-    <PageLayout title="Facturación SUNAT" tagline="Cumplimiento fiscal automático" fullWidth={true}>
+    <PageLayout title="App de Facturación Electronico" tagline="Cumplimiento fiscal automático" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
@@ -13,7 +13,7 @@ const FactElectronica = () => {
               <i className="fas fa-file-invoice"></i> Módulo Financiero
             </div>
             <h2 className="app-page-title">
-              Emite comprobantes electrónicos <span className="text-highlight">aprobados por SUNAT</span>
+              Emite comprobantes electrónicos con<span className="text-highlight">calculo inteligente de detracciones y directo desde tu cotización</span>
             </h2>
             <p className="app-page-subtitle">
               La facturación manual con SUNAT es lenta, propensa a errores y genera multas por incumplimiento. 
@@ -44,22 +44,28 @@ const FactElectronica = () => {
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-exclamation-circle"></i>
-                  <h4>Errores costosos</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-exclamation-circle"></i>
+                    <h4>Errores costosos</h4>
+                  </div>
                   <p>Un dato mal ingresado en la factura genera rechazo de SUNAT. Corregirlo toma tiempo y puede generar multas.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-hourglass-half"></i>
-                  <h4>Proceso lento</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-hourglass-half"></i>
+                    <h4>Proceso lento</h4>
+                  </div>
                   <p>Ingresar datos manualmente en el portal de SUNAT o en software externo toma 15-20 minutos por comprobante.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-file-invoice"></i>
-                  <h4>Sin integración</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-file-invoice"></i>
+                    <h4>Sin integración</h4>
+                  </div>
                   <p>Tienes que copiar datos de tu sistema de cotizaciones al sistema de facturación. Doble trabajo, doble chance de error.</p>
                 </div>
               </div>
@@ -72,31 +78,39 @@ const FactElectronica = () => {
             <i className="fas fa-check-circle"></i> Cómo Facturación SUNAT resuelve esto
           </h3>
           <div className="row g-4">
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-check-double"></i></div>
-                <h4>Aprobación automática por SUNAT</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-check-double"></i></div>
+                  <h4>Aprobación automática por SUNAT</h4>
+                </div>
                 <p>El sistema valida los datos antes de enviar. Si todo está correcto, SUNAT aprueba al instante. No más rechazos por errores manuales.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-calculator"></i></div>
-                <h4>Cálculo automático de IGV y detracciones</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-calculator"></i></div>
+                  <h4>Cálculo automático de IGV y detracciones</h4>
+                </div>
                 <p>El sistema calcula el IGV (18%), las detracciones (4%, 10%, 30%) y las percepciones automáticamente. Sin fórmulas, sin errores.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-plug"></i></div>
-                <h4>Conexión directa OSE/PSE</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-plug"></i></div>
+                  <h4>Conexión directa OSE/PSE</h4>
+                </div>
                 <p>Conecta directamente con operadores autorizados por SUNAT. No necesitas software externo ni portales web.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-file-excel"></i></div>
-                <h4>Exportación de reportes</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-file-excel"></i></div>
+                  <h4>Exportación de reportes</h4>
+                </div>
                 <p>Genera reportes financieros en Excel con un clic. Libros electrónicos, resúmenes diarios, reportes de ventas.</p>
               </div>
             </div>

@@ -49,22 +49,28 @@ const Consultador = () => {
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-eye"></i>
-                  <h4>Sin visibilidad del mercado</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-eye"></i>
+                    <h4>Sin visibilidad del mercado</h4>
+                  </div>
                   <p>No sabes qué está importando o exportando tu prospecto. Cotizas a ciegas sin saber el volumen real.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-stopwatch"></i>
-                  <h4>Lento para reaccionar</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-stopwatch"></i>
+                    <h4>Lento para reaccionar</h4>
+                  </div>
                   <p>Enteraste de una oportunidad cuando ya la tenía tu competencia. La velocidad de respuesta lo es todo.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-database"></i>
-                  <h4>Datos dispersos</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-database"></i>
+                    <h4>Datos dispersos</h4>
+                  </div>
                   <p>La información de importaciones/exportaciones está en portales gubernamentales, hard to access y harder to分析.</p>
                 </div>
               </div>
@@ -77,31 +83,39 @@ const Consultador = () => {
             <i className="fas fa-check-circle"></i> Cómo el Consultador resuelve esto
           </h3>
           <div className="row g-4">
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-magnifying-glass-chart"></i></div>
-                <h4>Búsqueda de oportunidades</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-magnifying-glass-chart"></i></div>
+                  <h4>Búsqueda de oportunidades</h4>
+                </div>
                 <p>Encuentra empresas que están importando o exportando productos específicos. Filtra por país, producto, volumen y frecuencia.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-clock"></i></div>
-                <h4>Alertas en tiempo real</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-clock"></i></div>
+                  <h4>Alertas en tiempo real</h4>
+                </div>
                 <p>Recibe notificaciones cuando una empresa relevante realiza una nueva operación. Sé el primero en contactar.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-file-lines"></i></div>
-                <h4>Declaraciones aduaneras</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-file-lines"></i></div>
+                  <h4>Declaraciones aduaneras</h4>
+                </div>
                 <p>Accede a información de declaraciones de importación y exportación. Volumen, producto, origen, destino y valor.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-link"></i></div>
-                <h4>Integración con Cotizador</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-link"></i></div>
+                  <h4>Integración con Cotizador</h4>
+                </div>
                 <p>Encontraste una oportunidad. Un clic la convierte en una cotización lista para enviar al prospecto.</p>
               </div>
             </div>

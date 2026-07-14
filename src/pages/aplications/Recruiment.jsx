@@ -44,22 +44,28 @@ const Recruiment = () => {
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-inbox"></i>
-                  <h4>Candidatos dispersos</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-inbox"></i>
+                    <h4>Candidatos dispersos</h4>
+                  </div>
                   <p>Los CVs llegan por correo, WhatsApp, redes sociales. No hay un lugar central para evaluar y comparar.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-calendar-xmark"></i>
-                  <h4>Coordinación caótica</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-calendar-xmark"></i>
+                    <h4>Coordinación caótica</h4>
+                  </div>
                   <p>Organizar entrevistas por WhatsApp genera confusiones. Los candidatos no llegan, o llegan al día equivocado.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-user-plus"></i>
-                  <h4>Onboarding lento</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-user-plus"></i>
+                    <h4>Onboarding lento</h4>
+                  </div>
                   <p>Cuando aceptas a alguien, empieza un proceso manual: crear usuario, asignar permisos, configurar equipo...</p>
                 </div>
               </div>
@@ -72,31 +78,39 @@ const Recruiment = () => {
             <i className="fas fa-check-circle"></i> Cómo ATS resuelve esto
           </h3>
           <div className="row g-4">
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-columns"></i></div>
-                <h4>Flujo visual Kanban</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-columns"></i></div>
+                  <h4>Flujo visual Kanban</h4>
+                </div>
                 <p>Arrastra candidatos entre columnas: Postulado → En Revisión → Entrevistado → Aceptado/Rechazado. Todo visible en un tablero.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-bullhorn"></i></div>
-                <h4>Publicación de convocatorias</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-bullhorn"></i></div>
+                  <h4>Publicación de convocatorias</h4>
+                </div>
                 <p>Crea convocatorias laborales con requisitos, horarios y ubicación. Publica y recibe postulaciones organizadas.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-envelope-open-text"></i></div>
-                <h4>Envío automático de correos</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-envelope-open-text"></i></div>
+                  <h4>Envío automático de correos</h4>
+                </div>
                 <p>Coordina entrevistas por email automático. El candidato recibe fecha, hora y lugar sin que tengas que escribir un solo correo.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-user-check"></i></div>
-                <h4>Conversión a empleado</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-user-check"></i></div>
+                  <h4>Conversión a empleado</h4>
+                </div>
                 <p>Aceptaste al candidato. Un clic lo convierte en empleado activo del sistema, con usuario, permisos y acceso configurado.</p>
               </div>
             </div>
@@ -109,6 +123,27 @@ const Recruiment = () => {
           <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
             <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
           </a>
+        </div>
+
+        {/* Banner: Busca Empleo en Logística */}
+        <div className="empleo-banner mt-5">
+          <div className="empleo-banner-content">
+            <div className="empleo-banner-icon">
+              <i className="fas fa-briefcase"></i>
+            </div>
+            <div className="empleo-banner-text">
+              <h4>¿Buscas trabajo en logística?</h4>
+              <p>Encuentra vacantes en agencias de carga, aduanas y operaciones internacionales. Publicadas por empresas reales del sector.</p>
+            </div>
+            <a
+              href="https://app.logia.lat/recruitment/empleos/"
+              className="empleo-banner-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-arrow-right"></i> Ver Empleos
+            </a>
+          </div>
         </div>
 
       </div>

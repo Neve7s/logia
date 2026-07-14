@@ -49,22 +49,28 @@ const Mailer = () => {
             <div className="row g-4">
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-clock"></i>
-                  <h4>Correos uno por uno</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-clock"></i>
+                    <h4>Correos uno por uno</h4>
+                  </div>
                   <p>Cada aviso de llegada, cada recordatorio de pago, cada actualización... escribes el correo manualmente para cada cliente.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-palette"></i>
-                  <h4>Sin diseño profesional</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-palette"></i>
+                    <h4>Sin diseño profesional</h4>
+                  </div>
                   <p>Un correo en texto plano no genera confianza. Los clientes esperan algo con logo, colores y formato profesional.</p>
                 </div>
               </div>
               <div className="col-md-4">
                 <div className="app-page-pain-item">
-                  <i className="fas fa-chart-bar"></i>
-                  <h4>Sin métricas</h4>
+                  <div className="app-page-pain-item-header">
+                    <i className="fas fa-chart-bar"></i>
+                    <h4>Sin métricas</h4>
+                  </div>
                   <p>No sabes si el cliente abrió el correo, si hizo clic en algún link, o si el correo llegó correctamente.</p>
                 </div>
               </div>
@@ -77,31 +83,39 @@ const Mailer = () => {
             <i className="fas fa-check-circle"></i> Cómo Comunicaciones resuelve esto
           </h3>
           <div className="row g-4">
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-wand-magic-sparkles"></i></div>
-                <h4>Templates profesionales</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-wand-magic-sparkles"></i></div>
+                  <h4>Templates profesionales</h4>
+                </div>
                 <p>Plantillas prediseñadas con logo, colores de tu empresa y formato profesional. Solo seleccionas la plantilla y envías.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-robot"></i></div>
-                <h4>Envío automático</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-robot"></i></div>
+                  <h4>Envío automático</h4>
+                </div>
                 <p>Cuando una cotización se aprueba o una carga llega, el sistema envía el correo automáticamente al cliente.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-users"></i></div>
-                <h4>Envío masivo segmentado</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-users"></i></div>
+                  <h4>Envío masivo segmentado</h4>
+                </div>
                 <p>Envía el mismo correo a cientos de clientes segmentados por zona, servicio o estado. Un clic, cientos de correos.</p>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <div className="app-page-feature-card">
-                <div className="app-page-feature-icon"><i className="fas fa-chart-line"></i></div>
-                <h4>Métricas de apertura</h4>
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-chart-line"></i></div>
+                  <h4>Métricas de apertura</h4>
+                </div>
                 <p>Sabes quién abrió el correo, quién hizo clic en el link, y si el correo llegó correctamente. Datos para mejorar.</p>
               </div>
             </div>

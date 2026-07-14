@@ -76,16 +76,6 @@ const HeroSection = () => {
 
         <p className="hero-lead">{hero.subtitle}</p>
 
-        <div className="hero-cta-group mb-5">
-          <a href={hero.ctaPrimary.href} className="btn-executive-large btn-cta-primary" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i>
-            {hero.ctaPrimary.label}
-          </a>
-          <a href={hero.ctaSecondary.href} className="btn-outline-premium">
-            {hero.ctaSecondary.label}
-          </a>
-        </div>
-
         <div className="hero-metrics mt-5 d-none d-md-flex w-100 justify-content-center">
           {hero.metrics.map((m, i) => (
             <div key={i} className="metric-item">
