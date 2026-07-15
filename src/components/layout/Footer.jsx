@@ -18,7 +18,7 @@ const Footer = () => {
         const el = document.querySelector(sectionId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       } else {
-        navigate(sectionId);
+        navigate('/', { state: { scrollTo: sectionId } });
       }
     }
   };

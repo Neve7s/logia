@@ -399,7 +399,7 @@ export const SITE_CONTENT = {
       { icon: "fas fa-briefcase", href: "https://app.logia.lat/recruitment/empleos/", label: "Busca Empleo en Logística" },
     ],
     solutions: [
-      { icon: "fas fa-cubes", label: "Ecosistema", path: "/#modulos" },
+      { icon: "fas fa-cubes", label: "Ecosistema", path: "/#app-gallery" },
       { icon: "fas fa-calculator", label: "Cotizador Profesional", path: "/app/cotizador" },
       { icon: "fas fa-box-open", label: "Shipments", path: "/app/shipments" },
       { icon: "fas fa-file-invoice", label: "App Facturación", path: "/app/facturacion" },
