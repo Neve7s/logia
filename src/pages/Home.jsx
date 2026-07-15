@@ -36,7 +36,7 @@ const Home = () => {
         <AppGallery />
         <TechHub />
         {/* <SocialProof /> */}
-        <PricingSection />
+        {/* <PricingSection /> */}
       </main>
       <Footer />
     </>
