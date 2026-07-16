@@ -39,7 +39,7 @@ desktop.ini
 web-logia/
 
 # Tool configuration files
-opencode.json
+opencode.json   
 
 # Test coverage
 coverage/
