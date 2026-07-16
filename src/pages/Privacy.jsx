@@ -87,7 +87,7 @@ const Privacy = () => {
           <p>Si tienes preguntas sobre esta política o sobre el tratamiento de tus datos, contáctanos:</p>
           <ul>
             <li><strong>Correo:</strong> privacidad@logia.lat</li>
-            <li><strong>WhatsApp:</strong> +51 935 533 845</li>
+            <li><strong>WhatsApp:</strong> +51 977 824 138</li>
           </ul>
         </div>
 

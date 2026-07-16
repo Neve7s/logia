@@ -35,7 +35,7 @@ const Support = () => {
             <i className="fab fa-whatsapp"></i>
             <h4>WhatsApp Business</h4>
             <p>Respuesta inmediata para consultas urgentes</p>
-            <a href="https://wa.me/51935533845" target="_blank" rel="noopener noreferrer" className="support-cta">
+            <a href="https://wa.me/51977824138" target="_blank" rel="noopener noreferrer" className="support-cta">
               <i className="fas fa-arrow-right"></i> Abrir chat
             </a>
           </div>
