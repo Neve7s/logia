@@ -36,7 +36,9 @@ desktop.ini
 .agents/
 .opencode/
 .codebase-memory/
+.playwright-mcp/
 web-logia/
+marketing/
 
 # Tool configuration files
 opencode.json   
@@ -54,3 +56,6 @@ coverage/
 *.pid
 *.seed
 *.pid.lock
+
+# STATEGIES
+POST-LINKEDIN.md
