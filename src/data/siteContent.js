@@ -11,7 +11,7 @@ export const SITE_CONTENT = {
     badgeSub: "Sin tarjeta de crédito",
     titleLine1: "El Motor Digital para",
     titleHighlight: "Agencias de Carga",
-    subtitle: "Software facturador que calcula automáticamente IGV, detracciones y exoneraciones en fletes y servicios. Cotizaciones pro, tracking, facturación SUNAT y más. Todo en una sola plataforma.",
+    subtitle: "Plataforma integral para gestionar tu equipo comercial, operaciones y finanzas con aplicaciones inteligentes. Todo en una sola plataforma.",
     ctaPrimary: { label: "Empezar Gratis", href: "https://app.logia.lat/register/company/" },
     ctaSecondary: { label: "Agendar Demo", href: "#soporte" },
     metrics: [
