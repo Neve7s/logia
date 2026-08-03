@@ -39,6 +39,7 @@ desktop.ini
 .playwright-mcp/
 web-logia/
 marketing/
+general/
 
 # Tool configuration files
 opencode.json   

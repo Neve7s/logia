@@ -16,6 +16,8 @@ import Consultador from './pages/aplications/Consultador';
 import Configuracion from './pages/aplications/Configuracion';
 import Academy from './pages/Academy';
 import ThreeBackground from './components/layout/ThreeBackground';
+import WhatsAppFloat from './components/widgets/WhatsAppFloat';
+import ChatIA from './components/widgets/ChatIA';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path="/academy" element={<Academy />} />
         </Routes>
       </BrowserRouter>
+      <WhatsAppFloat />
+      <ChatIA />
     </div>
   );
 }

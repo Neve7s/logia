@@ -232,14 +232,15 @@ export const SITE_CONTENT = {
     plans: [
       {
         name: "Básico",
-        basePrice: 79.99,
+        basePrice: 119.99,
         description: "Ideal para agencias que empiezan a digitalizar sus operaciones. Cotizador profesional y control básico de tu equipo.",
         features: [
           "Dashboard profesional con métricas clave",
           "Cotizaciones en PDF con tu marca (3 formatos)",
           "Control de rendimiento de tu personal",
           "Catálogo de clientes, navieras y servicios",
-          "1 Administrador + 2 Empleados",
+          "Hasta 6 usuarios incluidos",
+          "$10/mes por usuario adicional",
           "Soporte por correo electrónico",
         ],
         cta: "Elegir Básico",
@@ -257,7 +258,8 @@ export const SITE_CONTENT = {
           "Seguimiento de cargas con canal aduanero",
           "Avisos de Llegada automáticos en PDF",
           "Dominio personalizado para tu empresa",
-          "2 Administradores + 5 Empleados",
+          "Hasta 10 usuarios incluidos",
+          "$10/mes por usuario adicional",
           "Soporte prioritario por WhatsApp",
         ],
         cta: "Elegir Estándar",
@@ -269,7 +271,7 @@ export const SITE_CONTENT = {
       },
       {
         name: "Premium",
-        basePrice: 449.99,
+        basePrice: 199.99,
         description: "Potencia total con Facturación Electrónica SUNAT y automatización completa para agencias establecidas.",
         features: [
           "Todo en Estándar",
@@ -277,7 +279,8 @@ export const SITE_CONTENT = {
           "Cálculo automático de IGV y detracciones",
           "Recibos personalizados con diseño propio",
           "Control total de productividad y KPIs",
-          "Usuarios ilimitados para tu equipo",
+          "Hasta 15 usuarios incluidos",
+          "$10/mes por usuario adicional",
           "Soporte prioritario 24/7",
         ],
         cta: "Contactar Ventas",

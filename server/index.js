@@ -1,6 +1,13 @@
 import { Resend } from 'resend';
+import OpenAI from 'openai';
 
 const resend = new Resend(process.env.RESEND_API);
+
+// Cliente NVIDIA para proxy del chat
+const nvidiaClient = new OpenAI({
+  apiKey: process.env.VITE_NVIDIA_API_KEY,
+  baseURL: 'https://integrate.api.nvidia.com/v1',
+});
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -161,6 +168,44 @@ Bun.serve({
         console.error('Server error:', err);
         return new Response(
           JSON.stringify({ error: 'Error interno del servidor' }),
+          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
+    }
+
+    // --- Chat con NVIDIA IA ---
+    if (req.method === 'POST' && new URL(req.url).pathname === '/api/chat') {
+      try {
+        const body = await req.json();
+        const { messages, model = 'nvidia/nemotron-mini-4b-instruct' } = body;
+
+        if (!messages || !Array.isArray(messages)) {
+          return new Response(
+            JSON.stringify({ error: 'Messages array es requerido' }),
+            { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+          );
+        }
+
+        const completion = await nvidiaClient.chat.completions.create({
+          model,
+          messages,
+          temperature: 0.7,
+          max_tokens: 1024,
+          top_p: 0.9,
+          stream: false,
+        });
+
+        return new Response(
+          JSON.stringify({ 
+            success: true, 
+            content: completion.choices[0]?.message?.content || 'Sin respuesta' 
+          }),
+          { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      } catch (err) {
+        console.error('Chat error:', err);
+        return new Response(
+          JSON.stringify({ error: 'Error al procesar el chat' }),
           { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
       }

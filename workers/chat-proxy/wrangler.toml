@@ -1,0 +1,7 @@
+name = "logia-chat-proxy"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# NVIDIA_API_KEY se configura como secret en Cloudflare Dashboard
+# o con: wrangler secret put NVIDIA_API_KEY
