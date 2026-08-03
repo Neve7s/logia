@@ -322,6 +322,35 @@
   box-shadow: 0 4px 15px var(--chat-glow);
 }
 
+/* Markdown en mensajes */
+.message-bubble strong {
+  color: var(--chat-accent);
+  font-weight: 600;
+}
+
+.chat-ia-message.user .message-bubble strong {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.message-bubble .chat-link {
+  color: var(--chat-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.message-bubble .chat-link:hover {
+  color: var(--chat-primary);
+  text-decoration-thickness: 2px;
+}
+
+.chat-ia-message.user .message-bubble .chat-link {
+  color: #fff;
+  text-decoration-thickness: 1px;
+}
+
 .message-time {
   font-size: 10px;
   color: var(--chat-text-muted);

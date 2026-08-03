@@ -9,15 +9,77 @@ import './ChatIA.css';
 
 const WELCOME_MESSAGE = {
   role: 'assistant',
-  content: '¡Hola! Soy Lelo 🤖 Estoy aquí para ayudarte a conocer nuestra plataforma. Pregúntame sobre:\n\n• Módulos y funcionalidades\n• Planes y precios\n• Cómo empezar\n• Soporte técnico\n\n¿En qué puedo ayudarte hoy?'
+  content: '¡Hola! Soy Lelo 🤖 Estoy aquí para ayudarte a conocer LogIA. Pregúntame sobre:\n\n• Módulos y funcionalidades\n• Cómo empezar\n• Video tutorial\n• Soporte técnico\n\n¿En qué puedo ayudarte hoy?'
 };
 
 const QUICK_QUESTIONS = [
   '¿Qué es LogIA?',
-  '¿Cuáles son los precios?',
   '¿Cómo empiezo?',
+  'Ver video tutorial',
   'Módulos disponibles'
 ];
+
+// Parser simple de markdown para chat (negrita y links)
+function parseMarkdown(text) {
+  if (!text) return text;
+  
+  const parts = [];
+  let remaining = text;
+  let key = 0;
+
+  // Regex para links [texto](url)
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/;
+  // Regex para negrita **texto**
+  const boldRegex = /\*\*([^*]+)\*\*/;
+
+  while (remaining.length > 0) {
+    const linkMatch = remaining.match(linkRegex);
+    const boldMatch = remaining.match(boldRegex);
+
+    let nextMatch = null;
+    let matchType = null;
+
+    if (linkMatch && boldMatch) {
+      if (remaining.indexOf(linkMatch[0]) < remaining.indexOf(boldMatch[0])) {
+        nextMatch = linkMatch;
+        matchType = 'link';
+      } else {
+        nextMatch = boldMatch;
+        matchType = 'bold';
+      }
+    } else if (linkMatch) {
+      nextMatch = linkMatch;
+      matchType = 'link';
+    } else if (boldMatch) {
+      nextMatch = boldMatch;
+      matchType = 'bold';
+    }
+
+    if (!nextMatch) {
+      parts.push(remaining);
+      break;
+    }
+
+    const matchIndex = remaining.indexOf(nextMatch[0]);
+    if (matchIndex > 0) {
+      parts.push(remaining.substring(0, matchIndex));
+    }
+
+    if (matchType === 'link') {
+      parts.push(
+        <a key={key++} href={nextMatch[2]} target="_blank" rel="noopener noreferrer" className="chat-link">
+          {nextMatch[1]}
+        </a>
+      );
+    } else if (matchType === 'bold') {
+      parts.push(<strong key={key++}>{nextMatch[1]}</strong>);
+    }
+
+    remaining = remaining.substring(matchIndex + nextMatch[0].length);
+  }
+
+  return parts;
+}
 
 export default function ChatIA() {
   const [isOpen, setIsOpen] = useState(false);
@@ -145,7 +207,7 @@ export default function ChatIA() {
               <div className="message-content">
                 <div className="message-bubble">
                   {msg.content.split('\n').map((line, i) => (
-                    <span key={i}>{line}{i < msg.content.split('\n').length - 1 && <br />}</span>
+                    <span key={i}>{parseMarkdown(line)}{i < msg.content.split('\n').length - 1 && <br />}</span>
                   ))}
                 </div>
                 <span className="message-time">
