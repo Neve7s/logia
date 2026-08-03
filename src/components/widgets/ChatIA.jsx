@@ -16,7 +16,7 @@ const QUICK_QUESTIONS = [
   '¿Qué es LogIA?',
   '¿Cómo empiezo?',
   'Videos guía',
-  'Capacitaciones'
+  '¿Puedo pedir mejoras?'
 ];
 
 // Parser simple de markdown para chat (negrita y links)
