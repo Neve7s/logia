@@ -9,7 +9,7 @@ import './ChatIA.css';
 
 const WELCOME_MESSAGE = {
   role: 'assistant',
-  content: '¡Hola! Soy Lelo 🤖 Estoy aquí para ayudarte a conocer LogIA. Pregúntame sobre:\n\n• Módulos y funcionalidades\n• Cómo empezar\n• Video tutorial\n• Soporte técnico\n\n¿En qué puedo ayudarte hoy?'
+  content: '¡Hey! 👋 ¿Qué tal? Soy Lelo, tu asistente de LogIA. Estoy aquí para ayudarte a conocer todo sobre nuestra plataforma.\n\nPuedes preguntarme sobre:\n\n• Qué es LogIA y cómo funciona\n• Cómo empezar (¡hay video tutorial!)\n• Módulos y funcionalidades\n• Soporte técnico\n\n¿En qué te puedo ayudar? 😄'
 };
 
 const QUICK_QUESTIONS = [
@@ -102,6 +102,14 @@ export default function ChatIA() {
       inputRef.current.focus();
     }
   }, [isOpen]);
+
+  // Abrir chat automáticamente después de 4 segundos
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSend = async (text = inputValue) => {
     if (!text.trim() || isLoading) return;
