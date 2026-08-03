@@ -127,7 +127,7 @@ export default function ChatIA() {
       console.error('Error:', error);
       const errorMessage = { 
         role: 'assistant', 
-        content: 'Lo siento, hubo un error de conexión. Por favor, intenta de nuevo o contacta a soporte por WhatsApp.'
+        content: 'Lo siento, estoy teniendo problemas de conexión. 🔧 Por favor, intenta de nuevo en unos segundos o escríbenos por WhatsApp al +51 977 824 138 para ayudarte directamente.'
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
