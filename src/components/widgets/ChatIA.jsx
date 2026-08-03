@@ -15,8 +15,8 @@ const WELCOME_MESSAGE = {
 const QUICK_QUESTIONS = [
   '¿Qué es LogIA?',
   '¿Cómo empiezo?',
-  'Ver video tutorial',
-  'Módulos disponibles'
+  'Videos guía',
+  'Capacitaciones'
 ];
 
 // Parser simple de markdown para chat (negrita y links)
