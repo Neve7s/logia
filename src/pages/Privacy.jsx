@@ -67,7 +67,7 @@ const Privacy = () => {
             <li>Recordar tus preferencias de usuario</li>
             <li>Analizar el tráfico y uso de la plataforma para mejorar el servicio</li>
           </ul>
-          <p>Puedes configurar tu navegador para rechazar todas las cookies, aunque esto podría afectar la funcionalidad de la plataforma.</p>
+          <p>Puedes configurar tu navegador para rechazar todas las cookies, aunque esto podría afectar la funcionalidad de la plataforma. Para más detalles, consulta nuestra <a href="/cookies" style={{color: '#6366f1'}}>Política de Cookies</a>.</p>
         </div>
 
         <div className="content-card">

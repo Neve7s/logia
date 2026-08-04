@@ -15,6 +15,7 @@ import Mailer from './pages/aplications/Mailer';
 import Consultador from './pages/aplications/Consultador';
 import Configuracion from './pages/aplications/Configuracion';
 import Academy from './pages/Academy';
+import Cookies from './pages/Cookies';
 import ThreeBackground from './components/layout/ThreeBackground';
 import WhatsAppFloat from './components/widgets/WhatsAppFloat';
 import ChatIA from './components/widgets/ChatIA';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/privacidad" element={<Privacy />} />
           <Route path="/terminos" element={<Terms />} />
+          <Route path="/cookies" element={<Cookies />} />
           <Route path="/actualizaciones" element={<Updates />} />
           <Route path="/soporte" element={<Support />} />
           <Route path="/preguntas" element={<FAQ />} />

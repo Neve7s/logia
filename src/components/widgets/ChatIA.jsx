@@ -111,6 +111,17 @@ export default function ChatIA() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Cerrar chat con Escape
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen]);
+
   const handleSend = async (text = inputValue) => {
     if (!text.trim() || isLoading) return;
 

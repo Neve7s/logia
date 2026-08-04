@@ -10,11 +10,13 @@ export const APPLICATIONS = [
     id: 'cotizador',
     icon: 'fa-calculator',
     title: 'Cotizador Versátil',
-    description: 'Tu herramienta principal de ventas. Crea cotizaciones profesionales para carga marítima LCL, FCL y aérea en múltiples monedas con tipo de cambio actualizado. Calcula automáticamente impuestos aduaneros y desglósalos por tipo de servicio para que tus clientes tengan total claridad.',
+    description: 'Tu herramienta principal de ventas. Cotiza en 2 minutos: flete, gastos, seguro, IGV y detracciones se calculan solos. Genera el PDF con la marca de tu agencia (colores, logo y estilo) y conviértelo en embarque y factura sin re-tipear nada.',
     features: [
-      'Historial completo de cada cotización con estados (Aprobado, Rechazado).',
-      'Duplica cotizaciones en un clic y obtén un nuevo código al instante.',
-      'Calcula costos por tarifa fija, peso, volumen o contenedor.'
+      'Cálculo automático de IGV y detracciones según tipo de servicio.',
+      'PDF profesional con tu marca: colores, logo y estilo (Moderno, Corporativo, Minimalista).',
+      'Historial completo con estados (Borrador, Enviada, Aprobada, Rechazada, Caducada).',
+      'Crea el cliente, la naviera o el puerto al vuelo, sin salir de la pantalla.',
+      'Duplica cotizaciones en un clic y obtén un nuevo código al instante.'
     ],
     image: cotizadorImg,
     tag: 'Apps: Cotizador Pro'
@@ -23,11 +25,13 @@ export const APPLICATIONS = [
     id: 'shipments',
     icon: 'fa-box-open',
     title: 'Shipments Control',
-    description: 'Seguimiento completo de las cargas aprobadas. Registra fechas de salida y llegada, números de embarque y puertos. El sistema te avisa automáticamente qué cargas llegarán en los próximos 15 días para que nada se te escape.',
+    description: 'Seguimiento visual de tus cargas aprobadas. Panel tipo kanban con el estado de cada embarque, canal aduanero por colores y enlace de tracking según la naviera. El sistema genera el Aviso de Llegada en PDF automáticamente y te avisa de las cargas que llegarán en los próximos 15 días.',
     features: [
-      'Control visual del canal de aduana asignado (Verde, Rojo, Naranja).',
+      'Control visual del canal de aduana (Verde, Amarillo, Rojo).',
+      'Enlace de seguimiento automático según la naviera (Maersk, Hapag-Lloyd y más).',
+      'Aviso de Llegada en PDF con tu logo, listo para el cliente.',
       'Actualización instantánea sin recargar la página.',
-      'Genera automáticamente el Aviso de Llegada en PDF para tus clientes.'
+      'Alertas de demoras y fechas clave (zarpe, llegada, levante).'
     ],
     image: shipmentImg,
     tag: 'Apps: Gestión de Carga'
@@ -36,11 +40,13 @@ export const APPLICATIONS = [
     id: 'facturacion',
     icon: 'fa-file-invoice',
     title: 'Facturación OSE/PSE',
-    description: 'Emite facturas, boletas y notas de crédito electrónicas validadas directamente con SUNAT. Convierte tus servicios en comprobantes y recibos de caja con numeración automática y cálculo de impuestos integrado.',
+    description: 'Emite facturas, boletas y notas de crédito electrónicas validadas ante SUNAT. Cálculo automático de IGV y detracciones (códigos 027 y 037), modo PRUEBAS antes de PRODUCCIÓN, y envío automático del comprobante al cliente con tu marca.',
     features: [
-      'Comprobantes aprobados automáticamente por SUNAT.',
-      'Cálculo automático de detracciones sin errores manuales.',
-      'Exporta reportes financieros a Excel con un clic.'
+      'Comprobantes aprobados automáticamente por SUNAT (OSE/PSE).',
+      'Cálculo automático de IGV (18%) y detracciones (4%–30%) sin errores.',
+      'Envío automático de la factura por correo con tu logo.',
+      'Reportes financieros: emitidos, cobrados, vencidos y por vendedor.',
+      'Exporta reportes a Excel con un clic.'
     ],
     image: fiannza1Img,
     tag: 'Apps: Finanzas LogIA'
@@ -49,10 +55,12 @@ export const APPLICATIONS = [
     id: 'maestros',
     icon: 'fa-database',
     title: 'Infraestructura Masters',
-    description: 'Tu base de datos centralizada de clientes, proveedores, servicios, puertos y navieras. Toda la información que necesitas siempre actualizada y disponible para todos los módulos del sistema.',
+    description: 'La única fuente de verdad de tu agencia: clientes, servicios, navieras, puertos, agentes de aduana y tipos de carga en un solo lugar. RUC validado matemáticamente y autocompletado desde SUNAT, anti-duplicados con aviso de quién registró cada cliente, y tracking de navieras con detección automática de Maersk y Hapag-Lloyd.',
     features: [
-      'Busca clientes por RUC o DNI y autocompleta sus datos al instante.',
-      'Catálogo de navieras listo para rastreo de contenedores.',
+      'Validación oficial del RUC peruano (11 dígitos, dígito verificador).',
+      'Autocompleta razón social y dirección desde SUNAT/RENIEC.',
+      'Anti-duplicados: te dice quién registró un RUC que ya existe.',
+      'Navieras con plantilla de tracking y días de sobreestadía.',
       'Cada vendedor solo ve sus propios clientes para mayor privacidad.'
     ],
     image: maestrosImg,
@@ -62,11 +70,13 @@ export const APPLICATIONS = [
     id: 'ats',
     icon: 'fa-user-tie',
     title: 'Reclutamiento (ATS)',
-    description: 'Sistema de reclutamiento integrado. Publica convocatorias laborales y gestiona postulantes con sus CV en la nube, todo desde el mismo lugar donde operas tu agencia.',
+    description: 'Sistema de reclutamiento con portal de empleo público con la marca de tu agencia. Publica convocatorias, recibe postulaciones con CV en la nube y gestiona a cada candidato con un flujo visual: recibido, preseleccionado, entrevista, oferta y contratado.',
     features: [
-      'Flujo visual: de postulado → entrevistado → aceptado.',
+      'Portal de empleo público: tuagencia.logia.lat/empleos/ con tu marca.',
+      'Flujo visual tipo kanban del candidato (postulado → entrevistado → aceptado).',
       'Convierte un postulante en empleado activo con un clic.',
-      'Envío automático de correos para coordinar entrevistas.'
+      'Invitaciones a entrevista y confirmaciones por correo con tu logo.',
+      'Configura descuento de tardanzas y pago de horas extras desde RRHH.'
     ],
     image: kpiImg,
     tag: 'Apps: RRHH ATS'
@@ -75,10 +85,12 @@ export const APPLICATIONS = [
     id: 'configuracion',
     icon: 'fa-chart-line',
     title: 'Métricas & Configuraciones',
-    description: 'Ten el control total del rendimiento de tu agencia. Monitorea la productividad de cada vendedor, personaliza la imagen de tu empresa y gestiona todas las configuraciones desde un solo lugar.',
+    description: 'El panel del administrador te da la agencia completa: ventas, contenedores en tránsito, cobros pendientes, quién está conectado y qué está haciendo, y rendimiento por vendedor. Además personalizas la imagen de tu empresa: enlace propio, logo, slogan, colores de PDF y avisos para todo el equipo.',
     features: [
-      'Personaliza firmas, logotipos y datos de empresa en tus documentos.',
-      'Envío de correos automáticos a clientes y equipo.',
+      'Panel del equipo: quién está conectado y qué está haciendo en tiempo real.',
+      'KPIs de ventas, tránsitos y cobros, filtrables por vendedor.',
+      'Noticias de la empresa: publica avisos que ven todos los empleados.',
+      'Personaliza logo, colores, estilo de PDF y marcas de agua de certificaciones.',
       'Los datos de cada agencia están completamente separados y protegidos.'
     ],
     image: configuracionImg,
