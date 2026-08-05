@@ -77,7 +77,7 @@ const Navbar = () => {
             <div className={`dropdown-menu-x ${activeDropdown === 'soluciones' ? 'active' : ''}`}>
               {navbar.solutions.map((sol) => (
                 <a
-                  key={sol.path}
+                  key={`${sol.path}-${sol.label}`}
                   href={sol.path}
                   className="dropdown-item-x"
                   onClick={(e) => handleNavClick(e, sol.path)}
@@ -101,7 +101,7 @@ const Navbar = () => {
             <div className={`dropdown-menu-x ${activeDropdown === 'soporte' ? 'active' : ''}`}>
               {navbar.support.map((sup) => (
                 <a
-                  key={sup.path}
+                  key={`${sup.path}-${sup.label}`}
                   href={sup.path}
                   className="dropdown-item-x"
                   onClick={(e) => handleNavClick(e, sup.path)}
@@ -158,7 +158,7 @@ const Navbar = () => {
               {activeDropdown === 'soluciones-mobile' && (
                 <div className="mobile-dropdown-submenu">
                   {navbar.solutions.map((sol) => (
-                    <a key={sol.path} href={sol.path} className="dropdown-item-x" onClick={(e) => handleNavClick(e, sol.path)}>
+                    <a key={`${sol.path}-${sol.label}`} href={sol.path} className="dropdown-item-x" onClick={(e) => handleNavClick(e, sol.path)}>
                       <i className={`fas ${sol.icon}`}></i> {sol.label}
                     </a>
                   ))}
@@ -176,7 +176,7 @@ const Navbar = () => {
               {activeDropdown === 'soporte-mobile' && (
                 <div className="mobile-dropdown-submenu">
                   {navbar.support.map((sup) => (
-                    <a key={sup.path} href={sup.path} className="dropdown-item-x" onClick={(e) => handleNavClick(e, sup.path)}>
+                    <a key={`${sup.path}-${sup.label}`} href={sup.path} className="dropdown-item-x" onClick={(e) => handleNavClick(e, sup.path)}>
                       <i className={sup.icon}></i> {sup.label}
                     </a>
                   ))}

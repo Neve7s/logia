@@ -221,6 +221,31 @@
   height: 16px;
 }
 
+.chat-ia-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--chat-border);
+  background: transparent;
+  color: var(--chat-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.chat-ia-close-btn:hover {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--chat-text);
+  border-color: var(--chat-primary);
+}
+
+.chat-ia-close-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
 /* Mensajes */
 .chat-ia-messages {
   flex: 1;
@@ -604,6 +629,23 @@
   .chat-ia-toggle-icon {
     width: 24px;
     height: 24px;
+  }
+
+  .chat-ia-container.open .chat-ia-toggle {
+    display: none;
+  }
+
+  /* Touch targets en header mobile */
+  .chat-ia-header-actions .chat-ia-clear-btn,
+  .chat-ia-header-actions .chat-ia-close-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .chat-ia-header-actions .chat-ia-clear-btn svg,
+  .chat-ia-header-actions .chat-ia-close-btn svg {
+    width: 18px;
+    height: 18px;
   }
 
   /* Header mobile */

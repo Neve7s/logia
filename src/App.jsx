@@ -19,12 +19,14 @@ import Cookies from './pages/Cookies';
 import ThreeBackground from './components/layout/ThreeBackground';
 import WhatsAppFloat from './components/widgets/WhatsAppFloat';
 import ChatIA from './components/widgets/ChatIA';
+import RouteSeo from './components/layout/RouteSeo';
 
 function App() {
   return (
     <div className="executive-dark">
       <ThreeBackground />
       <BrowserRouter>
+        <RouteSeo />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacidad" element={<Privacy />} />
