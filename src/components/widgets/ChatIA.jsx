@@ -34,6 +34,18 @@ function ensureVideoLink(userText, response) {
   return response;
 }
 
+// Fallback determinista: si preguntan cómo configurar/usar algo, se ancla la
+// respuesta a recursos reales (LogIA Academy + WhatsApp) y se evita dejar
+// que la IA invente pasos de configuración.
+function ensureConfigNote(userText, response) {
+  const asksHowTo = /(como|cómo)\s*(configurar|usar|activar|crear|empezar|registrar)|configur|paso a paso|tutorial/i.test(userText);
+  const mentionsAcademy = /academy|videos gu[íi]a|videos guia/i.test(response);
+  if (asksHowTo && !mentionsAcademy) {
+    return `${response}\n\n💡 Dentro de la plataforma tienes los Videos Guía (LogIA Academy) de cada módulo con el paso a paso, y por WhatsApp +51 977 824 138 te ayudan directo.`;
+  }
+  return response;
+}
+
 // Parser simple de markdown para chat (negrita y links)
 function parseMarkdown(text) {
   if (!text) return text;
@@ -147,7 +159,8 @@ export default function ChatIA() {
 
     try {
       const response = await sendMessageToNvidia(text, messages, LOGIA_SYSTEM_PROMPT);
-      const assistantMessage = { role: 'assistant', content: ensureVideoLink(text, response) };
+      const finalContent = ensureConfigNote(text, ensureVideoLink(text, response));
+      const assistantMessage = { role: 'assistant', content: finalContent };
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Error:', error);
