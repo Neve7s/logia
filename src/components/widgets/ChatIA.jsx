@@ -19,6 +19,21 @@ const QUICK_QUESTIONS = [
   '¿Puedo pedir mejoras?'
 ];
 
+// Enlace real del video tutorial de registro (fuente única de verdad)
+const VIDEO_TUTORIAL_URL = 'https://www.youtube.com/watch?v=Uoq83P7fj4g';
+const VIDEO_TUTORIAL_LINK = `[Ver video tutorial de registro](${VIDEO_TUTORIAL_URL})`;
+
+// Fallback determinista: si el usuario pide el link del video y la IA no lo entregó,
+// se agrega el enlace real para garantizar que siempre aparezca.
+function ensureVideoLink(userText, response) {
+  const asksForVideo = /(link|enlace|url|pasame|pásame|me pasas|video|tutorial)/i.test(userText);
+  const hasLink = response.includes(VIDEO_TUTORIAL_URL);
+  if (asksForVideo && !hasLink) {
+    return `${response}\n\nAquí tienes el enlace directo al video tutorial: ${VIDEO_TUTORIAL_LINK}`;
+  }
+  return response;
+}
+
 // Parser simple de markdown para chat (negrita y links)
 function parseMarkdown(text) {
   if (!text) return text;
@@ -132,7 +147,7 @@ export default function ChatIA() {
 
     try {
       const response = await sendMessageToNvidia(text, messages, LOGIA_SYSTEM_PROMPT);
-      const assistantMessage = { role: 'assistant', content: response };
+      const assistantMessage = { role: 'assistant', content: ensureVideoLink(text, response) };
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Error:', error);
