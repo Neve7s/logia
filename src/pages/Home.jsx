@@ -30,8 +30,8 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <HeroCrossfade />
         <HowItWorks />
+        <HeroCrossfade />
         <AdminHub />
         <AppGallery />
         <TechHub />

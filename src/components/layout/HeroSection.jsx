@@ -76,6 +76,18 @@ const HeroSection = () => {
 
         <p className="hero-lead">{hero.subtitle}</p>
 
+        {/* CTA móvil - solo visible en móvil, no afecta desktop */}
+        <div className="hero-mobile-cta">
+          <a
+            href="https://app.logia.lat/register/company/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-hero-mobile"
+          >
+            Prueba gratis aquí <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
+          </a>
+        </div>
+
         <div className="hero-metrics mt-5 d-flex w-100 justify-content-center">
           {hero.metrics.map((m, i) => (
             <div key={i} className="metric-item">

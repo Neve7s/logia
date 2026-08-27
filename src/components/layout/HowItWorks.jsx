@@ -104,6 +104,18 @@ const HowItWorks = () => {
             ))}
           </div>
         </div>
+
+        {/* Botón móvil - Probar aquí -> registro empresas */}
+        <div className="how-mobile-cta">
+          <a
+            href="https://app.logia.lat/register/company/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-how-mobile"
+          >
+            Probar aquí <i className="fas fa-arrow-right" style={{ marginLeft: '8px' }}></i>
+          </a>
+        </div>
       </div>
     </section>
   );

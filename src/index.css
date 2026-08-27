@@ -767,6 +767,36 @@ section[id]::before {
   margin-top: 0.3rem;
 }
 
+/* Hero CTA móvil - oculto en desktop, no afecta layout desktop */
+.hero-mobile-cta {
+  display: none;
+}
+
+.btn-hero-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-hero-mobile:hover {
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.45);
+}
+
+.btn-hero-mobile:active {
+  transform: scale(0.97);
+}
+
 @media (max-width: 992px) {
   .hero-metrics {
     flex-wrap: wrap;
@@ -776,47 +806,80 @@ section[id]::before {
 
 @media (max-width: 768px) {
   .hero-high-end {
-    padding-top: 120px;
+    min-height: auto;
+    padding-top: 84px;
+    padding-bottom: 20px;
   }
 
-  .hero-title-main {
-    font-size: 2.5rem;
+  .hero-badge {
+    transform: scale(0.88);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-brand-reveal {
+    margin-bottom: 1rem !important;
   }
 
   .hero-brand-row {
-    transform: scale(0.85);
+    transform: scale(0.72);
+  }
+
+  .hero-log-text {
+    font-size: 2.85rem;
+  }
+
+  .container-3d-wrapper {
+    width: 52px;
+    height: 42px;
+    margin-left: 26px;
+    transform: scale(1.85);
+  }
+
+  .hero-title-main {
+    font-size: 1.9rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.15;
+  }
+
+  .hero-lead {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 12px;
+    margin-bottom: 0;
+  }
+
+  .hero-mobile-cta {
+    display: block;
+    margin-top: 1.25rem;
   }
 
   .hero-metrics {
     flex-wrap: nowrap;
-    gap: 0.75rem;
-    padding: 0.8rem 1rem;
+    gap: 0.6rem;
+    padding: 0.7rem 0.75rem;
+    margin-top: 1.25rem !important;
   }
 
   .metric-value {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
   }
 
   .metric-suffix {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .metric-label {
-    font-size: 0.6rem;
-  }
-
-  .hero-log-text {
-    font-size: 3rem;
+    font-size: 0.55rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title-main {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
   }
 
   .hero-lead {
-    font-size: 1rem;
+    font-size: 0.85rem;
     line-height: 1.5;
   }
 
@@ -5008,6 +5071,10 @@ main {
    ═══════════════════════════════════════════════════════ */
 
 /* ── HowItWorks Carousel (mobile) ── */
+.how-mobile-cta {
+  display: none;
+}
+
 .how-steps-desktop {
   display: row;
 }
@@ -5059,6 +5126,31 @@ main {
     background: var(--accent-indigo);
     border-color: var(--accent-indigo);
     transform: scale(1.25);
+  }
+
+  .how-mobile-cta {
+    display: block;
+    text-align: center;
+    margin-top: 1.75rem;
+  }
+
+  .btn-how-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-how-mobile:active {
+    transform: scale(0.97);
   }
 }
 
