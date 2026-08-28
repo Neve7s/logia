@@ -20,7 +20,7 @@ export default {
     if (request.method === 'POST' && new URL(request.url).pathname === '/api/chat') {
       try {
         const body = await request.json();
-        const { messages, model = 'nvidia/nemotron-mini-4b-instruct' } = body;
+        const { messages, model = 'nvidia/nemotron-3-nano-30b-a3b' } = body;
 
         if (!messages || !Array.isArray(messages)) {
           return new Response(

@@ -4,7 +4,9 @@
 // ============================================================
 
 // En producción usa el Worker de Cloudflare, en local el proxy Bun
-const PROXY_URL = 'https://dry-king-a9fa.hieysonhilario.workers.dev/api/chat';
+// Permite override via VITE_CHAT_API_URL (ej: http://localhost:3001/api/chat en dev)
+const PROXY_URL = import.meta.env.VITE_CHAT_API_URL || 'https://dry-king-a9fa.hieysonhilario.workers.dev/api/chat';
+const DEFAULT_MODEL = 'nvidia/nemotron-3-nano-30b-a3b';
 
 /**
  * Envía un mensaje al chat de IA y retorna la respuesta
@@ -26,7 +28,7 @@ export async function sendMessageToNvidia(message, history = [], systemPrompt = 
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify({ messages, model: DEFAULT_MODEL }),
     });
 
     if (!response.ok) {

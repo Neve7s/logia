@@ -177,7 +177,7 @@ Bun.serve({
     if (req.method === 'POST' && new URL(req.url).pathname === '/api/chat') {
       try {
         const body = await req.json();
-        const { messages, model = 'nvidia/nemotron-mini-4b-instruct' } = body;
+        const { messages, model = 'nvidia/nemotron-3-nano-30b-a3b' } = body;
 
         if (!messages || !Array.isArray(messages)) {
           return new Response(
