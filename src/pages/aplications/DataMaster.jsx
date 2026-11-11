@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/maestros.webp';
 
 const DataMaster = () => {
   return (
-    <PageLayout title="Infraestructura Masters" tagline="Datos centralizados, búsquedas instantáneas" fullWidth={true}>
+    <PageLayout title="Data Masters" tagline="Datos centralizados, búsquedas instantáneas" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
@@ -129,7 +129,7 @@ const DataMaster = () => {
                   <div className="app-page-feature-icon"><i className="fas fa-shield-halved"></i></div>
                   <h4>Datos protegidos y separados</h4>
                 </div>
-                <p>Cada agencia tiene su propia base de datos segura. Los datos nunca se mezclan entre empresas. Tu información está protegida con encriptación de grado bancario.</p>
+                <p>Cada empresa tiene su propia base de datos segura. Los datos nunca se mezclan entre empresas. Tu información está protegida con encriptación de grado bancario.</p>
               </div>
             </div>
           </div>
@@ -138,9 +138,14 @@ const DataMaster = () => {
         <div className="app-page-cta text-center">
           <h3>¿Listo para centralizar tus datos?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
-          <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
-          </a>
+          <div className="app-page-cta-actions">
+            <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
+            </a>
+            <a href="https://demo.logia.lat" className="btn-outline-premium" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-laptop-code" style={{ marginRight: '0.5rem' }}></i> Ver demo
+            </a>
+          </div>
         </div>
 
       </div>

@@ -23,7 +23,7 @@ const Academy = () => {
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
                   <div className="app-page-feature-icon"><i className="fas fa-calculator"></i></div>
-                  <h4>Cotizador Pro</h4>
+                  <h4>Cotizador Logístico</h4>
                 </div>
                 <p>Aprende a crear cotizaciones profesionales, configurar tarifas, calcular costos automáticamente y generar PDFs con tu marca.</p>
               </div>
@@ -32,7 +32,7 @@ const Academy = () => {
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
                   <div className="app-page-feature-icon"><i className="fas fa-box-open"></i></div>
-                  <h4>Shipments Control</h4>
+                  <h4>Gestor de Embarques</h4>
                 </div>
                 <p>Domina el control de cargas, actualización de estados, generación de Avisos de Llegada y el dashboard visual de operaciones.</p>
               </div>

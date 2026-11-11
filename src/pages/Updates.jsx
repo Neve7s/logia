@@ -6,7 +6,7 @@ const { updates } = SITE_CONTENT;
 
 const Updates = () => {
   return (
-    <PageLayout title="Updates & Changelog" tagline="Novedades del producto">
+    <PageLayout title="Actualizaciones y Novedades" tagline="Novedades del producto">
       <div className="updates-timeline">
         {updates.map((update, index) => (
           <div key={index} className="update-item">

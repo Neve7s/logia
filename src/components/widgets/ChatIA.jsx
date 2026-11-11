@@ -5,6 +5,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { sendMessageToNvidia } from '../../services/nvidiaApi';
 import { LOGIA_SYSTEM_PROMPT } from '../../data/knowledgeBase';
+import logo from '../../assets/favicon.svg';
 import './ChatIA.css';
 
 const WELCOME_MESSAGE = {
@@ -114,6 +115,7 @@ export default function ChatIA() {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+  const messagesRef = useRef(null);
   const inputRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -121,6 +123,10 @@ export default function ChatIA() {
   };
 
   useEffect(() => {
+    if (messages.length <= 1) {
+      if (messagesRef.current) messagesRef.current.scrollTop = 0;
+      return;
+    }
     scrollToBottom();
   }, [messages]);
 
@@ -129,14 +135,6 @@ export default function ChatIA() {
       inputRef.current.focus();
     }
   }, [isOpen]);
-
-  // Abrir chat automáticamente después de 4 segundos
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Cerrar chat con Escape
   useEffect(() => {
@@ -192,12 +190,12 @@ export default function ChatIA() {
   return (
     <div className={`chat-ia-container ${isOpen ? 'open' : ''}`}>
       {/* Botón toggle */}
-      <button 
+      <button
         className="chat-ia-toggle"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat'}
+        aria-expanded={isOpen}
       >
-        <div className="chat-ia-toggle-glow"></div>
         <div className="chat-ia-toggle-icon">
           {isOpen ? (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -209,16 +207,15 @@ export default function ChatIA() {
             </svg>
           )}
         </div>
-        <div className="chat-ia-toggle-pulse"></div>
       </button>
 
       {/* Ventana de chat */}
-      <div className="chat-ia-window">
+      <div className="chat-ia-window" role="dialog" aria-label="Chat con Lelo de LogIA">
         {/* Header */}
         <div className="chat-ia-header">
           <div className="chat-ia-header-info">
             <div className="chat-ia-avatar">
-              <span>🤖</span>
+              <img src={logo} alt="" />
             </div>
             <div className="chat-ia-header-text">
               <h3>Lelo de LogIA</h3>
@@ -253,14 +250,14 @@ export default function ChatIA() {
         </div>
 
         {/* Mensajes */}
-        <div className="chat-ia-messages">
+        <div className="chat-ia-messages" ref={messagesRef}>
           {messages.map((msg, index) => (
             <div 
               key={index} 
               className={`chat-ia-message ${msg.role === 'user' ? 'user' : 'assistant'}`}
             >
               <div className="message-avatar">
-                {msg.role === 'user' ? '👤' : '🤖'}
+                {msg.role === 'user' ? '👤' : <img src={logo} alt="" />}
               </div>
               <div className="message-content">
                 <div className="message-bubble">
@@ -277,7 +274,7 @@ export default function ChatIA() {
           
           {isLoading && (
             <div className="chat-ia-message assistant">
-              <div className="message-avatar">🤖</div>
+              <div className="message-avatar"><img src={logo} alt="" /></div>
               <div className="message-content">
                 <div className="message-bubble typing">
                   <span className="typing-dot"></span>
@@ -330,7 +327,7 @@ export default function ChatIA() {
             </button>
           </div>
           <div className="chat-ia-footer">
-            <span>Powered by NVIDIA AI</span>
+            <span>Asistente IA · LogIA</span>
           </div>
         </div>
       </div>

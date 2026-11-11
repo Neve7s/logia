@@ -25,6 +25,8 @@ const HeroCrossfade = () => {
               src={src}
               alt={`LogIA Dashboard ${i + 1}`}
               className={`hero-crossfade-img ${i === current ? 'active' : ''}`}
+              loading="lazy"
+              decoding="async"
             />
           ))}
         </div>

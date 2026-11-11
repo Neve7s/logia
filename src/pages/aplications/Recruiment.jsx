@@ -120,9 +120,14 @@ const Recruiment = () => {
         <div className="app-page-cta text-center">
           <h3>¿Listo para reclutar más rápido?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
-          <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
-          </a>
+          <div className="app-page-cta-actions">
+            <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
+            </a>
+            <a href="https://demo.logia.lat" className="btn-outline-premium" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-laptop-code" style={{ marginRight: '0.5rem' }}></i> Ver demo
+            </a>
+          </div>
         </div>
 
         {/* Banner: Busca Empleo en Logística */}
@@ -133,7 +138,7 @@ const Recruiment = () => {
             </div>
             <div className="empleo-banner-text">
               <h4>¿Buscas trabajo en logística?</h4>
-              <p>Encuentra vacantes en agencias de carga, aduanas y operaciones internacionales. Publicadas por empresas reales del sector.</p>
+              <p>Encuentra vacantes en agencias de carga, operadores logísticos, agencias de aduanas y operaciones internacionales. Publicadas por empresas reales del sector.</p>
             </div>
             <a
               href="https://app.logia.lat/recruitment/empleos/"

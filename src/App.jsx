@@ -15,17 +15,22 @@ import Mailer from './pages/aplications/Mailer';
 import Consultador from './pages/aplications/Consultador';
 import Configuracion from './pages/aplications/Configuracion';
 import Academy from './pages/Academy';
+import Servicios from './pages/Servicios';
+import Tutoriales from './pages/Tutoriales';
 import Cookies from './pages/Cookies';
+import NotFound from './pages/NotFound';
 import ThreeBackground from './components/layout/ThreeBackground';
 import WhatsAppFloat from './components/widgets/WhatsAppFloat';
 import ChatIA from './components/widgets/ChatIA';
 import RouteSeo from './components/layout/RouteSeo';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 function App() {
   return (
     <div className="executive-dark">
       <ThreeBackground />
       <BrowserRouter>
+        <ScrollToTop />
         <RouteSeo />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -44,6 +49,9 @@ function App() {
           <Route path="/app/consultador" element={<Consultador />} />
           <Route path="/app/configuracion" element={<Configuracion />} />
           <Route path="/academy" element={<Academy />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/tutoriales" element={<Tutoriales />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <WhatsAppFloat />

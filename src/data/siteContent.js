@@ -9,11 +9,12 @@ export const SITE_CONTENT = {
   hero: {
     badge: "Prueba 14 días gratis",
     badgeSub: "Sin tarjeta de crédito",
-    titleLine1: "El Motor Digital para",
-    titleHighlight: "Agencias de Carga",
-    subtitle: "Plataforma integral para gestionar tu equipo comercial, operaciones y finanzas con aplicaciones inteligentes. Todo en una sola plataforma.",
+    titleLine1: "Plataforma Integral para",
+    titleHighlight: "tu Empresa",
+    segments: ["Agencias de carga", "Operadores logísticos", "Agencias de aduanas"],
+    subtitle: "Gestiona tu equipo comercial, operaciones y finanzas con aplicaciones inteligentes. Todo en una sola plataforma.",
     ctaPrimary: { label: "Empezar Gratis", href: "https://app.logia.lat/register/company/" },
-    ctaSecondary: { label: "Agendar Demo", href: "#soporte" },
+    ctaSecondary: { label: "Ver demo interactiva", href: "https://demo.logia.lat" },
     metrics: [
       { value: 80, suffix: "%", label: "Menos Carga Administrativa" },
       { value: 100, suffix: "%", label: "Trazabilidad Total" },
@@ -24,7 +25,7 @@ export const SITE_CONTENT = {
   // ─── SOCIAL PROOF ──────────────────────────────────────────
   socialProof: {
     tagline: "Confianza Real",
-    title: "Ya hay agencias que <span class='text-highlight'>confían en LogIA</span>",
+    title: "Ya hay empresas que <span class='text-highlight'>confían en LogIA</span>",
     subtitle: "Nuestro primer cliente opera sin quejas desde el día uno. Esto es lo que opina:",
     testimonials: [
       {
@@ -46,7 +47,7 @@ export const SITE_CONTENT = {
   howItWorks: {
     tagline: "Simple y Rápido",
     title: "Cómo funciona <span class='text-highlight'>LogIA</span>",
-    subtitle: "En 3 pasos tu agencia está operando con el motor digital más completo de Latinoamérica.",
+    subtitle: "En 3 pasos tu empresa está operando con el motor digital más completo de Latinoamérica.",
     steps: [
       {
         number: "01",
@@ -66,7 +67,7 @@ export const SITE_CONTENT = {
         number: "03",
         icon: "fas fa-rocket",
         title: "Empieza a Cotizar",
-        description: "Genera cotizaciones profesionales en PDF con cálculo automático de costos. Envía por email, aprueba y conviértelo en un Shipment con tracking en tiempo real.",
+        description: "Genera cotizaciones profesionales en PDF con cálculo automático de costos. Envía por email, aprueba y conviértelo en un embarque con tracking en tiempo real.",
         duration: "Inmediato",
       },
     ],
@@ -76,16 +77,16 @@ export const SITE_CONTENT = {
   appGallery: {
     tagline: "Ecosistema Completo",
     title: "Herramientas que <span class='text-highlight'>resuelven problemas reales</span>",
-    subtitle: "Cada módulo está diseñado para eliminar cuellos de botella específicos de las agencias de carga.",
+    subtitle: "Cada módulo está diseñado para eliminar cuellos de botella específicos de agencias de carga, operadores logísticos y agencias de aduanas.",
     apps: [
       {
         id: "cotizador",
         icon: "fa-calculator",
-        title: "Cotizador Profesional",
+        title: "Cotizador Logístico",
         route: "/app/cotizador",
         tagline: "Cotiza en 2 minutos, no en horas",
-        problem: "Las agencias pierden 30-45 minutos por cotización usando Excel o Word. Los errores de cálculo cuestan dinero. No sabes si el servicio tiene IGV, detracción o exoneración.",
-        solution: "Cálculo automático por tarifa, peso, volumen o contenedor, con IGV y detracciones según tipo de servicio. PDF profesional con la marca de tu agencia: colores, logo y estilo (Moderno, Corporativo o Minimalista). Crea clientes, navieras y puertos al vuelo sin salir de la pantalla, y convierte la cotización aprobada en embarque y factura sin re-tipear nada.",
+        problem: "Las empresas pierden 30-45 minutos por cotización usando Excel o Word. Los errores de cálculo cuestan dinero. No sabes si el servicio tiene IGV, detracción o exoneración.",
+        solution: "Cálculo automático por tarifa, peso, volumen o contenedor, con IGV y detracciones según tipo de servicio. PDF profesional con la marca de tu empresa: colores, logo y estilo (Moderno, Corporativo o Minimalista). Crea clientes, navieras y puertos al vuelo sin salir de la pantalla, y convierte la cotización aprobada en embarque y factura sin re-tipear nada.",
         timeSaved: "De 30 min a 2 min por cotización",
         image: "cotizador.webp",
         features: [
@@ -99,7 +100,7 @@ export const SITE_CONTENT = {
       {
         id: "shipments",
         icon: "fa-box-open",
-        title: "Shipments Control",
+        title: "Gestor de Embarques",
         route: "/app/shipments",
         tagline: "Tracking real de cada carga",
         problem: "Sin control visual, las cargas se pierden entre WhatsApp, Excel y llamadas. El cliente pregunta y no tienes respuesta.",
@@ -154,8 +155,8 @@ export const SITE_CONTENT = {
         title: "Reclutamiento ATS",
         route: "/app/reclutamiento",
         tagline: "El LinkedIn de la Logística",
-        problem: "Reclutar personal cualificado para la agencia es manual, lento y desorganizado. Los candidatos se pierden entre correos. No hay un lugar central para buscar empleo en logística.",
-        solution: "Portal de empleo público con la marca de tu agencia (tuagencia.logia.lat/empleos/). Publica vacantes, recibe postulaciones con CV en la nube y gestiona candidatos con flujo visual: recibido, preseleccionado, entrevista, oferta y contratado.",
+        problem: "Reclutar personal cualificado para la empresa es manual, lento y desorganizado. Los candidatos se pierden entre correos. No hay un lugar central para buscar empleo en logística.",
+        solution: "Portal de empleo público con la marca de tu empresa (tuagencia.logia.lat/empleos/). Publica vacantes, recibe postulaciones con CV en la nube y gestiona candidatos con flujo visual: recibido, preseleccionado, entrevista, oferta y contratado.",
         timeSaved: "De 2 semanas a 3 días por contratación",
         image: "ats.jpg",
         features: [
@@ -187,7 +188,7 @@ export const SITE_CONTENT = {
         icon: "fa-chart-line",
         title: "Métricas & Config",
         route: "/app/configuracion",
-        tagline: "Control total de tu agencia",
+        tagline: "Control total de tu empresa",
         problem: "Sin métricas claras, la gerencia toma decisiones a ciegas. No sabes qué vende más, qué empleado rinde mejor ni quién está trabajando ahora mismo.",
         solution: "Panel del administrador: ventas, contenedores en tránsito y cobros pendientes de toda la empresa, con filtro por vendedor y quién está conectado. Publica avisos que ven todos los empleados y personaliza logo, colores y estilo de tus documentos.",
         timeSaved: "Decisiones basadas en datos, no en intuición",
@@ -228,19 +229,20 @@ export const SITE_CONTENT = {
   // ─── PRICING ───────────────────────────────────────────────
   pricing: {
     tagline: "Planes de Suscripción",
-    title: "Escala tu agencia al <span class='text-highlight'>siguiente nivel</span>",
+    title: "Escala tu empresa al <span class='text-highlight'>siguiente nivel</span>",
+    showPrices: false,
     plans: [
       {
         name: "Básico",
-        basePrice: 119.99,
-        description: "Ideal para agencias que empiezan a digitalizar sus operaciones. Cotizador profesional y control básico de tu equipo.",
+        basePrice: 79.99,
+        description: "Ideal para empresas que empiezan a digitalizar sus operaciones. Cotizador profesional y control básico de tu equipo.",
         features: [
           "Dashboard profesional con métricas clave",
           "Cotizaciones en PDF con tu marca (3 formatos)",
           "Control de rendimiento de tu personal",
           "Catálogo de clientes, navieras y servicios",
           "Hasta 6 usuarios incluidos",
-          "$10/mes por usuario adicional",
+          "Usuarios adicionales disponibles",
           "Soporte por correo electrónico",
         ],
         cta: "Elegir Básico",
@@ -251,15 +253,15 @@ export const SITE_CONTENT = {
       },
       {
         name: "Estándar",
-        basePrice: 149.99,
-        description: "Para agencias que necesitan control total de operaciones. Shipments, tracking y más usuarios para tu equipo.",
+        basePrice: 119.99,
+        description: "Para empresas que necesitan control total de operaciones. Gestor de Embarques, tracking y más usuarios para tu equipo.",
         features: [
           "Todo en Básico",
           "Seguimiento de cargas con canal aduanero",
           "Avisos de Llegada automáticos en PDF",
           "Dominio personalizado para tu empresa",
           "Hasta 10 usuarios incluidos",
-          "$10/mes por usuario adicional",
+          "Usuarios adicionales disponibles",
           "Soporte prioritario por WhatsApp",
         ],
         cta: "Elegir Estándar",
@@ -272,7 +274,7 @@ export const SITE_CONTENT = {
       {
         name: "Premium",
         basePrice: 199.99,
-        description: "Potencia total con Facturación Electrónica SUNAT y automatización completa para agencias establecidas.",
+        description: "Potencia total con Facturación Electrónica SUNAT y automatización completa para empresas establecidas.",
         features: [
           "Todo en Estándar",
           "Facturación Electrónica SUNAT (OSE/PSE)",
@@ -280,11 +282,11 @@ export const SITE_CONTENT = {
           "Recibos personalizados con diseño propio",
           "Control total de productividad y KPIs",
           "Hasta 15 usuarios incluidos",
-          "$10/mes por usuario adicional",
+          "Usuarios adicionales disponibles",
           "Soporte prioritario 24/7",
         ],
         cta: "Contactar Ventas",
-        ctaLink: "#soporte",
+        ctaLink: "/soporte",
         featured: false,
         color: "#f59e0b",
         icon: "fas fa-crown",
@@ -292,7 +294,7 @@ export const SITE_CONTENT = {
       {
         name: "Personalizado",
         basePrice: null,
-        description: "¿Necesitas algo específico? Diseñamos un plan a la medida con los módulos y usuarios que tu agencia requiera.",
+        description: "¿Necesitas algo específico? Diseñamos un plan a la medida con los módulos y usuarios que tu empresa requiera.",
         features: [
           "Todos los módulos Premium disponibles",
           "Configuración a medida de tu operación",
@@ -302,7 +304,7 @@ export const SITE_CONTENT = {
           "SLA personalizado garantizado",
         ],
         cta: "Contactar Ventas",
-        ctaLink: "#soporte",
+        ctaLink: "/soporte",
         featured: false,
         color: "#8b5cf6",
         icon: "fas fa-gear",
@@ -312,6 +314,11 @@ export const SITE_CONTENT = {
 
   // ─── FAQ ───────────────────────────────────────────────────
   faq: [
+    {
+      q: "¿LogIA desarrolla sistemas o integraciones a medida?",
+      a: "Sí. Además de la plataforma, desarrollamos aplicaciones, portales e integraciones a la medida para empresas de logística, transporte y comercio exterior, incluyendo conexiones con tu sitio web, ERP, SUNAT, navieras y APIs.",
+      icon: "fas fa-code",
+    },
     {
       q: "¿Necesito instalar algo en mi computadora?",
       a: "No, LogIA es una plataforma 100% web. Solo necesitas un navegador moderno (Chrome, Firefox, Safari o Edge) y conexión a internet.",
@@ -339,7 +346,7 @@ export const SITE_CONTENT = {
     },
     {
       q: "¿Mis datos están seguros?",
-      a: "Absolutamente. Encriptación AES-256, cumplimiento SOC 2 Tipo II, y cada agencia tiene su propio entorno seguro con datos completamente separados. Tus datos nunca se mezclan con los de otras empresas.",
+      a: "Absolutamente. Encriptación AES-256, cumplimiento SOC 2 Tipo II, y cada empresa tiene su propio entorno seguro con datos completamente separados. Tus datos nunca se mezclan con los de otras empresas.",
       icon: "fas fa-shield-halved",
     },
     {
@@ -368,13 +375,86 @@ export const SITE_CONTENT = {
   // ─── NAVBAR ────────────────────────────────────────────────
   navbar: {
     solutions: [
-      { icon: "fa-calculator", label: "Cotizador Profesional", path: "/app/cotizador" },
-      { icon: "fa-box-open", label: "Shipments Control", path: "/app/shipments" },
-      { icon: "fa-file-invoice", label: "App Facturación", path: "/app/facturacion" },
-      { icon: "fa-database", label: "Maestros", path: "/app/maestros" },
-      { icon: "fa-user-tie", label: "Reclutamiento ATS", path: "/app/reclutamiento" },
-      { icon: "fa-paper-plane", label: "Comunicaciones", path: "/app/comunicaciones" },
-      { icon: "fa-binoculars", label: "Consultador", path: "/app/consultador" },
+      {
+        icon: 'fa-calculator',
+        label: 'Cotizador Logístico',
+        shortLabel: 'Cotizador Logístico',
+        group: 'Comercial',
+        path: '/app/cotizador',
+        heroTitle: 'Cotiza en 2 minutos, no en horas',
+        heroText: 'Flete, gastos, seguro, IGV y detracciones se calculan solos. Genera el PDF con la marca de tu empresa y conviértelo en embarque y factura sin re-tipear nada.',
+        image: 'cotizador.webp',
+      },
+      {
+        icon: 'fa-box-open',
+        label: 'Gestor de Embarques',
+        shortLabel: 'Gestor de Embarques',
+        group: 'Operaciones',
+        path: '/app/shipments',
+        heroTitle: 'Cada carga, trazada de punta a punta',
+        heroText: 'Tracking real por embarque, canal aduanero y evidencia documentada. Avisos de llegada automáticos y todo el flujo hasta la entrega.',
+        image: 'shipment.webp',
+      },
+      {
+        icon: 'fa-file-invoice',
+        label: 'App Facturación',
+        shortLabel: 'Facturación',
+        group: 'Operaciones',
+        path: '/app/facturacion',
+        heroTitle: 'Factura SUNAT sin errores de cálculo',
+        heroText: 'Comprobantes electrónicos con IGV y detracciones automáticas, detección de fletes exonerados y validación de RUC.',
+        image: 'fiannza1.webp',
+      },
+      {
+        icon: 'fa-database',
+        label: 'Maestros',
+        shortLabel: 'Maestros',
+        group: 'Operaciones',
+        path: '/app/maestros',
+        heroTitle: 'Un solo catálogo, toda tu operación',
+        heroText: 'Clientes, navieras, puertos y servicios en una base única, validada contra SUNAT y compartida por todos los módulos.',
+        image: 'maestros.webp',
+      },
+      {
+        icon: 'fa-user-tie',
+        label: 'Reclutamiento ATS',
+        shortLabel: 'Reclutamiento',
+        group: 'Gestión',
+        path: '/app/reclutamiento',
+        heroTitle: 'Recluta talento logístico sin perder candidatos',
+        heroText: 'Portal de empleo con la marca de tu empresa, postulaciones con CV en la nube y un flujo Kanban de selección.',
+        image: 'ats.jpg',
+      },
+      {
+        icon: 'fa-paper-plane',
+        label: 'Comunicaciones',
+        shortLabel: 'Comunicaciones',
+        group: 'Comercial',
+        path: '/app/comunicaciones',
+        heroTitle: 'Comunica a escala, con tu marca',
+        heroText: 'Campañas y correos masivos integrados a tus clientes y prospectos, con plantillas y seguimiento de entregas.',
+        image: 'commu.jpg',
+      },
+      {
+        icon: 'fa-binoculars',
+        label: 'Consultador',
+        shortLabel: 'Consultador',
+        group: 'Comercial',
+        path: '/app/consultador',
+        heroTitle: 'Inteligencia de comercio exterior',
+        heroText: 'Datos de importadores peruanos desde SUNAT: volumen, frecuencia y mercados para prospectar con precisión.',
+        image: 'consultee.webp',
+      },
+      {
+        icon: 'fa-chart-line',
+        label: 'Métricas & Config',
+        shortLabel: 'Métricas',
+        group: 'Gestión',
+        path: '/app/configuracion',
+        heroTitle: 'Tu operación en tiempo real',
+        heroText: 'KPIs de ventas, cobros, contenedores y productividad por vendedor, con branding y permisos a medida.',
+        image: 'kpi.webp',
+      },
     ],
     support: [
       { icon: "fas fa-headset", label: "Soporte Técnico", path: "/soporte" },
@@ -383,14 +463,15 @@ export const SITE_CONTENT = {
       { icon: "fas fa-envelope", label: "Contacto", path: "/soporte" },
     ],
     cta: {
-      login: { label: "Ingresar", href: "https://app.logia.lat/login/" },
+      login: { label: "Iniciar sesión", href: "https://app.logia.lat/login/" },
+      demo: { label: "Ver demo", href: "https://demo.logia.lat" },
       trial: { label: "Prueba Gratis", href: "https://app.logia.lat/register/company/" },
     },
   },
 
   // ─── FOOTER ────────────────────────────────────────────────
   footer: {
-    bio: "Plataforma integral para agencias de carga en Latinoamérica. Automatiza cotizaciones, operaciones y facturación electrónica con seguridad de grado empresarial. Tus datos están protegidos y separados.",
+    bio: "Plataforma integral para agencias de carga, operadores logísticos y agencias de aduanas en Latinoamérica. Automatiza cotizaciones, operaciones y facturación electrónica con seguridad de grado empresarial. Tus datos están protegidos y separados.",
     social: [
       // { icon: "fab fa-x-twitter", href: "https://twitter.com/logia_lat", label: "Twitter" },
       // { icon: "fab fa-linkedin-in", href: "https://linkedin.com/company/logia", label: "LinkedIn" },
@@ -402,18 +483,22 @@ export const SITE_CONTENT = {
       { icon: "fas fa-briefcase", href: "https://app.logia.lat/recruitment/empleos/", label: "Busca Empleo en Logística" },
     ],
     solutions: [
-      { icon: "fas fa-cubes", label: "Ecosistema", path: "/#app-gallery" },
-      { icon: "fas fa-calculator", label: "Cotizador Profesional", path: "/app/cotizador" },
-      { icon: "fas fa-box-open", label: "Shipments", path: "/app/shipments" },
+      { icon: "fas fa-cubes", label: "Ecosistema", path: "/#producto" },
+      { icon: "fas fa-calculator", label: "Cotizador Logístico", path: "/app/cotizador" },
+      { icon: "fas fa-box-open", label: "Gestor de Embarques", path: "/app/shipments" },
       { icon: "fas fa-file-invoice", label: "App Facturación", path: "/app/facturacion" },
       { icon: "fas fa-user-tie", label: "Reclutamiento ATS", path: "/app/reclutamiento" },
       { icon: "fas fa-paper-plane", label: "Comunicaciones", path: "/app/comunicaciones" },
       { icon: "fas fa-binoculars", label: "Consultador", path: "/app/consultador" },
+      { icon: "fas fa-chart-line", label: "Métricas & Config", path: "/app/configuracion" },
     ],
     resources: [
       { icon: "fas fa-graduation-cap", label: "Academy", path: "/academy" },
-      { icon: "fas fa-microchip", label: "Infraestructura", path: "/#tecnologia" },
-      { icon: "fas fa-tags", label: "Planes y Precios", path: "/#precios" },
+      { icon: "fas fa-play", label: "Tutoriales", path: "/tutoriales" },
+      { icon: "fas fa-code", label: "Desarrollo a medida", path: "/servicios" },
+      { icon: "fas fa-laptop-code", label: "Demo interactiva", path: "https://demo.logia.lat", external: true },
+      { icon: "fas fa-microchip", label: "Sobre nosotros", path: "/#nosotros" },
+      { icon: "fas fa-tags", label: "Planes", path: "/#precios" },
       { icon: "fas fa-headset", label: "Soporte Técnico", path: "/soporte" },
       { icon: "fas fa-circle-question", label: "Preguntas Frecuentes", path: "/preguntas" },
       { icon: "fas fa-briefcase", label: "¿Buscas empleo?", path: "https://app.logia.lat/recruitment/empleos/", external: true },
@@ -426,10 +511,12 @@ export const SITE_CONTENT = {
     ],
     contact: {
       email: "soporte@logia.lat",
+      privacyEmail: "privacidad@logia.lat",
       whatsapp: "+51 977 824 138",
       whatsappLink: "https://wa.me/51977824138",
       hours: "Lun - Vie: 9:00 AM - 6:00 PM (PET)",
+      location: "Lima, Perú",
     },
-    version: "v2.4.0",
+    version: "v2.5.0",
   },
 };

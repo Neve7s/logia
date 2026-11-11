@@ -16,7 +16,7 @@ const Mailer = () => {
               Correos profesionales que <span className="text-highlight">abren puertas</span>
             </h2>
             <p className="app-page-subtitle">
-              Presenta tu agencia a prospectos con correos corporativos que impactan. 
+              Presenta tu empresa a prospectos con correos corporativos que impactan. 
               Envía emails masivos para eventos, saludos y promociones. Tu imagen profesional habla por ti antes de que hables.
             </p>
             <div className="app-page-metric">
@@ -84,7 +84,7 @@ const Mailer = () => {
                   <div className="app-page-feature-icon"><i className="fas fa-pen-fancy"></i></div>
                   <h4>Correos de prospección</h4>
                 </div>
-                <p>Plantillas profesionales para presentar tu agencia a nuevas empresas. Personaliza con logo, servicios y propuesta de valor.</p>
+                <p>Plantillas profesionales para presentar tu empresa a nuevos clientes. Personaliza con logo, servicios y propuesta de valor.</p>
               </div>
             </div>
             <div className="col-md-4">
@@ -102,7 +102,7 @@ const Mailer = () => {
                   <div className="app-page-feature-icon"><i className="fas fa-wand-magic-sparkles"></i></div>
                   <h4>Templates con tu marca</h4>
                 </div>
-                <p>Diseños profesionales con los colores y logo de tu agencia. Cada correo es una tarjeta de presentación.</p>
+                <p>Diseños profesionales con los colores y logo de tu empresa. Cada correo es una tarjeta de presentación.</p>
               </div>
             </div>
             <div className="col-md-4">
@@ -120,9 +120,14 @@ const Mailer = () => {
         <div className="app-page-cta text-center">
           <h3>¿Listo para que tus correos abran puertas?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
-          <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
-          </a>
+          <div className="app-page-cta-actions">
+            <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
+            </a>
+            <a href="https://demo.logia.lat" className="btn-outline-premium" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-laptop-code" style={{ marginRight: '0.5rem' }}></i> Ver demo
+            </a>
+          </div>
         </div>
 
       </div>

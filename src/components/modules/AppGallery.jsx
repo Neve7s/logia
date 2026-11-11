@@ -24,7 +24,6 @@ const imageMap = {
   'pdf-docs.jpg': pdfDocs,
   'ats.jpg': atsImg,
   'consultee.webp': consulteeImg,
-  'kpi.webp': kpiImg,
   'commu.jpg': commuImg,
 };
 
@@ -45,16 +44,16 @@ const AppGallery = () => {
   };
 
   return (
-    <section id="app-gallery" className="app-gallery-section py-large position-relative">
+    <section id="producto" className="app-gallery-section py-large position-relative">
       <div className="glow-orb" style={{ top: '10%', right: '5%', background: 'var(--accent-purple)', opacity: '0.2' }}></div>
       <div className="container-x">
-        <div className="text-center mb-5">
-          <span className="tagline">{appGallery.tagline}</span>
-          <h2 className="section-title" dangerouslySetInnerHTML={{ __html: appGallery.title }} />
-          <p className="section-desc mx-auto" style={{ maxWidth: '700px' }}>
-            {appGallery.subtitle}
-          </p>
-        </div>
+        <header className="section-head">
+          <div className="section-head-main">
+            <span className="tagline">{appGallery.tagline}</span>
+            <h2 className="section-title" dangerouslySetInnerHTML={{ __html: appGallery.title }} />
+            <p className="section-desc">{appGallery.subtitle}</p>
+          </div>
+        </header>
 
         {/* App Selector Tabs */}
         <div className="app-tabs mb-5">
@@ -64,8 +63,9 @@ const AppGallery = () => {
                 key={app.id}
                 className={`app-tab ${i === activeApp ? 'active' : ''}`}
                 onClick={() => { setActiveApp(i); setActiveFeature(0); }}
+                aria-pressed={i === activeApp}
               >
-                <i className={`fas ${app.icon}`}></i>
+                <i className={`fas ${app.icon}`} aria-hidden="true"></i>
                 <span>{app.title}</span>
               </button>
             ))}
@@ -139,14 +139,14 @@ const AppGallery = () => {
               </div>
               {/* Nav arrows */}
               <div className="app-carousel-nav">
-                <button className="app-nav-btn" onClick={prevApp}>
-                  <i className="fas fa-chevron-left"></i>
+                <button className="app-nav-btn" onClick={prevApp} aria-label="Aplicación anterior">
+                  <i className="fas fa-chevron-left" aria-hidden="true"></i>
                 </button>
                 <span className="app-nav-counter">
                   {activeApp + 1} / {appGallery.apps.length}
                 </span>
-                <button className="app-nav-btn" onClick={nextApp}>
-                  <i className="fas fa-chevron-right"></i>
+                <button className="app-nav-btn" onClick={nextApp} aria-label="Siguiente aplicación">
+                  <i className="fas fa-chevron-right" aria-hidden="true"></i>
                 </button>
               </div>
             </div>

@@ -1,0 +1,350 @@
+/* ==========================================================================
+   SITE FOOTER — editorial / corporate footer
+   --------------------------------------------------------------------------
+   Reference: Adobe-style footer (black canvas, plain link columns, featured
+   product chips, compact legal row and an oversized cropped wordmark).
+   Overrides the legacy footer rules in index.css. Shared by every page.
+   ========================================================================== */
+
+.footer-executive {
+  position: relative;
+  padding: 5rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000;
+  backdrop-filter: none;
+  overflow: hidden;
+}
+
+.footer-executive .container-x {
+  max-width: var(--site-container);
+}
+
+.footer-executive i {
+  color: inherit;
+}
+
+/* ── Link columns ────────────────────────────────────────────────────────── */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.15fr 1fr;
+  gap: 2.5rem 3rem;
+  align-items: start;
+}
+
+.footer-brand {
+  display: block;
+  max-width: 340px;
+}
+
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.footer-logo {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.footer-brand-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.footer-brand-name span {
+  color: var(--accent-indigo);
+}
+
+.footer-bio {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1.35rem;
+  font-size: 0.8rem;
+}
+
+.footer-contact a,
+.footer-contact span {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-col .footer-heading,
+.footer-featured .footer-heading {
+  margin: 0 0 1.1rem;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-list a {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Featured products ───────────────────────────────────────────────────── */
+
+.footer-featured {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-featured .footer-heading {
+  margin-bottom: 0.9rem;
+}
+
+.footer-featured-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-featured-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.footer-featured-item i {
+  color: var(--accent-indigo);
+  font-size: 0.78rem;
+}
+
+.footer-featured-item:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+/* ── Legal row ───────────────────────────────────────────────────────────── */
+
+.footer-legal-note {
+  max-width: 900px;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border: 0;
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.footer-legal-note a {
+  color: rgba(255, 255, 255, 0.58);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-underline-offset: 2px;
+}
+
+.footer-legal-note a:hover {
+  color: #fff;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-legal-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.76rem;
+}
+
+.footer-legal-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-legal-info a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-region {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.footer-region i {
+  font-size: 0.72rem;
+}
+
+.footer-version {
+  padding: 0.12rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: 'Geist', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin: 0;
+}
+
+.footer-executive .footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  padding: 0.2rem;
+  border-radius: 0;
+  background: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-executive .footer-social-link:hover {
+  background: none;
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Oversized cropped wordmark ──────────────────────────────────────────── */
+
+.footer-wordmark {
+  display: flex;
+  align-items: flex-start;
+  height: 0.72em;
+  margin-top: 3rem;
+  overflow: hidden;
+  color: #fff;
+  font-size: clamp(6rem, 34vw, 34rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+
+.footer-wordmark-accent {
+  color: var(--accent-indigo);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-executive {
+    padding-top: 3.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+  }
+
+  .footer-featured {
+    margin-top: 2.75rem;
+  }
+
+  .footer-legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .footer-social {
+    gap: 1.35rem;
+  }
+
+  .footer-wordmark {
+    margin-top: 2.5rem;
+    font-size: clamp(5rem, 34vw, 12rem);
+    height: 0.72em;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-featured-list {
+    gap: 0.5rem;
+  }
+}

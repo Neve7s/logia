@@ -11,6 +11,7 @@ out/
 .env
 .env.*
 !.env.example
+!.env.example
 
 # Logs
 *.log
@@ -64,6 +65,7 @@ POST-LINKEDIN.md
 /CampaignsMarketing
 /post-to-sell-logia-app/
 /guiones-logia
+/presentation
 
 # Generated banners (local builds)
 assets/banners/

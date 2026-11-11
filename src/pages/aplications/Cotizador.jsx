@@ -5,7 +5,7 @@ import img from '../../assets/ecosistema/cotizador.webp';
 
 const Cotizador = () => {
   return (
-    <PageLayout title="Cotizador Profesional" tagline="Cotiza en minutos, no hagas esperar a tu cliente" fullWidth={true}>
+    <PageLayout title="Cotizador Logístico" tagline="Cotiza en minutos, no hagas esperar a tu cliente" fullWidth={true}>
       <div className="app-page">
 
         {/* Hero de la app */}
@@ -31,8 +31,8 @@ const Cotizador = () => {
           </div>
           <div className="col-lg-6">
             <div className="app-page-image">
-              <img src={img} alt="Cotizador Pro" className="img-fluid rounded-4" />
-              <div className="app-page-image-tag">Cotizador Profesional — Panel Principal</div>
+              <img src={img} alt="Cotizador Logístico" className="img-fluid rounded-4" />
+              <div className="app-page-image-tag">Cotizador Logístico — Panel Principal</div>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ const Cotizador = () => {
         {/* La Solución */}
         <div className="app-page-section">
           <h3 className="app-page-section-title">
-            <i className="fas fa-check-circle"></i> Cómo Cotizador Pro resuelve esto
+            <i className="fas fa-check-circle"></i> Cómo Cotizador Logístico resuelve esto
           </h3>
           <div className="row g-4">
             <div className="col-md-4">
@@ -149,7 +149,7 @@ const Cotizador = () => {
               <div className="app-page-workflow-number">1</div>
               <div className="app-page-workflow-content">
                 <h4>El cliente solicita cotización</h4>
-                <p>Por WhatsApp, correo o llamada. El vendedor abre Cotizador Pro.</p>
+                <p>Por WhatsApp, correo o llamada. El vendedor abre Cotizador Logístico.</p>
               </div>
             </div>
             <div className="app-page-workflow-connector"><i className="fas fa-arrow-down"></i></div>
@@ -183,9 +183,14 @@ const Cotizador = () => {
         <div className="app-page-cta text-center">
           <h3>¿Listo para cotizar 15x más rápido?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
-          <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
-          </a>
+          <div className="app-page-cta-actions">
+            <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
+            </a>
+            <a href="https://demo.logia.lat" className="btn-outline-premium" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-laptop-code" style={{ marginRight: '0.5rem' }}></i> Ver demo
+            </a>
+          </div>
         </div>
 
       </div>

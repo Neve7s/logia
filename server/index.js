@@ -1,17 +1,23 @@
 import { Resend } from 'resend';
 import OpenAI from 'openai';
 
-const resend = new Resend(process.env.RESEND_API);
+const resendApiKey = process.env.RESEND_API || process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
+
+const CONTACT_TO = process.env.CONTACT_TO_EMAIL || 'soporte@logia.lat';
+const CONTACT_FROM = process.env.CONTACT_FROM_EMAIL || 'LogIA Contacto <suscriptores@logia.lat>';
+const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
+const PORT = Number(process.env.PORT) || 3001;
 
 // Cliente NVIDIA para proxy del chat
 const nvidiaClient = new OpenAI({
-  apiKey: process.env.VITE_NVIDIA_API_KEY,
+  apiKey: process.env.NVIDIA_API_KEY || process.env.VITE_NVIDIA_API_KEY,
   baseURL: 'https://integrate.api.nvidia.com/v1',
 });
 
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Origin': CORS_ORIGIN,
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
@@ -59,14 +65,32 @@ function escapeHtml(str) {
 
 // --- Server ---
 Bun.serve({
-  port: 3001,
+  port: PORT,
   async fetch(req) {
     if (req.method === 'OPTIONS') {
       return new Response(null, { headers: corsHeaders });
     }
 
+    if (req.method === 'GET' && new URL(req.url).pathname === '/api/health') {
+      return new Response(
+        JSON.stringify({
+          ok: true,
+          service: 'logia-api',
+          emailConfigured: Boolean(resend),
+        }),
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     if (req.method === 'POST' && new URL(req.url).pathname === '/api/contact') {
       const ip = getClientIP(req);
+
+      if (!resend) {
+        return new Response(
+          JSON.stringify({ error: 'Servicio de correo no configurado (RESEND_API)' }),
+          { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
 
       // Rate limit check
       if (isRateLimited(ip)) {
@@ -117,8 +141,8 @@ Bun.serve({
         const safeMessage = escapeHtml(message);
 
         const { data, error } = await resend.emails.send({
-          from: 'LogIA Contacto <suscriptores@logia.lat>',
-          to: ['nosyeih@gmail.com'],
+          from: CONTACT_FROM,
+          to: [CONTACT_TO],
           subject: `[LogIA] ${safeSubject}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -149,7 +173,7 @@ Bun.serve({
               </p>
             </div>
           `,
-          reply_to: email,
+          replyTo: email,
         });
 
         if (error) {
@@ -177,7 +201,7 @@ Bun.serve({
     if (req.method === 'POST' && new URL(req.url).pathname === '/api/chat') {
       try {
         const body = await req.json();
-        const { messages, model = 'nvidia/nemotron-3-nano-30b-a3b' } = body;
+        const { messages, model = 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning' } = body;
 
         if (!messages || !Array.isArray(messages)) {
           return new Response(
@@ -215,4 +239,4 @@ Bun.serve({
   },
 });
 
-console.log('🚀 API Server running on http://localhost:3001');
+console.log(`🚀 API Server running on http://localhost:${PORT}`);

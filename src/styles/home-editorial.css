@@ -1,0 +1,1405 @@
+/* ==========================================================================
+   HOME — Editorial / corporate presentation layer
+   --------------------------------------------------------------------------
+   Scope: `.home-main` (landing page only).
+   Keeps the existing dark background, indigo/purple accents and content.
+   Only refines hierarchy, rhythm, grid and card treatment so the sections
+   read as a formal, corporate site instead of a neon SaaS template.
+   Loaded AFTER index.css so it can refine the legacy section styles.
+   ========================================================================== */
+
+/* ── 1. Tokens & vertical rhythm ─────────────────────────────────────────── */
+
+.home-main {
+  --home-container: var(--site-container);
+  --home-gutter: 2.25rem;
+  --home-rule: rgba(255, 255, 255, 0.08);
+  --home-rule-strong: rgba(255, 255, 255, 0.14);
+  --home-surface: rgba(255, 255, 255, 0.02);
+  --home-surface-strong: rgba(255, 255, 255, 0.04);
+  --home-muted: rgba(255, 255, 255, 0.62);
+  --home-muted-soft: rgba(255, 255, 255, 0.5);
+  --home-card-radius: 12px;
+  --py-section: 7rem;
+}
+
+.home-main .container-x {
+  max-width: var(--home-container);
+  padding-inline: var(--home-gutter);
+}
+
+.home-main .py-large {
+  padding-block: var(--py-section);
+}
+
+/* Thin editorial rules mark the start of each block. */
+.home-main > section + section {
+  border-top: 1px solid var(--home-rule);
+}
+
+/* The dashboard showcase belongs to the hero, no rule above it. */
+.home-main > .hero-crossfade-section {
+  border-top: 0;
+}
+
+/* ── 2. Section headers (editorial, left aligned) ────────────────────────── */
+
+.home-main .section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-bottom: 1.75rem;
+  margin-bottom: 2.75rem;
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.home-main .section-head-main {
+  max-width: 800px;
+}
+
+.home-main .section-head-aside {
+  flex-shrink: 0;
+}
+
+.home-main .tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.home-main .tagline::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent-indigo);
+}
+
+.home-main .section-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.home-main .section-head .section-title {
+  margin-bottom: 0.9rem;
+}
+
+.home-main .section-desc {
+  max-width: 62ch;
+  margin-bottom: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--home-muted);
+  text-wrap: pretty;
+}
+
+/* ── 3. Hero (centered, per the mixed header rule) ───────────────────────── */
+
+.home-main .hero-high-end {
+  padding-top: 128px;
+  padding-bottom: 72px;
+}
+
+/* Hero stage: brand hero (default) or split application hero */
+.home-main .hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home-main .hero-stage {
+  width: 100%;
+}
+
+/* General (brand) hero — the previous centered layout */
+.home-main .hero-general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Split layout: copy on the left, clear product image on the right */
+.home-main .hero-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  text-align: left;
+}
+
+.home-main .hero-copy-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-main .hero-visual {
+  width: 100%;
+}
+
+.home-main .hero-brand-reveal {
+  margin-bottom: 2rem;
+}
+
+.home-main .hero-log-text {
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.home-main .hero-badge {
+  gap: 0.55rem;
+  margin-bottom: 1.75rem;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.home-main .hero-badge-text {
+  color: #e0e7ff;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.home-main .hero-badge-sub {
+  color: var(--home-muted-soft);
+  font-size: 0.76rem;
+}
+
+.home-main .hero-title-main {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.2rem, 3.9vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.home-main .hero-general .hero-title-main {
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+}
+
+.home-main .hero-lead {
+  max-width: 48ch;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--home-muted);
+}
+
+.home-main .hero-general .hero-lead {
+  max-width: 60ch;
+}
+
+/* Audience segments under the headline (agencies, operators, customs). */
+.home-main .hero-segments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.55rem 1.1rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-main .hero-general .hero-segments {
+  justify-content: center;
+  margin: 1.5rem 0 1.4rem;
+}
+
+.home-main .hero-segments li + li {
+  padding-left: 1.1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Keep long-form copy readable inside the wider container. */
+.home-main .app-detail-problem p,
+.home-main .app-detail-solution p {
+  max-width: 58ch;
+}
+
+.home-main .feature-list-premium p {
+  max-width: 56ch;
+}
+
+.home-main .cta-band-text {
+  max-width: 62ch;
+  margin-inline: auto;
+}
+
+.home-main .hero-cta-group {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem 1.4rem;
+  margin-top: 2.25rem;
+}
+
+.home-main .hero-general .hero-cta-group {
+  justify-content: center;
+}
+
+/* Product image panel */
+.home-main .hero-visual-frame {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #070a10;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.home-main .hero-visual-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.home-main .hero-visual-bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.home-main .hero-visual-screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #05070d;
+}
+
+.home-main .hero-visual-screen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.home-main .hero-visual-screen img.is-active {
+  opacity: 1;
+}
+
+/* Small positioning line above the app headline. */
+.home-main .hero-eyebrow {
+  display: block;
+  margin-bottom: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── 4. Dashboard showcase ───────────────────────────────────────────────── */
+
+.home-main .hero-crossfade-section {
+  padding: 2.5rem 0 5rem;
+}
+
+.home-main .hero-crossfade-wrapper {
+  border-radius: var(--home-card-radius);
+  border: 1px solid var(--home-rule-strong);
+  background: #05070d;
+  box-shadow: none;
+}
+
+.home-main .hero-crossfade-glow {
+  display: none;
+}
+
+/* ── 4b. Solution navigator at the foot of the hero ─────────────────────── */
+
+.home-main .hero-solutions {
+  width: 100%;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--home-rule-strong);
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+.home-main .hero-solutions-track {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.home-main .hero-solutions-track::-webkit-scrollbar {
+  display: none;
+}
+
+.home-main .hero-solutions-track > li {
+  flex: 1 0 130px;
+  scroll-snap-align: start;
+}
+
+.home-main .hero-solution-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  width: 100%;
+  height: 100%;
+  min-height: 104px;
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  font-family: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.home-main .hero-solution-card:hover {
+  border-color: rgba(165, 180, 252, 0.5);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.home-main .hero-solution-card.is-active {
+  border-color: rgba(165, 180, 252, 0.72);
+  background: rgba(99, 102, 241, 0.16);
+}
+
+.home-main .hero-solution-card.is-active .hero-solution-icon {
+  background: rgba(99, 102, 241, 0.3);
+  color: #fff;
+}
+
+.home-main .hero-solution-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: rgba(99, 102, 241, 0.14);
+  color: #a5b4fc;
+  font-size: 0.85rem;
+}
+
+.home-main .hero-solution-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.home-main .hero-solution-arrow {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.6rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.home-main .hero-solution-card:hover .hero-solution-arrow {
+  color: #fff;
+  transform: translateX(2px);
+}
+
+/* ── 5. Cómo funciona ────────────────────────────────────────────────────── */
+
+.home-main .how-step-card {
+  padding: 2rem;
+  border-radius: var(--home-card-radius);
+  border: 1px solid var(--home-rule);
+  background: var(--home-surface);
+  backdrop-filter: none;
+  text-align: left;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.home-main .how-step-card:hover {
+  transform: none;
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.home-main .how-step-number {
+  position: static;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--accent-indigo);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-main .how-step-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 0 1.25rem;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.12);
+  font-size: 1rem;
+}
+
+.home-main .how-step-title {
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.home-main .how-step-desc {
+  color: var(--home-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.home-main .how-step-duration {
+  align-self: flex-start;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 6px;
+  background: transparent;
+  color: #6ee7b7;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── 6. Admin hub ────────────────────────────────────────────────────────── */
+
+.home-main .admin-hub-section {
+  padding-block: var(--py-section);
+  background: transparent;
+}
+
+.home-main .feature-list-premium {
+  margin-top: 2.25rem;
+  border-top: 1px solid var(--home-rule);
+}
+
+.home-main .feature-list-premium li {
+  gap: 1rem;
+  margin: 0;
+  padding: 1.4rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--home-rule);
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  transition: none;
+}
+
+.home-main .feature-list-premium li:hover {
+  transform: none;
+  border-color: var(--home-rule);
+  background: transparent;
+}
+
+.home-main .feature-list-premium li > i {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--accent-indigo);
+  font-size: 0.9rem;
+}
+
+.home-main .feature-list-premium h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.home-main .feature-list-premium p {
+  margin: 0;
+  color: var(--home-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.home-main .admin-crossfade-wrapper {
+  border-radius: var(--home-card-radius);
+  border: 1px solid var(--home-rule-strong);
+  box-shadow: none;
+}
+
+.home-main .admin-crossfade-glow {
+  display: none;
+}
+
+.home-main .system-mockup-tag {
+  border-radius: 6px;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(5, 7, 13, 0.82);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── 7. App gallery ──────────────────────────────────────────────────────── */
+
+.home-main .glow-orb {
+  display: none;
+}
+
+.home-main .app-tabs {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.home-main .app-tabs-scroll {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+}
+
+.home-main .app-tab {
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.home-main .app-tab:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.home-main .app-tab.active {
+  border-bottom-color: var(--accent-indigo);
+  background: transparent;
+  color: #fff;
+}
+
+.home-main .app-detail-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--home-surface-strong);
+}
+
+.home-main .app-detail-title {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.home-main .app-detail-tagline {
+  color: var(--home-muted);
+  font-size: 0.85rem;
+}
+
+.home-main .app-detail-problem,
+.home-main .app-detail-solution {
+  padding: 0.1rem 0 0.1rem 1.1rem;
+  border: 0;
+  border-left: 2px solid;
+  border-radius: 0;
+  background: transparent;
+  margin-bottom: 1.1rem;
+}
+
+.home-main .app-detail-problem {
+  border-left-color: rgba(248, 113, 113, 0.55);
+}
+
+.home-main .app-detail-solution {
+  border-left-color: rgba(52, 211, 153, 0.55);
+}
+
+.home-main .app-detail-time-saved {
+  margin-bottom: 1.4rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 6px;
+  background: transparent;
+  color: #a5b4fc;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.home-main .app-feature-item {
+  border-radius: 6px;
+}
+
+/* Secondary action inside the gallery: ghost button, not a gradient pill. */
+.home-main .btn-app-detail {
+  margin-top: 0;
+  padding: 0.6rem 1.05rem;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: transparent;
+  color: #e0e7ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  overflow: visible;
+}
+
+.home-main .btn-app-detail::before {
+  display: none;
+}
+
+.home-main .btn-app-detail:hover {
+  transform: none;
+  border-color: rgba(165, 180, 252, 0.55);
+  background: rgba(99, 102, 241, 0.1);
+  color: #fff;
+  box-shadow: none;
+}
+
+.home-main .btn-app-detail:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.home-main .btn-app-detail-icon {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+}
+
+.home-main .btn-app-detail:hover .btn-app-detail-icon {
+  background: none;
+  transform: translateX(2px);
+}
+
+.home-main .app-detail-image-card {
+  border-radius: var(--home-card-radius);
+  border-color: var(--home-rule-strong);
+  background: #05070d;
+}
+
+.home-main .app-nav-btn {
+  border-radius: 8px;
+}
+
+.home-main .feature-card-premium {
+  padding: 2.5rem;
+  border-radius: var(--home-card-radius);
+  border: 1px solid var(--home-rule);
+  background: var(--home-surface);
+  backdrop-filter: none;
+}
+
+.home-main .feature-card-premium:hover {
+  transform: none;
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: none;
+}
+
+.home-main .feature-card-premium .card-icon {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.home-main .feature-card-premium .card-title {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.home-main .feature-card-premium .card-image-placeholder {
+  border-radius: 10px;
+  border-color: var(--home-rule);
+  box-shadow: none;
+  transform: none;
+}
+
+.home-main .feature-card-premium .card-image-placeholder:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── 8. Tech hub ─────────────────────────────────────────────────────────── */
+
+.home-main .tech-hub-section {
+  padding-block: var(--py-section);
+}
+
+.home-main .tech-grid {
+  max-width: none;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-main .tech-card {
+  grid-column: span 2;
+  padding: 1.35rem;
+  border-radius: 12px;
+  border: 1px solid var(--home-rule);
+  background: rgba(5, 7, 13, 0.55);
+  backdrop-filter: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.home-main .tech-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.06);
+}
+
+/* The platform card and the five feature cards share the same rhythm: 3 × 2. */
+.home-main .tech-card-core {
+  grid-column: span 2;
+  justify-content: flex-start;
+  padding: 1.35rem;
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(5, 7, 13, 0.55);
+}
+
+.home-main .tech-modal {
+  border-radius: var(--home-card-radius);
+  border: 1px solid var(--home-rule-strong);
+  background: #080a12;
+}
+
+/* ── 8b. Sobre nosotros ─────────────────────────────────────────────────── */
+
+.home-main .about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 4rem;
+  align-items: start;
+}
+
+.home-main .about-lead {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--home-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.home-main .about-commitments {
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--home-rule);
+}
+
+.home-main .about-commitments li {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--home-rule);
+}
+
+.home-main .about-commitment-index {
+  flex: 0 0 auto;
+  padding-top: 0.15rem;
+  color: var(--accent-indigo);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-main .about-commitments h3 {
+  margin: 0 0 0.35rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.home-main .about-commitments p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--home-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.home-main .about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  color: #c7d2fe;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.home-main .about-link:hover {
+  color: #fff;
+}
+
+.home-main .about-link i {
+  font-size: 0.7rem;
+  transition: transform 0.18s ease;
+}
+
+.home-main .about-link:hover i {
+  transform: translateX(3px);
+}
+
+.home-main .about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.home-main .about-card {
+  padding: 2rem;
+  border: 1px solid var(--home-rule);
+  border-radius: var(--home-card-radius);
+  background: var(--home-surface);
+}
+
+.home-main .about-card-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--accent-indigo);
+  font-size: 0.95rem;
+}
+
+.home-main .about-card h3 {
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.home-main .about-card p {
+  margin: 0;
+  color: var(--home-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ── 9. Pricing ──────────────────────────────────────────────────────────── */
+
+.home-main .pricing-controls {
+  align-items: flex-end;
+  margin: 0;
+}
+
+.home-main .pricing-savings-msg {
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+.home-main .pricing-grid {
+  margin-top: 0;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.home-main .plan-card {
+  padding: 1.75rem;
+  border-radius: var(--home-card-radius);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: var(--home-surface);
+  backdrop-filter: none;
+}
+
+.home-main .plan-card:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: none;
+}
+
+.home-main .plan-featured {
+  transform: none;
+  border-color: rgba(99, 102, 241, 0.55) !important;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.07), var(--home-surface));
+  box-shadow: none;
+}
+
+.home-main .plan-featured:hover {
+  box-shadow: none;
+}
+
+.home-main .featured-badge {
+  top: -11px;
+  padding: 0.28rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: rgba(20, 24, 48, 0.95);
+  color: #c7d2fe;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-main .plan-name {
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.home-main .plan-custom {
+  border-style: dashed;
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+.home-main .plan-custom:hover {
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: none;
+}
+
+.home-main .pricing-note {
+  margin-top: 2rem;
+  color: var(--home-muted-soft);
+  font-size: 0.8rem;
+}
+
+/* ── 10. Support ─────────────────────────────────────────────────────────── */
+
+.home-main .support-channel-card {
+  padding: 1.35rem;
+  border-radius: 12px;
+  border: 1px solid var(--home-rule);
+  background: var(--home-surface);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.home-main .support-channel-card:hover {
+  transform: none;
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+.home-main .support-channel-icon {
+  border-radius: 9px;
+  background: var(--home-surface-strong);
+  color: #a5b4fc;
+}
+
+.home-main .support-channel-body strong {
+  font-weight: 700;
+}
+
+.home-main .support-meta {
+  margin-top: 1.75rem;
+  color: var(--home-muted-soft);
+}
+
+/* ── 11. Closing CTA band (centered) ─────────────────────────────────────── */
+
+.home-main .cta-band-section {
+  padding: var(--py-section) 0;
+}
+
+.home-main .cta-band {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.16), transparent 62%),
+    var(--home-surface);
+  text-align: center;
+}
+
+.home-main .cta-band-copy {
+  max-width: 720px;
+}
+
+.home-main .cta-band-title {
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.home-main .cta-band-text {
+  color: var(--home-muted);
+}
+
+.home-main .cta-band-points {
+  justify-content: center;
+}
+
+.home-main .cta-band-actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.home-main .cta-band-contact {
+  color: var(--home-muted-soft);
+}
+
+/* ── 12. Buttons: same palette, lighter elevation ────────────────────────── */
+
+.home-main .btn-executive-large,
+.home-main .btn-outline-premium {
+  padding: 1rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.home-main .btn-executive-large {
+  box-shadow: none;
+}
+
+.home-main .btn-executive-large:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.28);
+}
+
+.home-main .btn-outline-premium {
+  backdrop-filter: none;
+}
+
+/* ── 13. Responsive ──────────────────────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .home-main .pricing-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-main .hero-split .hero-segments {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .home-main .hero-split .hero-segments li + li {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-main {
+    --py-section: 5.5rem;
+    --home-gutter: 1.75rem;
+  }
+
+  .home-main .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .home-main .hero-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
+  }
+
+  .home-main .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .home-main .section-head-aside {
+    width: 100%;
+  }
+
+  .home-main .pricing-controls {
+    align-items: flex-start;
+  }
+
+  .home-main .pricing-savings-msg {
+    text-align: left;
+  }
+
+  .home-main .tech-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-main .tech-grid .tech-card,
+  .home-main .tech-grid .tech-card:nth-child(5),
+  .home-main .tech-grid .tech-card:nth-child(6) {
+    grid-column: span 1;
+  }
+
+  .home-main .tech-grid .tech-card-core {
+    grid-column: span 1;
+  }
+
+  .home-main .cta-band {
+    padding: 3rem 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-main {
+    --py-section: 3.5rem;
+    --home-gutter: 1.25rem;
+  }
+
+  .home-main .hero-high-end {
+    padding-top: 104px;
+    padding-bottom: 40px;
+  }
+
+  .home-main .hero-badge {
+    margin-bottom: 1.25rem;
+    padding: 0.35rem 0.8rem;
+  }
+
+  .home-main .hero-brand-reveal {
+    margin-bottom: 1.25rem;
+  }
+
+  .home-main .hero-log-text {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+  }
+
+  .home-main .container-3d-wrapper {
+    transform: scale(1.55);
+    margin-left: 16px;
+    margin-top: 0;
+  }
+
+  .home-main .hero-general .hero-title-main {
+    font-size: clamp(1.9rem, 8.2vw, 2.4rem);
+  }
+
+  .home-main .hero-mobile-cta {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .home-main .hero-solutions {
+    margin-top: 2.5rem;
+  }
+
+  .home-main .hero-solution-card {
+    min-height: 92px;
+  }
+
+  .home-main .hero-solution-bottom {
+    font-size: 0.75rem;
+  }
+
+  .home-main .hero-title-main {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .home-main .hero-lead {
+    font-size: 1rem;
+  }
+
+  .home-main .hero-title-main {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .home-main .section-title {
+    font-size: 1.8rem;
+  }
+
+  .home-main .section-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Sobre nosotros: compromisos en fila horizontal */
+  .home-main .about-commitments {
+    display: flex;
+    gap: 0.7rem;
+    margin-top: 1.75rem;
+    padding: 0 0 0.4rem;
+    border-top: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-main .about-commitments::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-main .about-commitments li {
+    flex: 0 0 82%;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.1rem;
+    border: 1px solid var(--home-rule);
+    border-radius: 12px;
+    background: var(--home-surface);
+    scroll-snap-align: start;
+  }
+
+  .home-main .about-commitment-index {
+    padding-top: 0;
+  }
+
+  /* Soporte: canales en 2 columnas (2×2) */
+  .home-main .support-channels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .home-main .support-channel-card {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem;
+  }
+
+  .home-main .support-channel-icon {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+  }
+
+  .home-main .support-channel-body > span:not(.support-channel-action) {
+    font-size: 0.76rem;
+  }
+
+  /* Precios: carrusel horizontal con snap */
+  .home-main .pricing-grid {
+    display: grid !important;
+    grid-template-columns: none !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 82%;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0 0 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-main .pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-main .pricing-grid .plan-card {
+    width: auto;
+    max-width: none;
+    flex: unset;
+    scroll-snap-align: start;
+  }
+
+  .home-main .section-head {
+    margin-bottom: 2rem;
+  }
+
+  /* Keep the billing selector on a single, scrollable row. */
+  .home-main .pricing-toggle {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 4px;
+    border-radius: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .home-main .pricing-toggle::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-main .period-btn {
+    flex: 0 0 auto;
+    padding: 6px 10px;
+    font-size: 0.74rem;
+  }
+
+  .home-main .how-step-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .home-main .feature-card-premium {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .home-main .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-main .cta-band {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .home-main .cta-band-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-main .cta-band-actions > * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-main .hero-segments {
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-main .hero-segments li + li {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .home-main .hero-log-text {
+    font-size: 2.3rem;
+  }
+
+  .home-main .container-3d-wrapper {
+    transform: scale(1.35);
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-main .hero-badge-sub {
+    display: none;
+  }
+
+  .home-main .hero-solution-card {
+    min-height: 88px;
+  }
+}

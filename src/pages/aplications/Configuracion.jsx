@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/kpi.webp';
 
 const Configuracion = () => {
   return (
-    <PageLayout title="Métricas & Config" tagline="Control total de tu agencia" fullWidth={true}>
+    <PageLayout title="Métricas & Config" tagline="Control total de tu empresa" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
@@ -93,7 +93,7 @@ const Configuracion = () => {
                   <div className="app-page-feature-icon"><i className="fas fa-palette"></i></div>
                   <h4>Personalización de documentos</h4>
                 </div>
-                <p>Configura firmas, logotipos, colores y plantillas. Todos los documentos de la agencia tienen un formato profesional y consistente.</p>
+                <p>Configura firmas, logotipos, colores y plantillas. Todos los documentos de tu empresa tienen un formato profesional y consistente.</p>
               </div>
             </div>
             <div className="col-md-4">
@@ -118,11 +118,16 @@ const Configuracion = () => {
         </div>
 
         <div className="app-page-cta text-center">
-          <h3>¿Listo para controlar tu agencia con datos reales?</h3>
+          <h3>¿Listo para controlar tu empresa con datos reales?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
-          <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
-          </a>
+          <div className="app-page-cta-actions">
+            <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
+            </a>
+            <a href="https://demo.logia.lat" className="btn-outline-premium" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-laptop-code" style={{ marginRight: '0.5rem' }}></i> Ver demo
+            </a>
+          </div>
         </div>
 
       </div>

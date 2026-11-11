@@ -1,0 +1,579 @@
+/* ==========================================================================
+   UI SYSTEM — buttons, borders and radii
+   --------------------------------------------------------------------------
+   One control language for the whole site: rectangular buttons with an 8px
+   radius, hairline borders, flat surfaces and no glow. Loaded after
+   index.css so it normalises the legacy button styles.
+   ========================================================================== */
+
+:root {
+  --ui-radius-control: 8px;
+  --ui-radius-card: 12px;
+  --ui-radius-chip: 5px;
+  --ui-border: rgba(255, 255, 255, 0.12);
+  --ui-border-strong: rgba(255, 255, 255, 0.22);
+  --ui-surface: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+
+.btn-executive,
+.btn-executive-large,
+.btn-outline-premium,
+.btn-plan-outline,
+.btn-demo-outline,
+.btn-hero-mobile,
+.btn-how-mobile,
+.btn-app-detail,
+.btn-trial-cta,
+.app-nav-btn,
+.legal-print-btn,
+.btn-sm {
+  border-radius: var(--ui-radius-control);
+  box-shadow: none;
+  transform: none;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.btn-executive,
+.btn-executive-large,
+.btn-hero-mobile,
+.btn-how-mobile {
+  border: 1px solid transparent;
+  background: var(--accent-indigo);
+  color: #fff;
+}
+
+.btn-executive-large,
+.btn-hero-mobile,
+.btn-how-mobile {
+  padding: 0.85rem 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.btn-executive {
+  padding: 0.6rem 1.15rem;
+  font-size: 0.85rem;
+}
+
+.btn-outline-premium,
+.btn-demo-outline,
+.btn-plan-outline,
+.btn-app-detail {
+  border: 1px solid var(--ui-border-strong);
+  background: transparent;
+  color: #fff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.btn-outline-premium {
+  padding: 0.85rem 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.btn-outline-premium:hover,
+.btn-outline-premium:active,
+.btn-demo-outline:hover,
+.btn-plan-outline:hover,
+.btn-app-detail:hover,
+.btn-app-detail:active {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-executive:hover,
+.btn-executive-large:hover,
+.btn-hero-mobile:hover,
+.btn-how-mobile:hover {
+  background: oklch(62% 0.2 260);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-trial-cta::after {
+  display: none;
+}
+
+.btn-executive-large i,
+.btn-outline-premium i {
+  font-size: 0.9em;
+}
+
+.btn-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: auto;
+  margin-bottom: 0;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-plan-outline {
+  border-radius: var(--ui-radius-control);
+}
+
+.app-nav-btn {
+  border-radius: var(--ui-radius-control);
+}
+
+/* ── Chips / badges: rectangles, not pills ──────────────────────────────── */
+
+.app-page-badge,
+.hero-badge,
+.how-step-duration,
+.featured-badge,
+.discount-badge,
+.system-mockup-tag,
+.app-page-image-tag,
+.footer-version,
+.pricing-toggle,
+.period-btn,
+.trust-badge {
+  border-radius: var(--ui-radius-chip);
+}
+
+.period-btn.active {
+  box-shadow: none;
+}
+
+/* ── App page surfaces ──────────────────────────────────────────────────── */
+
+.app-page-image,
+.app-page-feature-card,
+.app-page-workflow-step,
+.app-page-problem-card,
+.app-page-pain-item,
+.app-page-metric,
+.app-page-cta,
+.faq-item,
+.empleo-banner {
+  border-radius: var(--ui-radius-card);
+  border-color: var(--ui-border);
+  box-shadow: none;
+}
+
+.app-page-image,
+.app-page-image:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.app-page-image::before {
+  display: none;
+}
+
+.app-page-feature-card,
+.app-page-pain-item,
+.app-page-workflow-step {
+  background: var(--ui-surface);
+}
+
+.app-page-feature-card:hover,
+.app-page-pain-item:hover,
+.app-page-workflow-step:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(165, 180, 252, 0.4);
+}
+
+.app-page-metric {
+  background: transparent;
+}
+
+.app-page-cta {
+  background: var(--ui-surface);
+  padding: 2.75rem 2rem;
+}
+
+.app-page-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.app-page-section-title {
+  letter-spacing: -0.01em;
+}
+
+.app-page-metric-icon,
+.app-page-workflow-number {
+  border-radius: var(--ui-radius-control);
+}
+
+.app-page-workflow-number {
+  background: rgba(99, 102, 241, 0.16);
+  color: #c7d2fe;
+  box-shadow: none;
+}
+
+.app-page-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* ── Page header (breadcrumbs + actions + title + app switcher) ─────────── */
+
+.app-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.app-head .breadcrumbs {
+  margin-bottom: 0;
+}
+
+.app-head-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.app-heading {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-heading .tagline {
+  margin-bottom: 0.8rem;
+}
+
+.app-heading .section-title {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+}
+
+.app-switcher {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+}
+
+.app-switch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 190px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-control);
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.app-switch:hover {
+  border-color: rgba(165, 180, 252, 0.5);
+  background: rgba(99, 102, 241, 0.08);
+  color: #fff;
+}
+
+.app-switch--next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.app-switch-dir {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.app-switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.app-switch--next .app-switch-label {
+  justify-content: flex-end;
+}
+
+/* ── Dropdown “all” item ────────────────────────────────────────────────── */
+
+.dropdown-item-x--all {
+  margin-top: 0.35rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 8px 8px;
+  color: #c7d2fe;
+}
+
+/* ── Services page ──────────────────────────────────────────────────────── */
+
+.services-panel {
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-card);
+  background: #070a10;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.services-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.services-panel-head span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.services-panel-head em {
+  margin-left: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.services-panel-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0.4rem 0.9rem;
+  list-style: none;
+}
+
+.services-panel-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+}
+
+.services-panel-list li:last-child {
+  border-bottom: 0;
+}
+
+.services-panel-list i {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #a5b4fc;
+  font-size: 0.72rem;
+}
+
+.services-panel-list .service-state {
+  margin-left: auto;
+  color: #34d399;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.services-panel-list .service-state.is-custom {
+  color: #a5b4fc;
+}
+
+/* ── Tutorials page ─────────────────────────────────────────────────────── */
+
+.tutorials-intro {
+  max-width: 72ch;
+  margin: 0 0 2rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.tutorials-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.tutorials-layout.is-single {
+  grid-template-columns: minmax(0, 960px);
+  justify-content: center;
+}
+
+.tutorials-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-card);
+  background: #05070d;
+}
+
+.tutorials-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tutorials-meta {
+  margin-top: 1.25rem;
+}
+
+.tutorials-tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.tutorials-meta h2 {
+  margin: 0 0 0.5rem;
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tutorials-meta p {
+  margin: 0 0 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.tutorials-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #c7d2fe;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tutorials-link:hover {
+  color: #fff;
+}
+
+.tutorials-link i {
+  font-size: 0.68rem;
+}
+
+.tutorials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tutorial-card {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.6rem;
+  border: 1px solid var(--ui-border);
+  border-radius: 10px;
+  background: var(--ui-surface);
+  color: #fff;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.tutorial-card:hover,
+.tutorial-card.is-active {
+  border-color: rgba(165, 180, 252, 0.5);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.tutorial-card img {
+  flex-shrink: 0;
+  width: 110px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.tutorial-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.tutorial-card-tag {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tutorial-card-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+@media (max-width: 991px) {
+  .tutorials-layout,
+  .tutorials-layout.is-single {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tutorial-card img {
+    width: 96px;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .app-head {
+    align-items: flex-start;
+  }
+
+  .app-head-actions {
+    width: 100%;
+  }
+
+  .app-switch {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .app-switcher {
+    gap: 0.6rem;
+  }
+}

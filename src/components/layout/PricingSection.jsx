@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SITE_CONTENT } from '../../data/siteContent';
 
 const { pricing } = SITE_CONTENT;
+const showPrices = pricing.showPrices !== false;
 
 const periodLabels = {
   monthly: 'Mensual',
@@ -34,35 +36,41 @@ const PricingSection = () => {
     <section id="precios" className="pricing-section py-large">
       <div className="container-x">
         {/* Header */}
-        <div className="text-center mb-4">
-          <span className="tagline">{pricing.tagline}</span>
-          <h2 className="section-title" dangerouslySetInnerHTML={{ __html: pricing.title }} />
-        </div>
-
-        {/* Toggle de período */}
-        <div className="pricing-controls">
-          <div className="pricing-toggle" role="tablist" aria-label="Seleccionar periodo de facturación">
-            {Object.keys(periodDiscounts).map((p) => (
-              <button
-                key={p}
-                className={`period-btn ${period === p ? 'active' : ''}`}
-                onClick={() => setPeriod(p)}
-                role="tab"
-                aria-selected={period === p}
-              >
-                <span className="period-label">{periodLabels[p]}</span>
-                {periodDiscounts[p] > 0 && (
-                  <span className="discount-badge">-{Math.round(periodDiscounts[p] * 100)}%</span>
-                )}
-              </button>
-            ))}
+        <header className="section-head">
+          <div className="section-head-main">
+            <span className="tagline">{pricing.tagline}</span>
+            <h2 className="section-title" dangerouslySetInnerHTML={{ __html: pricing.title }} />
           </div>
-          {discount > 0 && (
-            <p className="pricing-savings-msg">
-              Ahorras hasta <strong>{Math.round(discount * 100)}%</strong> con el plan {periodLabels[period].toLowerCase()}
-            </p>
+
+          {/* Toggle de período */}
+          {showPrices && (
+            <div className="section-head-aside">
+              <div className="pricing-controls">
+                <div className="pricing-toggle" role="tablist" aria-label="Seleccionar periodo de facturación">
+                  {Object.keys(periodDiscounts).map((p) => (
+                    <button
+                      key={p}
+                      className={`period-btn ${period === p ? 'active' : ''}`}
+                      onClick={() => setPeriod(p)}
+                      role="tab"
+                      aria-selected={period === p}
+                    >
+                      <span className="period-label">{periodLabels[p]}</span>
+                      {periodDiscounts[p] > 0 && (
+                        <span className="discount-badge">-{Math.round(periodDiscounts[p] * 100)}%</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+                {discount > 0 && (
+                  <p className="pricing-savings-msg">
+                    Ahorras hasta <strong>{Math.round(discount * 100)}%</strong> con el plan {periodLabels[period].toLowerCase()}
+                  </p>
+                )}
+              </div>
+            </div>
           )}
-        </div>
+        </header>
 
         {/* Tarjetas de planes */}
         <div className="pricing-grid">
@@ -93,7 +101,11 @@ const PricingSection = () => {
 
                 {/* Precio */}
                 <div className="plan-price-block">
-                  {isCustom ? (
+                  {!showPrices ? (
+                    <div className="custom-price">
+                      <span className="custom-price-text">{isCustom ? 'A Medida' : 'A consultar'}</span>
+                    </div>
+                  ) : isCustom ? (
                     <div className="custom-price">
                       <span className="custom-price-text">A Medida</span>
                     </div>
@@ -134,17 +146,33 @@ const PricingSection = () => {
                 </ul>
 
                 {/* CTA */}
-                <a
-                  href={plan.ctaLink}
-                  className={plan.featured ? 'btn-executive' : 'btn-plan-outline'}
-                  style={
-                    plan.featured
-                      ? { background: plan.color, color: '#fff' }
-                      : { borderColor: plan.color, color: plan.color }
-                  }
-                >
-                  {plan.cta}
-                </a>
+                {plan.ctaLink.startsWith('/') ? (
+                  <Link
+                    to={plan.ctaLink}
+                    className={plan.featured ? 'btn-executive' : 'btn-plan-outline'}
+                    style={
+                      plan.featured
+                        ? { background: plan.color, color: '#fff' }
+                        : { borderColor: plan.color, color: plan.color }
+                    }
+                  >
+                    {plan.cta}
+                  </Link>
+                ) : (
+                  <a
+                    href={plan.ctaLink}
+                    className={plan.featured ? 'btn-executive' : 'btn-plan-outline'}
+                    target={plan.ctaLink.startsWith('http') ? '_blank' : undefined}
+                    rel={plan.ctaLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    style={
+                      plan.featured
+                        ? { background: plan.color, color: '#fff' }
+                        : { borderColor: plan.color, color: plan.color }
+                    }
+                  >
+                    {plan.cta}
+                  </a>
+                )}
               </div>
             );
           })}
@@ -152,7 +180,19 @@ const PricingSection = () => {
 
         {/* Nota inferior */}
         <p className="pricing-note text-center">
-          Todos los planes incluyen 14 días de prueba gratis sin tarjeta de crédito.
+          {showPrices ? (
+            <>
+              Todos los planes incluyen 14 días de prueba gratis sin tarjeta de crédito.
+              Precios en USD; el IGV no está incluido. Consulta los{' '}
+              <Link to="/terminos">Términos y Condiciones</Link>.
+            </>
+          ) : (
+            <>
+              Todos los planes incluyen 14 días de prueba gratis sin tarjeta de crédito.{' '}
+              <Link to="/soporte">Escríbenos</Link> para preparar una propuesta según los usuarios
+              y módulos que necesites.
+            </>
+          )}
         </p>
       </div>
     </section>

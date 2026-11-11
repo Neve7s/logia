@@ -10,21 +10,39 @@ const FAQ = () => {
   return (
     <PageLayout title="Preguntas Frecuentes" tagline="Todo lo que necesitas saber">
       <div className="faq-container">
-        {faq.map((item, index) => (
-          <div key={index} className={`faq-item ${openIndex === index ? 'faq-open' : ''}`}
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}>
-            <div className="faq-question">
-              <div className="faq-question-left">
-                <i className={item.icon}></i>
-                <h4>{item.q}</h4>
-              </div>
-              <i className={`fas fa-chevron-${openIndex === index ? 'up' : 'down'}`}></i>
+        {faq.map((item, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div key={index} className={`faq-item ${isOpen ? 'faq-open' : ''}`}>
+              <h3 className="faq-question-heading">
+                <button
+                  type="button"
+                  className="faq-question"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                  id={`faq-question-${index}`}
+                >
+                  <span className="faq-question-left">
+                    <i className={item.icon} aria-hidden="true"></i>
+                    <span className="faq-question-title">{item.q}</span>
+                  </span>
+                  <i className={`fas fa-chevron-${isOpen ? 'up' : 'down'}`} aria-hidden="true"></i>
+                </button>
+              </h3>
+              {isOpen && (
+                <div
+                  className="faq-answer"
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${index}`}
+                >
+                  <p>{item.a}</p>
+                </div>
+              )}
             </div>
-            {openIndex === index && (
-              <div className="faq-answer"><p>{item.a}</p></div>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </PageLayout>
   );

@@ -17,9 +17,15 @@ const ThreeBackground = () => {
       camera = new window.THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
       camera.position.z = 250;
 
-      renderer = new window.THREE.WebGLRenderer({ antialias: true, alpha: true });
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+      renderer = new window.THREE.WebGLRenderer({
+        antialias: !isMobile,
+        alpha: true,
+        powerPreference: 'high-performance',
+      });
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
 
       container.appendChild(renderer.domElement);
 
@@ -27,7 +33,8 @@ const ThreeBackground = () => {
       scene.add(globeGroup);
 
       const radius = 90;
-      const geometry = new window.THREE.SphereGeometry(radius, 64, 64);
+      const segments = isMobile ? 32 : 64;
+      const geometry = new window.THREE.SphereGeometry(radius, segments, segments);
       const textureLoader = new window.THREE.TextureLoader();
       const earthTexture = textureLoader.load('https://unpkg.com/three-globe/example/img/earth-dark.jpg');
 
@@ -47,7 +54,7 @@ const ThreeBackground = () => {
         opacity: 0.05,
         side: window.THREE.BackSide
       });
-      globeGroup.add(new window.THREE.Mesh(new window.THREE.SphereGeometry(radius * 1.1, 32, 32), atmosMaterial));
+      globeGroup.add(new window.THREE.Mesh(new window.THREE.SphereGeometry(radius * 1.1, isMobile ? 16 : 32, isMobile ? 16 : 32), atmosMaterial));
 
       const getCoordinatesFromLatLng = (lat, lng, radius) => {
         const phi = (90 - lat) * (Math.PI / 180);

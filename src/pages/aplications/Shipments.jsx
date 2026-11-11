@@ -4,7 +4,7 @@ import img from '../../assets/ecosistema/shipment.webp';
 
 const Shipments = () => {
   return (
-    <PageLayout title="App de Control de Cargas/Importaciones" tagline="Tracking real de cada carga" fullWidth={true}>
+    <PageLayout title="Gestor de Embarques" tagline="Tracking real de cada carga" fullWidth={true}>
       <div className="app-page">
 
         <div className="row align-items-center g-5 mb-5">
@@ -29,8 +29,8 @@ const Shipments = () => {
           </div>
           <div className="col-lg-6">
             <div className="app-page-image">
-              <img src={img} alt="Shipments Control" className="img-fluid rounded-4" />
-              <div className="app-page-image-tag">App Shipments — Dashboard</div>
+              <img src={img} alt="Gestor de Embarques" className="img-fluid rounded-4" />
+              <div className="app-page-image-tag">Gestor de Embarques — Dashboard</div>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Shipments = () => {
         {/* La Solución */}
         <div className="app-page-section">
           <h3 className="app-page-section-title">
-            <i className="fas fa-check-circle"></i> Cómo Shipments Control resuelve esto
+            <i className="fas fa-check-circle"></i> Cómo Gestor de Embarques resuelve esto
           </h3>
           <div className="row g-4">
             <div className="col-md-4">
@@ -128,8 +128,8 @@ const Shipments = () => {
             <div className="app-page-workflow-step">
               <div className="app-page-workflow-number">1</div>
               <div className="app-page-workflow-content">
-                <h4>Cotización aprobada → Shipment</h4>
-                <p>Cuando el cliente aprueba la cotización, se convierte en Shipment con un clic. No más copiar datos.</p>
+                <h4>Cotización aprobada → Embarque</h4>
+                <p>Cuando el cliente aprueba la cotización, se convierte en embarque con un clic. No más copiar datos.</p>
               </div>
             </div>
             <div className="app-page-workflow-connector"><i className="fas fa-arrow-down"></i></div>
@@ -162,9 +162,14 @@ const Shipments = () => {
         <div className="app-page-cta text-center">
           <h3>¿Listo para tener control total de tus cargas?</h3>
           <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
-          <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
-            <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
-          </a>
+          <div className="app-page-cta-actions">
+            <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis
+            </a>
+            <a href="https://demo.logia.lat" className="btn-outline-premium" target="_blank" rel="noopener noreferrer">
+              <i className="fas fa-laptop-code" style={{ marginRight: '0.5rem' }}></i> Ver demo
+            </a>
+          </div>
         </div>
 
       </div>

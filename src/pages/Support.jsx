@@ -4,6 +4,10 @@ import PageLayout from '../components/layout/PageLayout';
 const RATE_LIMIT_KEY = 'logia_contact_rate';
 const MAX_SENDS = 2;
 const WINDOW_MS = 15 * 60 * 1000;
+const CONTACT_API_URL = import.meta.env.VITE_CONTACT_API_URL
+  || (import.meta.env.DEV
+    ? 'http://localhost:3001/api/contact'
+    : 'https://dry-king-a9fa.hieysonhilario.workers.dev/api/contact');
 
 function getClientSends() {
   try {
@@ -35,6 +39,8 @@ function getRemainingTime() {
 
 const Support = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [fallbackMode, setFallbackMode] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [clientBlocked, setClientBlocked] = useState(false);
@@ -97,14 +103,35 @@ const Support = () => {
     setIsSubmitting(true);
     setError(null);
 
+    const subjectLabels = {
+      soporte: 'Soporte técnico',
+      facturacion: 'Facturación',
+      ventas: 'Ventas',
+      otros: 'Otros',
+    };
+
+    // Sin backend configurado (build estático): abrir el cliente de correo.
+    if (!CONTACT_API_URL) {
+      const subject = encodeURIComponent(`[LogIA] ${subjectLabels[formData.subject] || formData.subject}`);
+      const body = encodeURIComponent(
+        `Nombre: ${formData.name}\nCorreo: ${formData.email}\n\n${formData.message}`
+      );
+      window.location.href = `mailto:soporte@logia.lat?subject=${subject}&body=${body}`;
+      recordSend();
+      setFallbackMode(true);
+      setFormSubmitted(true);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch(CONTACT_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(data.error || 'Error al enviar el mensaje');
@@ -118,11 +145,17 @@ const Support = () => {
         updateCooldownMsg();
       }
 
+      setFallbackMode(false);
+      setSubmittedEmail(formData.email);
       setFormSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setFormSubmitted(false), 5000);
+      setTimeout(() => setFormSubmitted(false), 7000);
     } catch (err) {
-      setError(err.message || 'Error al conectar con el servidor');
+      setError(
+        err.message === 'Failed to fetch'
+          ? 'No pudimos conectar con el servidor. Escríbenos a soporte@logia.lat o por WhatsApp.'
+          : err.message || 'Error al enviar el mensaje'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -159,18 +192,22 @@ const Support = () => {
             <h4>Horario de Atención</h4>
             <p>Lunes a Viernes, 9:00 AM - 6:00 PM (PET)</p>
             <span className="support-status">
-              <i className="fas fa-circle" style={{ color: '#4ade80', fontSize: '0.5rem' }}></i>
-              En línea ahora
+              <i className="fas fa-circle" style={{ color: '#4ade80', fontSize: '0.5rem' }} aria-hidden="true"></i>
+              Atención en horario laboral
             </span>
           </div>
         </div>
         <div className="col-lg-6">
           <h3 style={{ marginBottom: '1.5rem', color: '#fff' }}>Envíanos un mensaje</h3>
           {formSubmitted ? (
-            <div className="support-success">
-              <i className="fas fa-check-circle"></i>
-              <h4>¡Mensaje enviado!</h4>
-              <p>Recibimos tu mensaje. Te responderemos a <strong>{formData.email || 'tu correo'}</strong> en las próximas horas.</p>
+            <div className="support-success" role="status">
+              <i className="fas fa-check-circle" aria-hidden="true"></i>
+              <h4>{fallbackMode ? 'Solicitud lista para enviar' : '¡Mensaje enviado!'}</h4>
+              <p>
+                {fallbackMode
+                  ? 'Abrimos tu cliente de correo con el mensaje preparado. Si no se abrió, escríbenos a soporte@logia.lat.'
+                  : `Recibimos tu mensaje. Te responderemos a ${submittedEmail || 'tu correo'} en las próximas horas.`}
+              </p>
               <p style={{ fontSize: '0.9rem', opacity: 0.8, marginTop: '1rem' }}>
                 También puedes contactarnos por WhatsApp para una respuesta más rápida.
               </p>
@@ -194,8 +231,9 @@ const Support = () => {
           ) : (
             <form onSubmit={handleSubmit} className="support-form">
               <div className="form-group">
-                <label>Tu nombre</label>
+                <label htmlFor="support-name">Tu nombre</label>
                 <input 
+                  id="support-name"
                   type="text" 
                   name="name"
                   required 
@@ -205,8 +243,9 @@ const Support = () => {
                 />
               </div>
               <div className="form-group">
-                <label>Correo electrónico</label>
+                <label htmlFor="support-email">Correo electrónico</label>
                 <input 
+                  id="support-email"
                   type="email" 
                   name="email"
                   required 
@@ -216,8 +255,9 @@ const Support = () => {
                 />
               </div>
               <div className="form-group">
-                <label>Asunto</label>
+                <label htmlFor="support-subject">Asunto</label>
                 <select 
+                  id="support-subject"
                   name="subject"
                   required 
                   value={formData.subject}
@@ -231,8 +271,9 @@ const Support = () => {
                 </select>
               </div>
               <div className="form-group">
-                <label>Mensaje</label>
+                <label htmlFor="support-message">Mensaje</label>
                 <textarea 
+                  id="support-message"
                   name="message"
                   required 
                   rows="5"
@@ -242,7 +283,7 @@ const Support = () => {
                 />
               </div>
               {error && (
-                <div style={{ 
+                <div role="alert" style={{ 
                   background: 'rgba(239, 68, 68, 0.1)', 
                   border: '1px solid rgba(239, 68, 68, 0.3)',
                   borderRadius: '8px',

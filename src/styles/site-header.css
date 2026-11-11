@@ -1,0 +1,349 @@
+/* ==========================================================================
+   SITE HEADER — full-width, editorial navigation bar
+   --------------------------------------------------------------------------
+   Replaces the legacy floating pill navbar. Full viewport width, hairline
+   bottom border and content aligned to the site container.
+   ========================================================================== */
+
+:root {
+  --site-container: 1600px;
+  --nav-height: 76px;
+  --nav-height-scrolled: 68px;
+  --nav-rule: rgba(255, 255, 255, 0.09);
+}
+
+html {
+  scroll-padding-top: 0;
+}
+
+section[id],
+#main-content {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+.nav-premium {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: none;
+  height: var(--nav-height);
+  transform: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  transition: height 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-premium.scrolled {
+  height: var(--nav-height-scrolled);
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: none;
+}
+
+.nav-premium .container-x {
+  max-width: var(--site-container);
+  padding-inline: 2.25rem;
+  justify-content: flex-start;
+}
+
+.nav-premium .nav-links {
+  margin-left: 3rem;
+}
+
+.nav-premium .nav-actions {
+  margin-left: auto;
+}
+
+.nav-premium .brand-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.nav-premium .logo-x {
+  width: 26px;
+  height: 26px;
+}
+
+.nav-premium .nav-links {
+  gap: 2.25rem;
+}
+
+.nav-premium .nav-link-x {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.nav-premium .nav-link-x:hover {
+  color: #fff;
+}
+
+.nav-premium .nav-dropdown-chevron {
+  transition: transform 0.18s ease;
+}
+
+.nav-premium .nav-dropdown-trigger[aria-expanded="true"] .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-premium .dropdown-menu-x {
+  top: calc(100% + 10px);
+  min-width: 240px;
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(8, 10, 18, 0.98);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.nav-premium .nav-actions {
+  gap: 0.9rem;
+}
+
+/* ── App launcher (Adobe-style applications grid) ─────────────────────────── */
+
+.nav-apps {
+  position: relative;
+  display: flex;
+}
+
+.nav-apps-btn {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-apps-btn:hover,
+.nav-apps-btn[aria-expanded="true"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Login: the only light control in the bar (Adobe style) */
+.btn-nav-login {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  border-radius: var(--ui-radius-control, 8px);
+  background: #fff;
+  color: #0a0a12;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.18s ease;
+}
+
+.btn-nav-login:hover {
+  background: rgba(255, 255, 255, 0.86);
+  color: #000;
+}
+
+.nav-apps-panel {
+  position: absolute;
+  top: calc(100% + 18px);
+  right: 0;
+  width: 400px;
+  padding: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: #080a12;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  z-index: 1002;
+}
+
+.nav-apps-title {
+  margin: 0 0 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nav-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+
+.nav-app-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.35rem;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.68rem;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-app-tile:hover {
+  background: rgba(99, 102, 241, 0.12);
+  color: #fff;
+}
+
+.nav-app-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(99, 102, 241, 0.14);
+  color: #a5b4fc;
+  font-size: 0.95rem;
+}
+
+/* ── Mega menus (Adobe-style panels) ─────────────────────────────────────── */
+
+.mega-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background: #05070d;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+.mega-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-inner {
+  max-width: var(--site-container);
+  margin: 0 auto;
+  padding: 2.5rem 2.25rem 2rem;
+}
+
+.mega-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem 3rem;
+}
+
+.mega-col h3 {
+  margin: 0 0 1rem;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.mega-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mega-col a {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.mega-col a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mega-footer {
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mega-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.mega-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.mega-action:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+.mega-action i {
+  font-size: 0.7rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 991px) {
+  .nav-premium .container-x {
+    justify-content: space-between;
+  }
+
+  .nav-premium .nav-links {
+    margin-left: 0;
+  }
+
+  .mega-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 68px;
+    --nav-height-scrolled: 62px;
+  }
+
+  .nav-premium .container-x {
+    padding-inline: 1.25rem;
+  }
+
+  .nav-premium .brand-name {
+    font-size: 1.15rem;
+  }
+}

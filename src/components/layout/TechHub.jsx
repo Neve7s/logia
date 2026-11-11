@@ -5,13 +5,13 @@ const techNodes = [
   {
     title: 'LogIA Central',
     icon: 'microchip',
-    description: 'El corazón de tu agencia, diseñado para funcionar rápido y sin errores en todas tus operaciones diarias.',
+    description: 'El corazón de tu empresa, diseñado para funcionar rápido y sin errores en todas tus operaciones diarias.',
     highlight: true,
   },
   {
     title: 'Privacidad Absoluta',
     icon: 'server',
-    description: 'Tu información completamente separada y protegida del resto. Tus datos nunca se mezclarán con los de otras agencias.',
+    description: 'Tu información completamente separada y protegida del resto. Tus datos nunca se mezclarán con los de otras empresas.',
   },
   {
     title: 'Conexiones Directas',
@@ -42,13 +42,15 @@ const TechHub = () => {
     <section id="tecnologia" className="tech-hub-section py-large">
       <div className="tech-visual-bg animated-galaxy-bg" />
       <div className="container-x position-relative z-2">
-        <div className="text-center mb-5">
-          <span className="tagline">Ecosistema Flux</span>
-          <h2 className="section-title text-white">Infraestructura <span className="text-highlight">Resiliente</span></h2>
-          <p className="section-desc mx-auto" style={{ maxWidth: '700px', color: 'var(--text-muted)' }}>
-            Tu agencia respaldada por una plataforma robusta y segura, diseñada para que nunca dejes de operar.
-          </p>
-        </div>
+        <header className="section-head">
+          <div className="section-head-main">
+            <span className="tagline">Ecosistema Flux</span>
+            <h2 className="section-title text-white">Infraestructura <span className="text-highlight">Resiliente</span></h2>
+            <p className="section-desc">
+              Tu empresa respaldada por una plataforma robusta y segura, diseñada para que nunca dejes de operar.
+            </p>
+          </div>
+        </header>
 
         <div className="tech-grid">
           {techNodes.map((node, i) => (

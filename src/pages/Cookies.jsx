@@ -1,176 +1,192 @@
 import React from 'react';
-import PageLayout from '../components/layout/PageLayout';
+import { Link } from 'react-router-dom';
+import LegalPage, { LegalSection } from '../components/layout/LegalPage';
+
+const sections = [
+  { id: 'que-son', title: '¿Qué son las cookies?' },
+  { id: 'categorias', title: 'Categorías que utilizamos' },
+  { id: 'detalle', title: 'Detalle de cookies' },
+  { id: 'terceros', title: 'Servicios de terceros' },
+  { id: 'gestion', title: 'Cómo gestionarlas' },
+  { id: 'duracion', title: 'Duración' },
+  { id: 'consentimiento', title: 'Consentimiento' },
+  { id: 'cambios', title: 'Cambios en esta política' },
+  { id: 'contacto', title: 'Contacto' },
+];
 
 const Cookies = () => {
   return (
-    <PageLayout 
+    <LegalPage
       title="Política de Cookies"
+      shortTitle="Cookies"
       tagline="Transparencia en el uso de cookies"
+      updated="10 de noviembre de 2026"
+      version="2.0"
+      sections={sections}
+      intro="En LogIA utilizamos cookies y tecnologías similares para que la plataforma funcione de forma segura, recordar tus preferencias y entender cómo se usa el sitio. Esta política explica qué usamos y cómo puedes gestionarlo."
     >
-      <div className="content-section">
-        <p className="content-lead">
-          En LogIA utilizamos cookies y tecnologías similares para mejorar tu experiencia 
-          en nuestra plataforma. Esta política explica qué cookies usamos, para qué las 
-          utilizamos y cómo puedes gestionarlas.
+      <LegalSection id="que-son" number="01" title="¿Qué son las cookies?" icon="fas fa-cookie-bite">
+        <p>
+          Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando
+          visitas un sitio web. Permiten recordar información entre páginas y visitas, mantener la
+          sesión, aplicar medidas de seguridad y medir el uso del sitio.
         </p>
-
-        <div className="content-card">
-          <h2><i className="fas fa-cookie-bite"></i> 1. ¿Qué son las cookies?</h2>
-          <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo 
-          (computadora, tablet o móvil) cuando visitas un sitio web. Sirven para recordar 
-          tus preferencias, mejorar la experiencia de navegación y obtener información 
-          sobre cómo se utiliza el sitio.</p>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-list"></i> 2. Tipos de cookies que utilizamos</h2>
-          <p>En LogIA clasificamos las cookies en las siguientes categorías:</p>
-          <ul>
-            <li>
-              <strong>Cookies estrictamente necesarias:</strong> Son esenciales para el 
-              funcionamiento de la plataforma. Sin estas cookies, el servicio no podría 
-              proporcionarse correctamente. Ejemplo: cookies de sesión, autenticación y 
-              seguridad.
-            </li>
-            <li>
-              <strong>Cookies de rendimiento:</strong> Recopilan información sobre cómo 
-              utilizan los visitantes la plataforma (páginas visitadas, tiempo de permanencia, 
-              errores encontrados). Esta información es agregada y anónima, y se utiliza 
-              exclusivamente para mejorar el funcionamiento del sitio.
-            </li>
-            <li>
-              <strong>Cookies de funcionalidad:</strong> Permiten recordar tus preferencias 
-              y configuraciones (idioma, región, tema de visualización) para ofrecerte una 
-              experiencia más personalizada.
-            </li>
-            <li>
-              <strong>Cookies de marketing:</strong> Se utilizan para rastrear a los 
-              visitantes en los sitios web con el fin de mostrar anuncios relevantes y 
-              atractivos para el usuario individual. Estas cookies son de terceros 
-              (Google Analytics, Meta Pixel).
-            </li>
-          </ul>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-bullseye"></i> 3. Para qué utilizamos las cookies</h2>
-          <p>Utilizamos cookies para los siguientes fines:</p>
-          <ul>
-            <li><strong>Autenticación:</strong> Mantener tu sesión activa y segura mientras 
-            utilizas la plataforma</li>
-            <li><strong>Seguridad:</strong> Detectar y prevenir accesos no autorizados 
-            y proteger contra fraudes</li>
-            <li><strong>Preferencias:</strong> Recordar tu configuración, idioma y 
-            opciones de visualización</li>
-            <li><strong>Análisis:</strong> Comprender cómo los usuarios interactúan con 
-            la plataforma para mejorarla continuamente</li>
-            <li><strong>Rendimiento:</strong> Optimizar la velocidad de carga y el 
-            funcionamiento de la aplicación</li>
-            <li><strong>Soporte:</strong> Proporcionar asistencia técnica más eficiente</li>
-          </ul>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-puzzle-piece"></i> 4. Cookies de terceros</h2>
-          <p>Algunas cookies son instaladas por servicios de terceros que aparecen en 
-          nuestras páginas:</p>
-          <ul>
-            <li>
-              <strong>Google Analytics:</strong> Nos ayuda a entender cómo los visitantes 
-              utilizan la plataforma. Esta información es agregada y anónima. 
-              Más información: 
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"> 
-                Política de Privacidad de Google
-              </a>
-            </li>
-            <li>
-              <strong>Google Fonts:</strong> Utilizamos fuentes de Google para mejorar 
-              la tipografía del sitio.
-            </li>
-          </ul>
-          <p>No tenemos control sobre las cookies de terceros. Te recomendamos revisar 
-          las políticas de privacidad de estos servicios para más información.</p>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-sliders"></i> 5. Gestión de cookies</h2>
-          <p>Puedes controlar y gestionar las cookies de diversas maneras:</p>
-          <ul>
-            <li>
-              <strong>Configuración del navegador:</strong> La mayoría de los navegadores 
-              permiten bloquear o eliminar cookies. Consulta la ayuda de tu navegador 
-              para conocer los pasos:
-              <ul>
-                <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome</a></li>
-                <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies" target="_blank" rel="noopener noreferrer">Firefox</a></li>
-                <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
-                <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Edge</a></li>
-              </ul>
-            </li>
-            <li>
-              <strong>Panel de preferencias:</strong> En el futuro, ofreceremos un panel 
-              de configuración de cookies dentro de la plataforma para que puedas 
-              personalizar tus preferencias.
-            </li>
-          </ul>
-          <p><strong>Importante:</strong> Si deshabilitas las cookies, algunas 
-          funcionalidades de la plataforma podrían no estar disponibles o no 
-          funcionar correctamente.</p>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-shield-halved"></i> 6. Cookies esenciales</h2>
-          <p>Las cookies estrictamente necesarias no se pueden desactivar ya que son 
-          fundamentales para el funcionamiento de la plataforma. Incluyen:</p>
-          <ul>
-            <li>Cookies de sesión de usuario</li>
-            <li>Cookies de autenticación y seguridad</li>
-            <li>Cookies de平衡 de carga (load balancing)</li>
-            <li>Cookies de recordar el consentimiento de cookies</li>
-          </ul>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-clock"></i> 7. Duración de las cookies</h2>
-          <p>Las cookies que utilizamos tienen las siguientes duraciones:</p>
-          <ul>
-            <li><strong>Cookies de sesión:</strong> Se eliminan automáticamente al cerrar 
-            el navegador</li>
-            <li><strong>Cookies persistentes:</strong> Permanecen en tu dispositivo durante 
-            un período determinado o hasta que las elimines manualmente</li>
-          </ul>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-globe"></i> 8. Cookies en otros países</h2>
-          <p>Si accedes a LogIA desde fuera de Perú, ten en cuenta que tu información 
-          puede ser transferida a, almacenada y procesada en Perú donde se encuentran 
-          nuestros servidores. Al utilizar nuestra plataforma, consientes dicha 
-          transferencia.</p>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-sync-alt"></i> 9. Cambios en esta política</h2>
-          <p>Nos reservamos el derecho de actualizar esta política de cookies en cualquier 
-          momento. Los cambios importantes serán notificados a través de la plataforma 
-          o por correo electrónico. Te recomendamos revisar esta página periódicamente.</p>
-        </div>
-
-        <div className="content-card">
-          <h2><i className="fas fa-envelope"></i> 10. Contacto</h2>
-          <p>Si tienes preguntas sobre esta política de cookies o sobre el uso de cookies 
-          en nuestra plataforma, contáctanos:</p>
-          <ul>
-            <li><strong>Correo:</strong> privacidad@logia.lat</li>
-            <li><strong>WhatsApp:</strong> +51 977 824 138</li>
-          </ul>
-        </div>
-
-        <p className="content-update">
-          <i className="fas fa-calendar"></i> Última actualización: Agosto 2025
+        <p>
+          También usamos tecnologías similares, como almacenamiento local del navegador, para
+          conservar preferencias de interfaz y mejorar el rendimiento.
         </p>
-      </div>
-    </PageLayout>
+      </LegalSection>
+
+      <LegalSection id="categorias" number="02" title="Categorías que utilizamos" icon="fas fa-list">
+        <ul>
+          <li>
+            <strong>Estrictamente necesarias:</strong> permiten la navegación, la autenticación y la
+            seguridad. Sin ellas, el Servicio no puede funcionar correctamente.
+          </li>
+          <li>
+            <strong>De preferencias:</strong> recuerdan configuraciones como idioma, tema o filtros
+            seleccionados.
+          </li>
+          <li>
+            <strong>De rendimiento:</strong> recopilan información agregada sobre el uso del sitio
+            para detectar errores y optimizar la experiencia.
+          </li>
+          <li>
+            <strong>De marketing:</strong> solo se utilizan si existe consentimiento previo y se
+            informa de su finalidad. No usamos cookies publicitarias de perfilado sin autorización.
+          </li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection id="detalle" number="03" title="Detalle de cookies" icon="fas fa-table-list">
+        <div className="legal-table-wrapper">
+          <table className="legal-table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Finalidad</th>
+                <th scope="col">Duración</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>session_id</td>
+                <td>Necesaria</td>
+                <td>Mantener la sesión autenticada</td>
+                <td>Sesión</td>
+              </tr>
+              <tr>
+                <td>csrf_token</td>
+                <td>Necesaria</td>
+                <td>Proteger formularios contra ataques CSRF</td>
+                <td>Sesión</td>
+              </tr>
+              <tr>
+                <td>preferences</td>
+                <td>Preferencias</td>
+                <td>Recordar idioma, tema y filtros</td>
+                <td>Hasta 12 meses</td>
+              </tr>
+              <tr>
+                <td>analytics_id</td>
+                <td>Rendimiento</td>
+                <td>Medición agregada del uso del sitio</td>
+                <td>Hasta 24 meses</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Los nombres son referenciales y pueden variar según el entorno, la versión del producto o
+          el proveedor de infraestructura. La plataforma puede actualizar este detalle sin alterar
+          las finalidades descritas.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="terceros" number="04" title="Servicios de terceros" icon="fas fa-puzzle-piece">
+        <p>
+          Algunos recursos son servidos por terceros y pueden registrar datos técnicos como la
+          dirección IP o el navegador:
+        </p>
+        <ul>
+          <li>
+            <strong>Google Fonts:</strong> carga de tipografías. Consulta la{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              política de privacidad de Google
+            </a>.
+          </li>
+          <li>
+            <strong>Font Awesome CDN:</strong> entrega de iconografía utilizada en la interfaz.
+          </li>
+          <li>
+            <strong>Pasarela de pagos y correo transaccional:</strong> se usan solo cuando contratas
+            un plan o cuando la plataforma envía notificaciones operativas.
+          </li>
+        </ul>
+        <p>
+          No controlamos directamente las cookies de terceros. Te recomendamos revisar sus políticas
+          para conocer su alcance.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="gestion" number="05" title="Cómo gestionarlas" icon="fas fa-sliders">
+        <p>
+          Puedes bloquear, eliminar o limitar las cookies desde la configuración de tu navegador.
+          Consulta la ayuda oficial de cada navegador:
+        </p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+          <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+        </ul>
+        <p>
+          Si deshabilitas las cookies necesarias, es posible que no puedas iniciar sesión o que
+          algunas funciones de la plataforma dejen de estar disponibles.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="duracion" number="06" title="Duración" icon="fas fa-clock">
+        <ul>
+          <li><strong>Cookies de sesión:</strong> se eliminan al cerrar el navegador.</li>
+          <li><strong>Cookies persistentes:</strong> permanecen durante el plazo indicado o hasta que las elimines manualmente.</li>
+          <li><strong>Almacenamiento local:</strong> puede conservarse hasta que se borren los datos del sitio.</li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection id="consentimiento" number="07" title="Consentimiento" icon="fas fa-handshake">
+        <p>
+          Las cookies estrictamente necesarias no requieren consentimiento porque son indispensables
+          para prestar el Servicio. Las cookies de preferencias, rendimiento y marketing se utilizan
+          conforme a la normativa aplicable y, cuando corresponde, con tu autorización.
+        </p>
+        <p>
+          Puedes retirar tu consentimiento en cualquier momento eliminando las cookies y ajustando
+          la configuración de tu navegador.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="cambios" number="08" title="Cambios en esta política" icon="fas fa-rotate">
+        <p>
+          Podemos actualizar esta política cuando cambien las cookies utilizadas o la normativa
+          aplicable. Publicaremos la versión vigente con su fecha de actualización y comunicaremos
+          los cambios relevantes por los canales habituales.
+        </p>
+      </LegalSection>
+
+      <LegalSection id="contacto" number="09" title="Contacto" icon="fas fa-envelope">
+        <p>
+          Si tienes preguntas sobre esta política, escríbenos a{' '}
+          <a href="mailto:privacidad@logia.lat">privacidad@logia.lat</a> o a{' '}
+          <a href="mailto:soporte@logia.lat">soporte@logia.lat</a>.
+        </p>
+        <p>
+          También puedes revisar la <Link to="/privacidad">Política de Privacidad</Link> y los{' '}
+          <Link to="/terminos">Términos y Condiciones</Link>.
+        </p>
+      </LegalSection>
+    </LegalPage>
   );
 };
 

@@ -68,7 +68,7 @@ const AdminHub = () => {
         <div className="row align-items-center g-4">
           <div className="col-lg-6">
             <span className="tagline">Gestión de Alto Nivel</span>
-            <h2 className="section-title">Control total de tu <span className="text-highlight">Agencia</span></h2>
+            <h2 className="section-title">Control total de tu <span className="text-highlight">Empresa</span></h2>
             <p className="section-desc">Administra el motor de tu negocio con herramientas diseñadas para la alta gerencia.</p>
 
             {/* Desktop list */}
@@ -125,6 +125,8 @@ const AdminHub = () => {
                   src={src}
                   alt={`Admin Dashboard ${i + 1}`}
                   className={`admin-crossfade-img ${i === currentImg ? 'active' : ''}`}
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
               <div className="system-mockup-tag">Dashboard Administrativo</div>

@@ -9,8 +9,8 @@ export const APPLICATIONS = [
   {
     id: 'cotizador',
     icon: 'fa-calculator',
-    title: 'Cotizador Versátil',
-    description: 'Tu herramienta principal de ventas. Cotiza en 2 minutos: flete, gastos, seguro, IGV y detracciones se calculan solos. Genera el PDF con la marca de tu agencia (colores, logo y estilo) y conviértelo en embarque y factura sin re-tipear nada.',
+    title: 'Cotizador Logístico',
+    description: 'Tu herramienta principal de ventas. Cotiza en 2 minutos: flete, gastos, seguro, IGV y detracciones se calculan solos. Genera el PDF con la marca de tu empresa (colores, logo y estilo) y conviértelo en embarque y factura sin re-tipear nada.',
     features: [
       'Cálculo automático de IGV y detracciones según tipo de servicio.',
       'PDF profesional con tu marca: colores, logo y estilo (Moderno, Corporativo, Minimalista).',
@@ -19,12 +19,12 @@ export const APPLICATIONS = [
       'Duplica cotizaciones en un clic y obtén un nuevo código al instante.'
     ],
     image: cotizadorImg,
-    tag: 'Apps: Cotizador Pro'
+    tag: 'Apps: Cotizador Logístico'
   },
   {
     id: 'shipments',
     icon: 'fa-box-open',
-    title: 'Shipments Control',
+    title: 'Gestor de Embarques',
     description: 'Seguimiento visual de tus cargas aprobadas. Panel tipo kanban con el estado de cada embarque, canal aduanero por colores y enlace de tracking según la naviera. El sistema genera el Aviso de Llegada en PDF automáticamente y te avisa de las cargas que llegarán en los próximos 15 días.',
     features: [
       'Control visual del canal de aduana (Verde, Amarillo, Rojo).',
@@ -55,7 +55,7 @@ export const APPLICATIONS = [
     id: 'maestros',
     icon: 'fa-database',
     title: 'Infraestructura Masters',
-    description: 'La única fuente de verdad de tu agencia: clientes, servicios, navieras, puertos, agentes de aduana y tipos de carga en un solo lugar. RUC validado matemáticamente y autocompletado desde SUNAT, anti-duplicados con aviso de quién registró cada cliente, y tracking de navieras con detección automática de Maersk y Hapag-Lloyd.',
+    description: 'La única fuente de verdad de tu empresa: clientes, servicios, navieras, puertos, agentes de aduana y tipos de carga en un solo lugar. RUC validado matemáticamente y autocompletado desde SUNAT, anti-duplicados con aviso de quién registró cada cliente, y tracking de navieras con detección automática de Maersk y Hapag-Lloyd.',
     features: [
       'Validación oficial del RUC peruano (11 dígitos, dígito verificador).',
       'Autocompleta razón social y dirección desde SUNAT/RENIEC.',
@@ -70,7 +70,7 @@ export const APPLICATIONS = [
     id: 'ats',
     icon: 'fa-user-tie',
     title: 'Reclutamiento (ATS)',
-    description: 'Sistema de reclutamiento con portal de empleo público con la marca de tu agencia. Publica convocatorias, recibe postulaciones con CV en la nube y gestiona a cada candidato con un flujo visual: recibido, preseleccionado, entrevista, oferta y contratado.',
+    description: 'Sistema de reclutamiento con portal de empleo público con la marca de tu empresa. Publica convocatorias, recibe postulaciones con CV en la nube y gestiona a cada candidato con un flujo visual: recibido, preseleccionado, entrevista, oferta y contratado.',
     features: [
       'Portal de empleo público: tuagencia.logia.lat/empleos/ con tu marca.',
       'Flujo visual tipo kanban del candidato (postulado → entrevistado → aceptado).',
@@ -85,13 +85,13 @@ export const APPLICATIONS = [
     id: 'configuracion',
     icon: 'fa-chart-line',
     title: 'Métricas & Configuraciones',
-    description: 'El panel del administrador te da la agencia completa: ventas, contenedores en tránsito, cobros pendientes, quién está conectado y qué está haciendo, y rendimiento por vendedor. Además personalizas la imagen de tu empresa: enlace propio, logo, slogan, colores de PDF y avisos para todo el equipo.',
+    description: 'El panel del administrador te da una visión completa de tu empresa: ventas, contenedores en tránsito, cobros pendientes, quién está conectado y qué está haciendo, y rendimiento por vendedor. Además personalizas la imagen de tu empresa: enlace propio, logo, slogan, colores de PDF y avisos para todo el equipo.',
     features: [
       'Panel del equipo: quién está conectado y qué está haciendo en tiempo real.',
       'KPIs de ventas, tránsitos y cobros, filtrables por vendedor.',
       'Noticias de la empresa: publica avisos que ven todos los empleados.',
       'Personaliza logo, colores, estilo de PDF y marcas de agua de certificaciones.',
-      'Los datos de cada agencia están completamente separados y protegidos.'
+      'Los datos de cada empresa están completamente separados y protegidos.'
     ],
     image: configuracionImg,
     tag: 'Apps: Configuración & KPI'

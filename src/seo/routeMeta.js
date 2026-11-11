@@ -1,5 +1,7 @@
 const SITE = 'https://logia.lat';
 
+import { TUTORIALS, getYoutubeId } from '../data/tutorials';
+
 const appJsonLd = (name, url, description, featureList) => ({
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -17,19 +19,18 @@ const appJsonLd = (name, url, description, featureList) => ({
 
 export const ROUTE_META = {
   '/': {
-    title:
-      'LogIA — Software para Agencias de Carga | Facturación SUNAT, Cotizaciones, Tracking, Consultador de Importadores',
+    title: 'LogIA — Plataforma Integral para tu Empresa',
     description:
-      'LogIA: plataforma integral para agencias de carga en Latinoamérica. Facturación electrónica SUNAT, cotizaciones de fletes, tracking de envíos, consultador de importadores, reclutamiento ATS y más. Prueba 14 días gratis.',
+      'LogIA: plataforma integral para agencias de carga, operadores logísticos y agencias de aduanas en Latinoamérica. Facturación electrónica SUNAT, cotizaciones de fletes, tracking de envíos, consultador de importadores, reclutamiento ATS y más. Prueba 14 días gratis.',
   },
   '/app/cotizador': {
-    title: 'Cotizador de Fletes para Agencias de Carga | LogIA',
+    title: 'Cotizador de Fletes para Agencias de Carga y Operadores Logísticos | LogIA',
     description:
       'Crea cotizaciones profesionales de fletes marítimos, aéreos y terrestres en minutos. Cálculo automático de IGV y detracciones, PDF con branding corporativo. Prueba LogIA 14 días gratis.',
     jsonLd: appJsonLd(
       'LogIA — Cotizador de Fletes',
       `${SITE}/app/cotizador`,
-      'Cotizador profesional de fletes para agencias de carga. Cotizaciones en PDF con branding corporativo, cálculo automático de IGV, detracciones y exoneraciones.',
+      'Cotizador profesional de fletes para agencias de carga y operadores logísticos. Cotizaciones en PDF con branding corporativo, cálculo automático de IGV, detracciones y exoneraciones.',
       [
         'Cotizaciones de flete marítimo, aéreo y terrestre',
         'PDF profesionales con branding corporativo',
@@ -39,9 +40,9 @@ export const ROUTE_META = {
     ),
   },
   '/app/shipments': {
-    title: 'Tracking de Envíos y Canal Aduanero | LogIA',
+    title: 'Gestor de Embarques: Tracking y Canal Aduanero | LogIA',
     description:
-      'Gestiona y rastrea envíos internacionales en tiempo real. Conoce el canal aduanero de cada despacho, evidencia documentada y flujo completo hasta la entrega. Software para agencias de carga.',
+      'Gestiona y rastrea envíos internacionales en tiempo real con el gestor de embarques de LogIA. Conoce el canal aduanero de cada despacho, evidencia documentada y flujo completo hasta la entrega.',
     jsonLd: appJsonLd(
       'LogIA — Tracking de Envíos',
       `${SITE}/app/shipments`,
@@ -55,13 +56,13 @@ export const ROUTE_META = {
     ),
   },
   '/app/facturacion': {
-    title: 'Facturación Electrónica SUNAT para Agencias de Carga | LogIA',
+    title: 'Facturación Electrónica SUNAT para Agencias de Carga y Operadores Logísticos | LogIA',
     description:
-      'Emite facturas electrónicas SUNAT con cálculo automático de IGV y detracciones. Detecta servicios exonerados como fletes marítimos y aéreos. Software de facturación para agencias de carga.',
+      'Emite facturas electrónicas SUNAT con cálculo automático de IGV y detracciones. Detecta servicios exonerados como fletes marítimos y aéreos. Software de facturación para agencias de carga y operadores logísticos.',
     jsonLd: appJsonLd(
       'LogIA — Facturación Electrónica SUNAT',
       `${SITE}/app/facturacion`,
-      'Facturación electrónica SUNAT para agencias de carga. Cálculo automático de IGV, detracciones y exoneraciones de fletes internacionales.',
+      'Facturación electrónica SUNAT para agencias de carga y operadores logísticos. Cálculo automático de IGV, detracciones y exoneraciones de fletes internacionales.',
       [
         'Facturas electrónicas SUNAT',
         'Cálculo automático de IGV y detracciones',
@@ -73,7 +74,7 @@ export const ROUTE_META = {
   '/app/maestros': {
     title: 'Gestión de Clientes, Navieras y Puertos | LogIA',
     description:
-      'Centraliza clientes, navieras y puertos en un solo lugar. Base de datos maestra que alimenta cotizaciones, facturación y envíos de tu agencia de carga.',
+      'Centraliza clientes, navieras y puertos en un solo lugar. Base de datos maestra que alimenta cotizaciones, facturación y envíos de tu empresa logística.',
     jsonLd: appJsonLd(
       'LogIA — Maestros',
       `${SITE}/app/maestros`,
@@ -94,7 +95,7 @@ export const ROUTE_META = {
   '/app/comunicaciones': {
     title: 'Emails Masivos y Comunicación Empresarial | LogIA',
     description:
-      'Comunícate con clientes y prospectos desde una sola plataforma. Envíos masivos de correos, campañas y comunicación empresarial integrada con tu agencia de carga.',
+      'Comunícate con clientes y prospectos desde una sola plataforma. Envíos masivos de correos, campañas y comunicación empresarial integrada con tu operación logística.',
     jsonLd: appJsonLd(
       'LogIA — Comunicaciones',
       `${SITE}/app/comunicaciones`,
@@ -110,17 +111,57 @@ export const ROUTE_META = {
   '/app/consultador': {
     title: 'Consultador de Importadores SUNAT | LogIA',
     description:
-      'Data lake de SUNAT con información de importadores peruanos: volumen, frecuencia, países de origen y destino. Actualización cada 7 días. Prospección comercial para agencias de carga.',
+      'Data lake de SUNAT con información de importadores peruanos: volumen, frecuencia, países de origen y destino. Actualización cada 7 días. Prospección comercial para agencias de carga, operadores logísticos y agencias de aduanas.',
   },
   '/app/configuracion': {
     title: 'Configuración y Personalización | LogIA',
     description:
-      'Personaliza LogIA para tu agencia de carga: roles, permisos, servicios, branding y preferencias de cada módulo.',
+      'Personaliza LogIA para tu empresa: roles, permisos, servicios, branding y preferencias de cada módulo.',
   },
   '/academy': {
     title: 'Academy LogIA — Capacitaciones y Videos Guía',
     description:
-      'Capacitaciones virtuales personalizadas, videos guía de cada módulo y acuerdos presenciales para tu agencia de carga.',
+      'Capacitaciones virtuales personalizadas, videos guía de cada módulo y acuerdos presenciales para tu empresa.',
+  },
+  '/servicios': {
+    title: 'Desarrollo de Software e Integraciones para Logística | LogIA',
+    description:
+      'Diseñamos y desarrollamos aplicaciones a medida, portales e integraciones para empresas de logística y transporte: web, ERP, SUNAT, navieras y APIs. Hablemos de tu proyecto.',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Desarrollo de software e integraciones a medida',
+      serviceType: 'Desarrollo de aplicaciones, integraciones y sistemas a medida',
+      provider: { '@type': 'Organization', name: 'LogIA', url: SITE },
+      areaServed: 'Latinoamérica',
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Empresas de logística, transporte y comercio exterior',
+      },
+      description:
+        'Aplicaciones web a medida, portales de clientes e integraciones con sitios web, ERP, SUNAT, navieras y APIs para empresas de logística y transporte.',
+    },
+  },
+  '/tutoriales': {
+    title: 'Tutoriales de LogIA — Videos guía y capacitación',
+    description:
+      'Aprende a usar LogIA con tutoriales en video: registro, configuración, cotizaciones, embarques, facturación y más. Videos cortos y prácticos.',
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: TUTORIALS.map((tutorial, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'VideoObject',
+          name: tutorial.title,
+          description: tutorial.description,
+          embedUrl: `https://www.youtube-nocookie.com/embed/${getYoutubeId(tutorial.youtubeUrl)}`,
+          thumbnailUrl: `https://img.youtube.com/vi/${getYoutubeId(tutorial.youtubeUrl)}/hqdefault.jpg`,
+          publisher: { '@type': 'Organization', name: 'LogIA', url: SITE },
+        },
+      })),
+    },
   },
   '/preguntas': {
     title: 'Preguntas Frecuentes — LogIA',
@@ -130,22 +171,22 @@ export const ROUTE_META = {
   '/soporte': {
     title: 'Soporte y Ayuda — LogIA',
     description:
-      'Soporte técnico y ayuda para agencias de carga que usan LogIA. Videos guía, capacitaciones y contacto directo.',
+      'Soporte técnico y ayuda para empresas de logística y comercio exterior que usan LogIA. Videos guía, capacitaciones y contacto directo.',
   },
   '/actualizaciones': {
     title: 'Actualizaciones y Novedades — LogIA',
     description:
-      'Novedades, mejoras y nuevas funcionalidades de LogIA, la plataforma para agencias de carga en Latinoamérica.',
+      'Novedades, mejoras y nuevas funcionalidades de LogIA, la plataforma para agencias de carga, operadores logísticos y agencias de aduanas en Latinoamérica.',
   },
   '/privacidad': {
     title: 'Política de Privacidad — LogIA',
     description:
-      'Política de privacidad de LogIA. Conoce cómo protegemos tus datos y los de tu agencia de carga.',
+      'Política de privacidad de LogIA. Conoce cómo protegemos tus datos y los de tu empresa.',
   },
   '/terminos': {
     title: 'Términos y Condiciones — LogIA',
     description:
-      'Términos y condiciones de uso de LogIA, plataforma para agencias de carga.',
+      'Términos y condiciones de uso de LogIA, plataforma para empresas de logística y comercio exterior.',
   },
   '/cookies': {
     title: 'Política de Cookies — LogIA',
