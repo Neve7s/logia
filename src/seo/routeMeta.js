@@ -24,18 +24,18 @@ export const ROUTE_META = {
       'LogIA: plataforma integral para agencias de carga, operadores logísticos y agencias de aduanas en Latinoamérica. Facturación electrónica SUNAT, cotizaciones de fletes, tracking de envíos, consultador de importadores, reclutamiento ATS y más. Prueba 14 días gratis.',
   },
   '/app/cotizador': {
-    title: 'Cotizador de Fletes para Agencias de Carga y Operadores Logísticos | LogIA',
+    title: 'Cotizador de Fletes para Agencias de Aduanas, Carga y Operadores Logísticos | LogIA',
     description:
-      'Crea cotizaciones profesionales de fletes marítimos, aéreos y terrestres en minutos. Cálculo automático de IGV y detracciones, PDF con branding corporativo. Prueba LogIA 14 días gratis.',
+      'Crea cotizaciones profesionales de fletes marítimos, aéreos y terrestres en minutos. Busca clientes por RUC, detalla la carga (FCL, LCL, pallets, bultos y contenedores) y calcula servicios, IGV y derechos arancelarios. PDF con branding corporativo. Visita la demo en demo.logia.lat.',
     jsonLd: appJsonLd(
       'LogIA — Cotizador de Fletes',
       `${SITE}/app/cotizador`,
-      'Cotizador profesional de fletes para agencias de carga y operadores logísticos. Cotizaciones en PDF con branding corporativo, cálculo automático de IGV, detracciones y exoneraciones.',
+      'Cotizador profesional de fletes para agencias de aduanas, agencias de carga y operadores logísticos. Cotizaciones en PDF con branding corporativo, búsqueda de clientes por RUC, detalle de carga FCL/LCL/aéreo y cálculo automático de IGV y derechos arancelarios.',
       [
+        'Búsqueda de clientes por RUC y detalle de carga FCL, LCL, aéreo, pallets, bultos y contenedores',
         'Cotizaciones de flete marítimo, aéreo y terrestre',
         'PDF profesionales con branding corporativo',
-        'Cálculo automático de IGV y detracciones',
-        'Exoneración de IGV en fletes internacionales'
+        'Cálculo automático de IGV y derechos arancelarios'
       ]
     ),
   },
@@ -56,17 +56,17 @@ export const ROUTE_META = {
     ),
   },
   '/app/facturacion': {
-    title: 'Facturación Electrónica SUNAT para Agencias de Carga y Operadores Logísticos | LogIA',
+    title: 'Facturación Electrónica SUNAT para Agencias de Aduanas, Carga y Operadores Logísticos | LogIA',
     description:
-      'Emite facturas electrónicas SUNAT con cálculo automático de IGV y detracciones. Detecta servicios exonerados como fletes marítimos y aéreos. Software de facturación para agencias de carga y operadores logísticos.',
+      'Emite facturas electrónicas SUNAT: desde tus cotizaciones extrae los servicios cotizados e identifica si van con detracción, calcula IGV y emite fletes exonerados e inafectos. Software de facturación para agencias de aduanas, agencias de carga y operadores logísticos.',
     jsonLd: appJsonLd(
       'LogIA — Facturación Electrónica SUNAT',
       `${SITE}/app/facturacion`,
-      'Facturación electrónica SUNAT para agencias de carga y operadores logísticos. Cálculo automático de IGV, detracciones y exoneraciones de fletes internacionales.',
+      'Facturación electrónica SUNAT para agencias de aduanas, agencias de carga y operadores logísticos. Desde la cotización identifica si el servicio va con detracción; calcula IGV y emite fletes exonerados e inafectos.',
       [
-        'Facturas electrónicas SUNAT',
-        'Cálculo automático de IGV y detracciones',
-        'Detección de servicios exonerados',
+        'Facturas electrónicas SUNAT con OSE/PSE',
+        'Identificación de detracciones desde los servicios cotizados',
+        'Emisión de fletes exonerados e inafectos según SUNAT',
         'Validación automática de RUC'
       ]
     ),
@@ -166,7 +166,7 @@ export const ROUTE_META = {
   '/preguntas': {
     title: 'Preguntas Frecuentes — LogIA',
     description:
-      'Respuestas sobre LogIA: facturación SUNAT, IGV en fletes, detracciones, consultador de importadores, ATS, planes y precios.',
+      'Respuestas sobre LogIA: cotizaciones con IGV y derechos arancelarios, facturación SUNAT y detracciones, consultador de importadores, ATS, planes y precios.',
   },
   '/soporte': {
     title: 'Soporte y Ayuda — LogIA',

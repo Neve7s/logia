@@ -10,9 +10,10 @@ export const APPLICATIONS = [
     id: 'cotizador',
     icon: 'fa-calculator',
     title: 'Cotizador Logístico',
-    description: 'Tu herramienta principal de ventas. Cotiza en 2 minutos: flete, gastos, seguro, IGV y detracciones se calculan solos. Genera el PDF con la marca de tu empresa (colores, logo y estilo) y conviértelo en embarque y factura sin re-tipear nada.',
+    description: 'Tu herramienta principal de ventas. Cotiza en 2 minutos: busca el cliente por RUC, detalla la carga (FCL, LCL, aéreo; pallets, bultos y contenedores) y tus servicios, IGV y derechos arancelarios se calculan solos. Genera el PDF con la marca de tu empresa (colores, logo y estilo) y conviértelo en embarque y factura sin re-tipear nada.',
     features: [
-      'Cálculo automático de IGV y detracciones según tipo de servicio.',
+      'Datos del cliente por búsqueda de RUC y detalle de carga (FCL, LCL, aéreo; pallets, bultos y contenedores).',
+      'Cálculo automático de IGV y derechos arancelarios según tipo de servicio y modalidad.',
       'PDF profesional con tu marca: colores, logo y estilo (Moderno, Corporativo, Minimalista).',
       'Historial completo con estados (Borrador, Enviada, Aprobada, Rechazada, Caducada).',
       'Crea el cliente, la naviera o el puerto al vuelo, sin salir de la pantalla.',
@@ -40,10 +41,11 @@ export const APPLICATIONS = [
     id: 'facturacion',
     icon: 'fa-file-invoice',
     title: 'Facturación OSE/PSE',
-    description: 'Emite facturas, boletas y notas de crédito electrónicas validadas ante SUNAT. Cálculo automático de IGV y detracciones (códigos 027 y 037), modo PRUEBAS antes de PRODUCCIÓN, y envío automático del comprobante al cliente con tu marca.',
+    description: 'Emite facturas, boletas y notas de crédito electrónicas validadas ante SUNAT. Desde tus cotizaciones extrae los servicios cotizados e identifica, según precio y tipo de servicio, si se emite con detracción (códigos 027 y 037). Permite emitir facturas de flete exonerado e inafecto según SUNAT. Modo PRUEBAS antes de PRODUCCIÓN y envío automático del comprobante al cliente con tu marca.',
     features: [
       'Comprobantes aprobados automáticamente por SUNAT (OSE/PSE).',
-      'Cálculo automático de IGV (18%) y detracciones (4%–30%) sin errores.',
+      'Extrae los servicios de la cotización e identifica si el servicio va con detracción (4%–30%, códigos 027/037).',
+      'Cálculo automático de IGV (18%) y emisión de fletes exonerados e inafectos según SUNAT.',
       'Envío automático de la factura por correo con tu logo.',
       'Reportes financieros: emitidos, cobrados, vencidos y por vendedor.',
       'Exporta reportes a Excel con un clic.'

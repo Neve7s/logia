@@ -13,7 +13,7 @@ const FactElectronica = () => {
               <i className="fas fa-file-invoice"></i> Módulo Financiero
             </div>
             <h2 className="app-page-title">
-              Emite comprobantes electrónicos con<span className="text-highlight">calculo inteligente de detracciones y directo desde tu cotización</span>
+              Emite comprobantes electrónicos con<span className="text-highlight">cálculo inteligente de detracciones y emisión directa desde tu cotización</span>
             </h2>
             <p className="app-page-subtitle">
               La facturación manual con SUNAT es lenta, propensa a errores y genera multas por incumplimiento. 
@@ -91,9 +91,18 @@ const FactElectronica = () => {
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
                   <div className="app-page-feature-icon"><i className="fas fa-calculator"></i></div>
-                  <h4>Cálculo automático de IGV y detracciones</h4>
+                  <h4>Detracciones e IGV desde tu cotización</h4>
                 </div>
-                <p>El sistema calcula el IGV (18%), las detracciones (4%, 10%, 30%) y las percepciones automáticamente. Sin fórmulas, sin errores.</p>
+                <p>Desde tu cotización extrae los servicios cotizados e identifica, según precio y tipo de servicio, si se emite factura con detracción. Calcula el IGV (18%) y las detracciones (4%, 10%, 30%) automáticamente. Sin fórmulas, sin errores.</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="app-page-feature-card">
+                <div className="app-page-feature-card-header">
+                  <div className="app-page-feature-icon"><i className="fas fa-file-circle-check"></i></div>
+                  <h4>Fletes exonerados e inafectos</h4>
+                </div>
+                <p>Emite facturas de servicio de flete exonerado e inafecto según SUNAT, con la afectación correcta para cada tipo de servicio.</p>
               </div>
             </div>
             <div className="col-md-4">

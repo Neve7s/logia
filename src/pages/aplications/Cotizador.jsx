@@ -86,9 +86,9 @@ const Cotizador = () => {
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
                   <div className="app-page-feature-icon"><i className="fas fa-bolt"></i></div>
-                  <h4>Cálculo automático multi-criterio</h4>
+                  <h4>Carga detallada y cálculo multi-criterio</h4>
                 </div>
-                <p>Ingresa peso, volumen o tipo de contenedor. El sistema calcula automáticamente el costo usando tarifas fijas, por kilo, por metro cúbico o por contenedor. Sin errores, sin fórmulas en Excel.</p>
+                <p>Elige la modalidad (FCL, LCL o aéreo) y detalla pallets, bultos o contenedores. El sistema calcula automáticamente tus servicios, el IGV y los derechos arancelarios usando tarifas fijas, por kilo, por metro cúbico o por contenedor. Sin errores, sin fórmulas en Excel.</p>
               </div>
             </div>
             <div className="col-md-4">
@@ -131,9 +131,9 @@ const Cotizador = () => {
               <div className="app-page-feature-card">
                 <div className="app-page-feature-card-header">
                   <div className="app-page-feature-icon"><i className="fas fa-percentage"></i></div>
-                  <h4>Percepción IGV automática</h4>
+                  <h4>Derechos arancelarios automáticos</h4>
                 </div>
-                <p>Si el cliente ya tiene cotizaciones aprobadas, el sistema aplica 3.50% automáticamente. Si es nuevo, aplica 10%. Sin que el vendedor tenga que recordar la regla.</p>
+                <p>El sistema calcula automáticamente los derechos arancelarios de la operación junto con tus servicios y el IGV. Sin fórmulas manuales ni cálculos por fuera de la cotización.</p>
               </div>
             </div>
           </div>
@@ -156,8 +156,8 @@ const Cotizador = () => {
             <div className="app-page-workflow-step">
               <div className="app-page-workflow-number">2</div>
               <div className="app-page-workflow-content">
-                <h4>Selecciona cliente y servicio</h4>
-                <p>Autocompleta por RUC. Selecciona modalidad (LCL, FCL, Aéreo) y servicios.</p>
+                <h4>Busca el cliente y detalla la carga</h4>
+                <p>Busca el cliente por RUC. Selecciona modalidad (FCL, LCL, Aéreo) y detalla pallets, bultos o contenedores.</p>
               </div>
             </div>
             <div className="app-page-workflow-connector"><i className="fas fa-arrow-down"></i></div>
@@ -165,7 +165,7 @@ const Cotizador = () => {
               <div className="app-page-workflow-number">3</div>
               <div className="app-page-workflow-content">
                 <h4>El sistema calcula todo</h4>
-                <p>Costos, IGV, percepción, tipo de cambio. El vendedor solo revisa y ajusta si es necesario.</p>
+                <p>Costo de tus servicios, IGV, derechos arancelarios y tipo de cambio. El vendedor solo revisa y ajusta si es necesario.</p>
               </div>
             </div>
             <div className="app-page-workflow-connector"><i className="fas fa-arrow-down"></i></div>

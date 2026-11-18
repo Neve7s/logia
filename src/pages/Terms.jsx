@@ -104,9 +104,9 @@ const Terms = () => {
         </p>
         <p>El alcance contratado se detalla en el plan elegido y puede incluir:</p>
         <ul>
-          <li>Cotizador profesional con cálculo de fletes, IGV y detracciones.</li>
+          <li>Cotizador profesional con búsqueda de clientes por RUC, detalle de carga (FCL, LCL, aéreo; pallets, bultos y contenedores), cálculo de servicios, IGV y derechos arancelarios.</li>
           <li>Control de embarques, canal aduanero y documentos PDF con marca del Cliente.</li>
-          <li>Facturación electrónica mediante OSE/PSE y reportes de cobranza.</li>
+          <li>Facturación electrónica mediante OSE/PSE, con identificación de detracciones desde la cotización, emisión de fletes exonerados e inafectos y reportes de cobranza.</li>
           <li>Base maestra de clientes, navieras, puertos y servicios.</li>
           <li>Portal de empleo y gestión de candidatos (ATS).</li>
           <li>Campañas de correo y comunicaciones transaccionales.</li>
