@@ -38,7 +38,7 @@ const Terms = () => {
         <h2><i className="fas fa-circle-info" aria-hidden="true"></i> Resumen rápido</h2>
         <ul>
           <li>La plataforma se contrata por suscripción y se renueva automáticamente salvo cancelación.</li>
-          <li>La prueba gratuita dura 14 días y no requiere tarjeta de crédito.</li>
+          <li>La prueba gratuita de diciembre dura 1 mes calendario y no requiere tarjeta de crédito.</li>
           <li>Los datos de tu empresa son de tu propiedad y se mantienen aislados por empresa.</li>
           <li>LogIA no sustituye la asesoría contable, tributaria o legal de tu empresa.</li>
         </ul>
@@ -188,7 +188,7 @@ const Terms = () => {
 
       <LegalSection id="prueba-gratuita" number="08" title="Prueba gratuita" icon="fas fa-gift">
         <ul>
-          <li>La prueba gratuita tiene una duración de 14 días calendario y no exige tarjeta de crédito.</li>
+          <li>La prueba gratuita de diciembre tiene una duración de 1 mes calendario y no exige tarjeta de crédito.</li>
           <li>Durante la prueba se habilita el equivalente funcional del plan Estándar, salvo indicación distinta.</li>
           <li>La prueba es única por empresa y puede estar sujeta a validación de identidad o RUC.</li>
           <li>LogIA puede ajustar o finalizar la prueba por uso abusivo o incumplimiento de estos Términos.</li>

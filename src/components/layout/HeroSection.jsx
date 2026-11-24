@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SITE_CONTENT } from '../../data/siteContent';
+import Snowfall from './Snowfall';
 import cotizadorImg from '../../assets/ecosistema/cotizador.webp';
 import shipmentImg from '../../assets/ecosistema/shipment.webp';
 import facturacionImg from '../../assets/ecosistema/fiannza1.webp';
@@ -127,7 +128,7 @@ const HeroSection = () => {
         rel="noopener noreferrer"
         className="btn-hero-mobile"
       >
-        Prueba gratis aquí <i className="fas fa-arrow-right" aria-hidden="true" style={{ marginLeft: '8px' }}></i>
+        {hero.ctaPrimaryMobile || 'Gratis todo diciembre'} <i className="fas fa-arrow-right" aria-hidden="true" style={{ marginLeft: '8px' }}></i>
       </a>
       <a
         href={hero.ctaSecondary.href}
@@ -142,6 +143,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="hero-high-end">
+      <Snowfall />
       <div className="hero-overlay" />
 
       <div className="container-x hero-content">
@@ -167,6 +169,13 @@ const HeroSection = () => {
                       <div className="face top" />
                       <div className="face bottom" />
                     </div>
+                    <span className="cube-santa-hat" aria-hidden="true">
+                      <svg viewBox="0 0 120 90" focusable="false">
+                        <path d="M10 64 C26 10 92 6 106 44 L94 58 C78 30 38 34 24 68 Z" fill="#e5484d" />
+                        <circle cx="105" cy="42" r="13" fill="#f2f6fb" />
+                        <rect x="6" y="60" width="104" height="17" rx="8.5" fill="#f2f6fb" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -182,6 +191,13 @@ const HeroSection = () => {
               </ul>
 
               <p className="hero-lead">{hero.subtitle}</p>
+
+              {hero.holidayNote && (
+                <p className="hero-holiday-note">
+                  <i className="fas fa-snowflake" aria-hidden="true"></i>
+                  {hero.holidayNote}
+                </p>
+              )}
 
               {renderCtas(false)}
               {renderMobileCtas(false)}

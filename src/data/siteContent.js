@@ -7,13 +7,15 @@ export const SITE_CONTENT = {
 
   // ─── HERO ──────────────────────────────────────────────────
   hero: {
-    badge: "Prueba 14 días gratis",
-    badgeSub: "Sin tarjeta de crédito",
+    badge: "Gratis todo diciembre",
+    badgeSub: "1 mes completo · sin tarjeta",
+    holidayNote: "Regalo de Navidad para nuevas cuentas: 1 mes gratis, todo diciembre.",
     titleLine1: "Plataforma Integral para",
     titleHighlight: "tu Empresa",
     segments: ["Agencias de carga", "Operadores logísticos", "Agencias de aduanas"],
     subtitle: "Gestiona tu equipo comercial, operaciones y finanzas con aplicaciones inteligentes. Todo en una sola plataforma.",
-    ctaPrimary: { label: "Empezar Gratis", href: "https://app.logia.lat/register/company/" },
+    ctaPrimary: { label: "Activar mi mes gratis", href: "https://app.logia.lat/register/company/" },
+    ctaPrimaryMobile: "Gratis todo diciembre",
     ctaSecondary: { label: "Ver demo interactiva", href: "https://demo.logia.lat" },
     metrics: [
       { value: 80, suffix: "%", label: "Menos Carga Administrativa" },
@@ -346,7 +348,7 @@ export const SITE_CONTENT = {
     },
     {
       q: "¿Hay un período de prueba gratuita?",
-      a: "Sí, ofrecemos 14 días de prueba gratuita sin tarjeta de crédito. Tienes acceso completo a todas las funcionalidades del plan Estándar.",
+      a: "Sí, durante todo diciembre ofrecemos 1 mes de prueba gratuita sin tarjeta de crédito. Tienes acceso completo a todas las funcionalidades del plan Estándar.",
       icon: "fas fa-gift",
     },
     {

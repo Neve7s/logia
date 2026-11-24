@@ -123,7 +123,7 @@ const AppDetail = () => {
             ¿Listo para probar {app.title}?
           </h3>
           <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', maxWidth: '500px', margin: '0 auto 1.5rem' }}>
-            14 días de prueba gratuita. Sin tarjeta de crédito. Cancela cuando quieras.
+            1 mes de prueba gratuita en diciembre. Sin tarjeta de crédito. Cancela cuando quieras.
           </p>
           <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
             <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i>

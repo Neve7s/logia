@@ -21,7 +21,7 @@ export const ROUTE_META = {
   '/': {
     title: 'LogIA — Plataforma Integral para tu Empresa',
     description:
-      'LogIA: plataforma integral para agencias de carga, operadores logísticos y agencias de aduanas en Latinoamérica. Facturación electrónica SUNAT, cotizaciones de fletes, tracking de envíos, consultador de importadores, reclutamiento ATS y más. Prueba 14 días gratis.',
+      'LogIA: plataforma integral para agencias de carga, operadores logísticos y agencias de aduanas en Latinoamérica. Facturación electrónica SUNAT, cotizaciones de fletes, tracking de envíos, consultador de importadores, reclutamiento ATS y más. Gratis todo diciembre.',
   },
   '/app/cotizador': {
     title: 'Cotizador de Fletes para Agencias de Aduanas, Carga y Operadores Logísticos | LogIA',
@@ -90,7 +90,7 @@ export const ROUTE_META = {
   '/app/reclutamiento': {
     title: 'Reclutamiento ATS para Logística | LogIA',
     description:
-      'Publica vacantes, recibe postulaciones y gestiona candidatos con flujo Kanban. Coordina entrevistas automáticamente. Como LinkedIn para la logística. Prueba 14 días gratis.',
+      'Publica vacantes, recibe postulaciones y gestiona candidatos con flujo Kanban. Coordina entrevistas automáticamente. Como LinkedIn para la logística. Gratis todo diciembre.',
   },
   '/app/comunicaciones': {
     title: 'Emails Masivos y Comunicación Empresarial | LogIA',

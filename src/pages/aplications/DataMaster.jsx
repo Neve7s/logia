@@ -137,7 +137,7 @@ const DataMaster = () => {
 
         <div className="app-page-cta text-center">
           <h3>¿Listo para centralizar tus datos?</h3>
-          <p>14 días de prueba gratuita. Sin tarjeta de crédito.</p>
+          <p>1 mes gratis en diciembre. Sin tarjeta de crédito.</p>
           <div className="app-page-cta-actions">
             <a href="https://app.logia.lat/register/company/" className="btn-executive-large" target="_blank" rel="noopener noreferrer">
               <i className="fas fa-rocket" style={{ marginRight: '0.5rem' }}></i> Empezar Gratis

@@ -12,8 +12,8 @@ const CtaBand = () => {
               Digitaliza tu empresa con <span className="text-highlight">LogIA</span>
             </h2>
             <p className="cta-band-text">
-              Cotiza, opera y factura desde una sola plataforma. Empieza con 14 días de prueba,
-              sin tarjeta de crédito y con acompañamiento de nuestro equipo.
+              Cotiza, opera y factura desde una sola plataforma. Empieza con 1 mes gratis,
+              todo diciembre, sin tarjeta de crédito y con acompañamiento de nuestro equipo.
             </p>
             <ul className="cta-band-points">
               <li><i className="fas fa-circle-check" aria-hidden="true"></i> Implementación guiada</li>

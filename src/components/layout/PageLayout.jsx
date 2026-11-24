@@ -61,7 +61,7 @@ const PageLayout = ({ title, tagline, children, fullWidth = false }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Prueba gratis
+                Gratis en diciembre
               </a>
             </div>
           </div>

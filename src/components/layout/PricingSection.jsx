@@ -182,13 +182,13 @@ const PricingSection = () => {
         <p className="pricing-note text-center">
           {showPrices ? (
             <>
-              Todos los planes incluyen 14 días de prueba gratis sin tarjeta de crédito.
+              Todos los planes incluyen 1 mes gratis, todo diciembre, sin tarjeta de crédito.
               Precios en USD; el IGV no está incluido. Consulta los{' '}
               <Link to="/terminos">Términos y Condiciones</Link>.
             </>
           ) : (
             <>
-              Todos los planes incluyen 14 días de prueba gratis sin tarjeta de crédito.{' '}
+              Todos los planes incluyen 1 mes gratis, todo diciembre, sin tarjeta de crédito.{' '}
               <Link to="/soporte">Escríbenos</Link> para preparar una propuesta según los usuarios
               y módulos que necesites.
             </>

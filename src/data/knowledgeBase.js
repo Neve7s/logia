@@ -95,7 +95,7 @@ Si alguien pregunta por "portal de empleo" o "empleos", primero PREGUNTA si est�
 
 ## PRECIOS
 - Planes: Básico (6 usuarios), Estándar (10), Premium (15) y Personalizado. Los precios se cotizan según usuarios y módulos: invita a contactar al equipo para una propuesta.
-- Incluye 2 semanas de prueba gratis del plan Premium (6 usuarios)
+- Incluye 1 mes de prueba gratis en diciembre del plan Premium (6 usuarios)
 - Registro: https://app.logia.lat/register/company/
 - Video tutorial: https://www.youtube.com/watch?v=Uoq83P7fj4g
 
